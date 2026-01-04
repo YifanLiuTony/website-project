@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.sunfly.com.hk/</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Alternate language versions -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sunfly.com.hk/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.sunfly.com.hk/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.sunfly.com.hk/" />
+  </url>
+  
+  <!-- Add more pages as you create them -->
+  <!-- Example:
+  <url>
+    <loc>https://www.sunfly.com.hk/products</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>

@@ -57,6 +57,12 @@ const translations = {
         'jobRef.project1.quantity': 'Quantities: 2250.00 sqm',
         'jobRef.project1.product': 'Product: PARETE steel raised floor FS2000',
         'jobRef.project1.desc': 'Supplied premium PARETE steel raised floor FS2000 system for the gaming area, providing durable and high-performance flooring solution.',
+        'jobRef.project2.title': 'Du Montford Office Building',
+        'jobRef.project2.location': 'United Kingdom',
+        'jobRef.project2.date': 'Completed 2023',
+        'jobRef.project2.quantity': 'Specifications: 200*1800*40mm',
+        'jobRef.project2.product': 'Product: Yarden - Vertical Hanging Panel Series',
+        'jobRef.project2.desc': 'Installed modern Yarden vertical hanging panel ceiling system for a contemporary office space, featuring integrated lighting and acoustic solutions.',
         'jobRef.more': 'More >>>>',
         
         // About
@@ -132,7 +138,17 @@ const translations = {
         'footer.about.desc': 'Hong Kong\'s leading supplier of premium building materials, dedicated to quality and customer satisfaction.',
         'footer.products.title': 'Products',
         'footer.contact.title': 'Contact',
-        'footer.copyright': '© 2024 Sunfly Building Materials (Hong Kong) Corporation Limited. All rights reserved.'
+        'footer.copyright': '© 2024 Sunfly Building Materials (Hong Kong) Corporation Limited. All rights reserved.',
+
+        // Image Alt Text
+        'alt.hero': 'Construction materials',
+        'alt.about': 'Sunfly warehouse',
+        'alt.raisedFloor': 'Raised Floor System',
+        'alt.ceiling': 'Ceiling System',
+        'alt.glazing': 'Glazing System',
+        'alt.steelFraming': 'Light Steel Framing System',
+        'alt.project1': 'Macau Galaxy 3A Gaming Area',
+        'alt.project2': 'Du Montford Office Building'
     },
     '繁': {
         // Navigation
@@ -191,6 +207,12 @@ const translations = {
         'jobRef.project1.quantity': '數量: 2250.00平方米',
         'jobRef.project1.product': '產品: PARETE鋼架空地板 FS2000',
         'jobRef.project1.desc': '為遊戲區供應優質PARETE鋼架空地板 FS2000系統，提供耐用且高性能的地板解決方案。',
+        'jobRef.project2.title': '杜蒙福特辦公大樓',
+        'jobRef.project2.location': '英國',
+        'jobRef.project2.date': '2023年完成',
+        'jobRef.project2.quantity': '規格: 200*1800*40mm',
+        'jobRef.project2.product': '產品: Yarden - 垂直懸掛面板系列',
+        'jobRef.project2.desc': '為現代辦公空間安裝現代Yarden垂直懸掛面板天花板系統，配有集成照明和隔音解決方案。',
         'jobRef.more': '更多 >>>>',
         
         // About
@@ -266,7 +288,17 @@ const translations = {
         'footer.about.desc': '香港領先的優質建材供應商，致力於品質及客戶滿意度。',
         'footer.products.title': '產品',
         'footer.contact.title': '聯絡',
-        'footer.copyright': '© 2024 沈飛建材（香港）有限公司。版權所有。'
+        'footer.copyright': '© 2024 沈飛建材（香港）有限公司。版權所有。',
+
+        // Image Alt Text
+        'alt.hero': '建築材料',
+        'alt.about': '沈飛倉庫',
+        'alt.raisedFloor': '架空地板系統',
+        'alt.ceiling': '天花板系統',
+        'alt.glazing': '玻璃幕牆系統',
+        'alt.steelFraming': '輕鋼架系統',
+        'alt.project1': '澳門銀河3A遊戲區',
+        'alt.project2': '杜蒙福辦公大樓'
     },
     '简': {
         // Navigation
@@ -325,6 +357,12 @@ const translations = {
         'jobRef.project1.quantity': '数量: 2250.00平方米',
         'jobRef.project1.product': '产品: PARETE钢架空地板 FS2000',
         'jobRef.project1.desc': '为游戏区供应优质PARETE钢架空地板 FS2000系统，提供耐用且高性能的地板解决方案。',
+        'jobRef.project2.title': '杜蒙福特办公楼',
+        'jobRef.project2.location': '英国',
+        'jobRef.project2.date': '2023年完成',
+        'jobRef.project2.quantity': '规格: 200*1800*40mm',
+        'jobRef.project2.product': '产品: Yarden - 垂直悬挂面板系列',
+        'jobRef.project2.desc': '为现代办公空间安装现代Yarden垂直悬挂面板天花板系统，配有集成照明和隔音解决方案。',
         'jobRef.more': '更多 >>>>',
         
         // About
@@ -400,6 +438,16 @@ const translations = {
         'footer.about.desc': '香港领先的优质建材供应商，致力于品质及客户满意度。',
         'footer.products.title': '产品',
         'footer.contact.title': '联系',
-        'footer.copyright': '© 2024 沈飞建材（香港）有限公司。版权所有。'
+        'footer.copyright': '© 2024 沈飞建材（香港）有限公司。版权所有。',
+
+        // Image Alt Text
+        'alt.hero': '建筑材料',
+        'alt.about': '沈飞仓库',
+        'alt.raisedFloor': '架空地板系统',
+        'alt.ceiling': '天花板系统',
+        'alt.glazing': '玻璃幕墙系统',
+        'alt.steelFraming': '轻钢架系统',
+        'alt.project1': '澳门银河3A游戏区',
+        'alt.project2': '杜蒙福办公大楼'
     }
 };

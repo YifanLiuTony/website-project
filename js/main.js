@@ -12,7 +12,7 @@ function updateTranslations() {
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         const translation = t(key);
-        
+
         // Update text content for most elements
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
             // For form inputs, update placeholder if it exists
@@ -24,6 +24,14 @@ function updateTranslations() {
         } else {
             element.textContent = translation;
         }
+    });
+
+    // Update image alt attributes with data-i18n-alt
+    const imagesWithAlt = document.querySelectorAll('[data-i18n-alt]');
+    imagesWithAlt.forEach(img => {
+        const key = img.getAttribute('data-i18n-alt');
+        const translation = t(key);
+        img.alt = translation;
     });
 }
 
@@ -76,54 +84,52 @@ function toggleMobileMenu() {
 // Handle contact form submission
 function handleFormSubmit(event) {
     event.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(event.target);
-    
+
+    // EmailJS configuration
+    const serviceID = 'default_service';
+    const templateID = 'template_czus2pw';
+
     // Show loading state
     const submitButton = event.target.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
-    
-    // Send email using PHP backend
-    fetch('send-email.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+
+    // Send email using EmailJS
+    emailjs.sendForm(serviceID, templateID, event.target)
+        .then(() => {
             // Show success message
-            alert(t('contact.form.success'));
+            alert(t('contact.form.success') || 'Message sent successfully!');
             // Reset form
             event.target.reset();
-        } else {
-            throw new Error(data.error || 'Failed to send email');
-        }
-    })
-    .catch(error => {
-        console.error('Email send error:', error);
-        alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@sunfly.com.hk');
-    })
-    .finally(() => {
-        // Restore button state
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    });
+        })
+        .catch((error) => {
+            console.error('Email send error:', error);
+            alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@sunfly.com.hk');
+        })
+        .finally(() => {
+            // Restore button state
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        });
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize translations first (critical for page display)
+    updateTranslations();
+
+    // Initialize EmailJS if available
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('7OufI5CIU1Q7BV8Cr');
+    }
+
     // Set up form submission handler
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
     }
-    
-    // Initialize translations
-    updateTranslations();
-    
+
     // Add smooth scrolling to the page
     document.documentElement.classList.add('smooth-scroll');
     document.documentElement.style.scrollBehavior = 'smooth';

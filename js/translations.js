@@ -138,7 +138,7 @@ const translations = {
         'footer.about.desc': 'Hong Kong\'s leading supplier of premium building materials, dedicated to quality and customer satisfaction.',
         'footer.products.title': 'Products',
         'footer.contact.title': 'Contact',
-        'footer.copyright': '© 2024 Sunfly Building Materials (Hong Kong) Corporation Limited. All rights reserved.',
+        'footer.copyright': '© 2026 Sunfly Building Materials (Hong Kong) Corporation Limited. All rights reserved.',
 
         // Image Alt Text
         'alt.hero': 'Construction materials',
@@ -288,7 +288,7 @@ const translations = {
         'footer.about.desc': '香港領先的優質建材供應商，致力於品質及客戶滿意度。',
         'footer.products.title': '產品',
         'footer.contact.title': '聯絡',
-        'footer.copyright': '© 2024 沈飛建材（香港）有限公司。版權所有。',
+        'footer.copyright': '© 2026 沈飛建材（香港）有限公司。版權所有。',
 
         // Image Alt Text
         'alt.hero': '建築材料',
@@ -438,7 +438,7 @@ const translations = {
         'footer.about.desc': '香港领先的优质建材供应商，致力于品质及客户满意度。',
         'footer.products.title': '产品',
         'footer.contact.title': '联系',
-        'footer.copyright': '© 2024 沈飞建材（香港）有限公司。版权所有。',
+        'footer.copyright': '© 2026 沈飞建材（香港）有限公司。版权所有。',
 
         // Image Alt Text
         'alt.hero': '建筑材料',

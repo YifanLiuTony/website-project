@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://sunfly.hk/</loc>
-    <lastmod>2026-2-4</lastmod>
+    <lastmod>2026-02-04</lastmod>          <!-- update to today's date or last real change -->
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <!-- Alternate language versions -->
-    <xhtml:link rel="alternate" hreflang="en" href="https://sunfly.hk/" />
+
+    <!-- Language alternates (optional but good for multilingual) -->
+    <xhtml:link rel="alternate" hreflang="en"    href="https://sunfly.hk/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://sunfly.hk/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://sunfly.hk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunfly.hk/" />
   </url>
-  
-  <!-- Add more pages as you create them -->
-  <!-- Example:
+
+  <!-- Example: Products page (add if it exists) -->
   <url>
     <loc>https://sunfly.hk/products</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-12-31</lastmod>           <!-- use real last change date -->
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  -->
+
+  <!-- Add more <url> blocks here when you create new pages -->
 
 </urlset>

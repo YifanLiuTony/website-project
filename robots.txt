@@ -13,3 +13,8 @@ Sitemap: https://www.sunfly.com.hk/sitemap.xml
 
 # Crawl-delay (optional, adjust based on server capacity)
 Crawl-delay: 1
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sunfly.hk/sitemap.xml

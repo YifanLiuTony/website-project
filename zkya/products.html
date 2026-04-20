@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Catalog — Zhongke Yong'an Battery Fire Safety</title>
+<meta name="description" content="Full product catalog: lithium-battery extinguishers, foam concentrate agents, image-based flame & smoke detection, auto-tracking fire monitors, and high-pressure water-mist systems. Engineered by Zhongke Yong'an with China's State Key Laboratory for Fire Safety.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="static/images/logo.png">
+<style>
+  /* ---- Reset ---- */
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:#1e293b;line-height:1.6;background:#fff;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none}
+
+  /* ---- Palette ---- */
+  :root{
+    --blue:#2064AE;
+    --blue-dark:#18264C;
+    --blue-mid:#1F519F;
+    --blue-light:#E8F0FA;
+    --red:#C0392B;
+    --red-hover:#9C2C21;
+    --ink:#1e293b;
+    --ink-muted:#475569;
+    --line:#e2e8f0;
+    --bg-soft:#f8fafc;
+    --white:#fff;
+    --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+    --shadow-md:0 4px 12px rgba(15,23,42,.08);
+    --shadow-lg:0 20px 45px rgba(15,23,42,.15);
+    --radius:10px;
+    --container:1200px;
+  }
+
+  /* ---- Layout helpers ---- */
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .section{padding:80px 0}
+  .section-sm{padding:48px 0}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  .eyebrow.light{color:#9bb4d9}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:0 0 16px}
+  h1{font-size:clamp(2.1rem,4.2vw,3.4rem);line-height:1.15}
+  h2{font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.25}
+  h3{font-size:1.18rem}
+  p{margin:0 0 14px;color:var(--ink-muted)}
+  .lead{font-size:1.1rem;color:var(--ink-muted);max-width:780px}
+
+  /* ---- Buttons ---- */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:8px;font-weight:600;font-size:.96rem;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;white-space:nowrap}
+  .btn-primary{background:var(--red);color:#fff !important;box-shadow:var(--shadow-md)}
+  .btn-primary:hover{background:var(--red-hover);color:#fff !important;transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.1)}
+  .btn-ghost{color:var(--blue);padding:10px 0}
+  .btn-ghost:hover{color:var(--blue-dark)}
+  .btn-ghost::after{content:" →";transition:margin .15s}
+  .btn-ghost:hover::after{margin-left:4px}
+
+  /* ---- Keyword emphasis ---- */
+  .kw{font-weight:700;color:var(--blue-dark)}
+  .cases .kw,.hero .kw,.page-hero .kw{color:#fff}
+
+  /* ---- Top announcement ---- */
+  .topbar{background:var(--blue-dark);color:#cfd9ec;font-size:.85rem;padding:8px 0;text-align:center}
+  .topbar strong{color:#fff;font-weight:600}
+
+  /* ---- Nav ---- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo-wrap{display:flex;align-items:center;gap:12px}
+  .logo-wrap img{height:36px;width:auto;max-width:140px;object-fit:contain}
+  .logo-wrap .wordmark{font-weight:700;font-size:1.02rem;color:var(--blue-dark);line-height:1.1}
+  .logo-wrap .wordmark small{display:block;font-size:.7rem;color:var(--ink-muted);font-weight:500;letter-spacing:.02em}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:.94rem;font-weight:500;color:var(--ink);transition:color .15s}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links a.active{color:var(--blue)}
+  .nav-links a.nav-cta{background:var(--red);color:#fff;padding:10px 20px;border-radius:6px;font-size:.9rem;font-weight:600}
+  .nav-links a.nav-cta:hover{background:var(--red-hover);color:#fff}
+  #nav-toggle{display:none;font-size:1.4rem;color:var(--blue-dark)}
+
+  /* ---- Page Hero (lighter than landing hero) ---- */
+  .page-hero{position:relative;background:linear-gradient(135deg,#0F1B38 0%,#18264C 55%,#1F519F 100%);color:#fff;padding:72px 0 64px;overflow:hidden}
+  .page-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px;opacity:.35;pointer-events:none}
+  .page-hero-inner{position:relative;z-index:1}
+  .page-hero h1{color:#fff;margin-bottom:18px;font-size:clamp(1.9rem,3.6vw,2.9rem)}
+  .page-hero p.lead{color:#d4dcee;max-width:760px}
+  .page-hero .quick-links{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 12px}
+  .page-hero .ql-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#dde4f4;padding:8px 16px;border-radius:99px;font-size:.85rem;font-weight:500;transition:background .15s,border-color .15s}
+  .page-hero .ql-chip:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
+  .crumbs{font-size:.82rem;color:#9bb4d9;margin-bottom:14px}
+  .crumbs a{color:#9bb4d9;text-decoration:underline;text-underline-offset:2px}
+  .crumbs a:hover{color:#fff}
+
+  /* ---- Section headers ---- */
+  .cat-head{max-width:820px;margin-bottom:40px}
+  .cat-anchor{scroll-margin-top:90px}
+  .cat-head .cat-count{display:inline-block;margin-left:10px;font-size:.85rem;color:var(--ink-muted);background:var(--bg-soft);border:1px solid var(--line);padding:2px 10px;border-radius:99px;font-weight:500;vertical-align:middle}
+
+  /* ---- Product featured card ---- */
+  .featured{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;background:linear-gradient(135deg,var(--blue-light) 0%,#fff 100%);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:32px}
+  .featured-img{background:#fff;min-height:360px;display:flex;align-items:center;justify-content:center;padding:32px;border-right:1px solid var(--line)}
+  .featured-img img{max-height:320px;width:auto;object-fit:contain}
+  .featured-body{padding:40px 36px;display:flex;flex-direction:column;justify-content:center}
+  .featured-body .product-tag{margin-bottom:14px}
+  .featured-body h3{color:var(--blue-dark);font-size:1.55rem;margin-bottom:14px}
+  .featured-body p{font-size:1rem}
+  .featured-specs{margin-top:18px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:.9rem;color:var(--ink-muted)}
+  .featured-specs b{color:var(--ink-muted);font-weight:600;display:inline-block;min-width:110px;color:var(--blue-dark)}
+
+  /* ---- Product grid + card ---- */
+  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .product-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .product-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .product-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--blue)}
+  .product-thumb{background:#f1f5f9;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;border-bottom:1px solid var(--line)}
+  .product-thumb img{max-height:170px;width:auto;object-fit:contain}
+  .product-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+  .product-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:3px 9px;border-radius:99px;margin-bottom:10px;align-self:flex-start}
+  .product-tag.ex{color:var(--red);background:#fdecea}
+  .product-body h3{color:var(--blue-dark);font-size:1.02rem;margin-bottom:8px;line-height:1.3}
+  .product-body p{font-size:.88rem;margin-bottom:10px;flex:1;color:var(--ink-muted)}
+  .product-specs{font-size:.8rem;color:var(--ink-muted);padding-top:10px;border-top:1px dashed var(--line);margin-top:6px}
+  .product-specs b{color:var(--ink)}
+
+  /* ---- Category band (lightly tinted) ---- */
+  .cat-section{padding:80px 0}
+  .cat-section.alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cat-section.dark{background:var(--blue-dark);color:#d4dcee}
+  .cat-section.dark h2,.cat-section.dark .cat-head h3{color:#fff}
+  .cat-section.dark p.lead{color:#b9c4dc}
+  .cat-section.dark .eyebrow{color:#9bb4d9}
+  .cat-section.dark .cat-count{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:#c7d1e3}
+  .cat-section.dark .product-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);color:#d4dcee}
+  .cat-section.dark .product-card:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08)}
+  .cat-section.dark .product-card h3{color:#fff}
+  .cat-section.dark .product-card p{color:#b9c4dc}
+  .cat-section.dark .product-thumb{background:#0f1b38;border-bottom:1px solid rgba(255,255,255,.1)}
+  .cat-section.dark .product-specs{color:#9bb4d9;border-top-color:rgba(255,255,255,.1)}
+  .cat-section.dark .product-specs b{color:#fff}
+  .cat-section.dark .product-tag{background:rgba(255,255,255,.1);color:#cfd9ec}
+  .cat-section.dark .product-tag.ex{background:rgba(192,57,43,.2);color:#ffb1a6}
+
+  /* ---- CTA band ---- */
+  .cta-band{background:linear-gradient(120deg,var(--blue) 0%,var(--blue-mid) 60%,var(--blue-dark) 100%);color:#fff;padding:60px 0;text-align:center}
+  .cta-band h2{color:#fff;margin-bottom:10px}
+  .cta-band p{color:#d4dcee;max-width:620px;margin:0 auto 26px}
+
+  /* ---- Footer ---- */
+  footer{background:#0f1b38;color:#9bb4d9;padding:56px 0 28px;font-size:.9rem}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:40px}
+  footer h4{color:#fff;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer li{padding:5px 0}
+  footer a{color:#9bb4d9}
+  footer a:hover{color:#fff}
+  .footer-brand p{color:#9bb4d9;font-size:.88rem;margin-top:14px;max-width:320px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7687a8}
+
+  /* ---- Responsive ---- */
+  @media (max-width: 980px){
+    .featured{grid-template-columns:1fr}
+    .featured-img{border-right:0;border-bottom:1px solid var(--line);min-height:260px}
+    .featured-body{padding:32px 28px}
+    .product-grid,.product-grid.cols-2,.product-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md)}
+    .nav-links.open a{padding:12px 0;border-bottom:1px solid var(--line);width:100%}
+    .nav-links.open .nav-cta{margin-top:8px;text-align:center}
+    #nav-toggle{display:block}
+  }
+  @media (max-width: 640px){
+    .cat-section{padding:60px 0}
+    .product-grid,.product-grid.cols-2,.product-grid.cols-4{grid-template-columns:1fr}
+    .page-hero{padding:56px 0 48px}
+    .footer-grid{grid-template-columns:1fr}
+    .topbar{font-size:.78rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Announcement / Top Bar ===== -->
+<div class="topbar">
+  <strong>Lithium-ion battery fire specialists</strong> &nbsp;·&nbsp; Built with China's State Key Laboratory for Fire Safety &nbsp;·&nbsp; Shipping worldwide
+</div>
+
+<!-- ===== Navigation ===== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="en-landing.html" class="logo-wrap">
+      <img src="static/upload/image/20250913/1757746851734252.png" alt="Zhongke Yong'an / ZKYA logo">
+      <div class="wordmark">Zhongke Yong'an<small>Battery Fire Safety</small></div>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="en-landing.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="en-landing.html#industries">Industries</a>
+      <a href="cases.html">Case Studies</a>
+      <a href="en-landing.html#about">About</a>
+      <a href="en-landing.html#contact" class="nav-cta">Request a Quote</a>
+    </nav>
+    <button id="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<!-- ===== Page Hero ===== -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="crumbs"><a href="en-landing.html">Home</a> &nbsp;/&nbsp; Product Catalog</div>
+    <span class="eyebrow light">Product Catalog</span>
+    <h1>Engineered specifically for lithium-ion battery fire risk.</h1>
+    <p class="lead">Five product lines — developed in-house — cover detection, the suppression agent itself, and every form of delivery. Battery-focused extinguishers, foam concentrates, and image-based detection form the core of the catalog. Auto-tracking cannons and high-pressure water-mist systems extend coverage into industrial facilities and high-value infrastructure. Deployed at GWh-scale energy-storage sites, transit depots, and national security zones including the <span class="kw">Tiananmen District</span> lithium-battery safety initiative.</p>
+    <div class="quick-links">
+      <a class="ql-chip" href="#extinguishers">Battery Extinguishers (10)</a>
+      <a class="ql-chip" href="#agents">Foam Concentrate Agents (4)</a>
+      <a class="ql-chip" href="#detection">Image-Based Detection (8)</a>
+      <a class="ql-chip" href="#auto-tracking">Auto-Tracking Monitors (4)</a>
+      <a class="ql-chip" href="#water-mist">High-Pressure Water Mist (4)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1. Battery Extinguishers & Suppression Devices ===== -->
+<section class="cat-section" id="extinguishers">
+  <div class="container">
+    <div class="cat-head cat-anchor">
+      <span class="eyebrow">Category 01 · Core battery line</span>
+      <h2>Battery Extinguishers &amp; Suppression Devices <span class="cat-count">10 products</span></h2>
+      <p class="lead">Purpose-engineered to deliver our lithium-specific foam agent onto cells in thermal runaway. Portable, backpack, handcart, mobile, and fixed configurations — at both cell-level and pack-level scale.</p>
+    </div>
+
+    <!-- Featured: Lithium-Battery Dedicated Fire Extinguisher -->
+    <div class="featured">
+      <div class="featured-img">
+        <img src="static/upload/image/2025/1015/20241121040812283.png" alt="Lithium-Battery Dedicated Fire Extinguisher" onerror="this.style.opacity='.25'">
+      </div>
+      <div class="featured-body">
+        <span class="product-tag">Featured · Portable / Mobile / Fixed</span>
+        <h3>Lithium-Battery Dedicated Fire Extinguisher</h3>
+        <p>An industrial-grade extinguisher engineered around our lithium-specific foam agent. On discharge, the agent blankets burning cells, drops cell temperature rapidly, and reduces thermal radiation and conduction to adjacent cells — cutting the chance of large-scale thermal runaway inside the pack and buying response crews more time.</p>
+        <div class="featured-specs"><b>Available sizes:</b> 1 L &nbsp;·&nbsp; 2 L &nbsp;·&nbsp; 6 L &nbsp;·&nbsp; 45 L &nbsp;·&nbsp; hand-cart and fixed configurations on request</div>
+      </div>
+    </div>
+
+    <div class="product-grid cols-3">
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20241125041442857.png" alt="Cylinder-Type Compressed-Nitrogen Foam Lithium Extinguisher" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Cylinder · N₂ + Foam</span>
+          <h3>Cylinder-Type Compressed-Nitrogen Foam Extinguisher (Lithium)</h3>
+          <p>Positive-pressure three-phase gas/liquid foam technology mixes our lithium-specific foam concentrate with compressed nitrogen to form an efficient, stable, environmentally acceptable suppression medium. Fast cooling, smoke absorption, radiation blocking, sustained suppression.</p>
+          <div class="product-specs"><b>Configurations:</b> 3 L &nbsp;·&nbsp; 6 L &nbsp;·&nbsp; 30 L &nbsp;·&nbsp; larger on request</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20241125042326889.png" alt="Compressed-Air Foam System for Lithium Batteries" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">CAFS · Lithium</span>
+          <h3>Compressed-Air Foam System (CAFS) — Lithium</h3>
+          <p>Positive-pressure three-phase gas/liquid foam mixing of our lithium-specific foam concentrate with compressed air. Fast cooling, smoke absorption, radiation blocking, high extinguishing efficiency. Unit includes compressor, fire pump, electrical control, foam-liquid tank, proportional mixer, and gas/liquid mixer.</p>
+          <div class="product-specs"><b>Typical use:</b> battery cabinets, PACK-level fixed suppression</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250208043737332.png" alt="Compressed-Nitrogen Foam Suppression System" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">N₂ · Fixed System</span>
+          <h3>Compressed-Nitrogen Foam Suppression System</h3>
+          <p>For installations that require an inert pressurisation gas. Combines our lithium-specific foam concentrate with compressed nitrogen for cooling, smoke reduction, radiation blocking, and sustained suppression. Fires under program-set automatic logic.</p>
+          <div class="product-specs"><b>Includes:</b> nitrogen cylinders, control module, water tank, foam-liquid tank</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123103634880.png" alt="Fixed Foam-Spray Suppression System for e-bike charging" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Fixed · E-bike charging</span>
+          <h3>Fixed Foam-Spray Suppression System</h3>
+          <p>Designed for consolidated e-bike / e-scooter charging bays. On fire signal, the system alerts occupants and transmits to the fire-management platform; zone control valves open to the affected bay, and charging power is automatically interlocked off.</p>
+          <div class="product-specs"><b>Typical use:</b> e-bike / e-scooter / last-mile fleet charging points</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210085435785.png" alt="Backpack CAFS unit" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Backpack CAFS</span>
+          <h3>Backpack Compressed-Air Foam Unit</h3>
+          <p>Compressed-air composite cylinder is both the foam propellant and a firefighter air-supply source. Human-factored harness, compact envelope, hands-free — suited to tight passageways, climbing, and rescue. Works across difficult terrain.</p>
+          <div class="product-specs"><b>Typical use:</b> first responder teams, plant &amp; tunnel emergency stations</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210085518153.png" alt="Handcart CAFS unit" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Handcart CAFS</span>
+          <h3>Hand-Cart Compressed-Air Foam Unit</h3>
+          <p>A light, mobile positive-pressure foam-generation unit comprising cart, foam tank, proportioning mixer, delivery hardware, fire hose, control valves, and auxiliaries. Premix-type foam system.</p>
+          <div class="product-specs"><b>Typical use:</b> depot response cart, warehouse fire stations</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210025454629.png" alt="Mobile CAFS unit" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Mobile CAFS</span>
+          <h3>Mobile Compressed-Air Foam Unit</h3>
+          <p>A wheeled/towable positive-pressure foam-generation unit including a mobile chassis, foam tank, proportioning mixer, delivery hardware, high-pressure gas cylinder, fire hose, and control valves. Premix-type foam system.</p>
+          <div class="product-specs"><b>Typical use:</b> yard-response units at transit depots and ESS sites</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210025516237.png" alt="Mobile CAFS — Electric Chassis" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Mobile CAFS · Electric chassis</span>
+          <h3>Mobile Compressed-Air Foam Unit (Electric Chassis)</h3>
+          <p>Same proven CAFS architecture on a self-propelled electric chassis — the operator can drive the unit to the seat of the fire without a tow vehicle. Ideal for sprawling battery yards and indoor production floors.</p>
+          <div class="product-specs"><b>Typical use:</b> ESS yards, manufacturing halls, large warehouses</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210025751646.png" alt="Fixed CAFS system" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Fixed CAFS</span>
+          <h3>Fixed Compressed-Air Foam System</h3>
+          <p>Permanently installed CAFS based on our positive-pressure three-phase foam mixing. Comprises fire pump, foam pump, air compressor, water &amp; foam tanks, proportional mixer, gas/liquid mixer, and control cabinet. For total-flooding or targeted pack-level protection.</p>
+          <div class="product-specs"><b>Typical use:</b> container ESS, UPS rooms, industrial battery bays</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. Foam Concentrate Agents ===== -->
+<section class="cat-section alt" id="agents">
+  <div class="container">
+    <div class="cat-head cat-anchor">
+      <span class="eyebrow">Category 02 · Core battery line</span>
+      <h2>Foam Concentrate Agents <span class="cat-count">4 products</span></h2>
+      <p class="lead">The chemistry inside every one of our suppression devices — plus three general-purpose foam concentrates for non-battery use cases.</p>
+    </div>
+
+    <!-- Featured lithium-specific agent -->
+    <div class="featured">
+      <div class="featured-img">
+        <img src="static/upload/image/2025/1015/20250210053202948.png" alt="Lithium-Battery Foam Concentrate" onerror="this.style.opacity='.25'">
+      </div>
+      <div class="featured-body">
+        <span class="product-tag">Featured · Lithium-specific</span>
+        <h3>Lithium-Battery Composite Micro-Foam Concentrate</h3>
+        <p>A multi-phase composite formulation built for lithium-ion cell fires. Combines high-porosity fireproof micro-components, organic phosphorus flame retardants, specialty surfactants, and a high-density, low-conductivity suppression medium via a proprietary inorganic-organic compounding process.</p>
+        <div class="featured-specs"><b>Attributes:</b> non-toxic, no persistent organic pollutants, no bioaccumulation — engineered for closed-environment battery use</div>
+      </div>
+    </div>
+
+    <div class="product-grid cols-3">
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210053238433.png" alt="AFFF" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">AFFF</span>
+          <h3>Aqueous Film-Forming Foam (AFFF)</h3>
+          <p>Environmentally oriented AFFF forms a water film at the fuel-surface / air interface. Very low surface tension lets the foam rapidly spread and seal the surface against oxygen, suppressing re-ignition. For crude oil, petroleum, diesel, jet fuel and similar water-insoluble flammable liquids.</p>
+          <div class="product-specs"><b>Typical use:</b> fuel depots, aviation fueling, marine</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210053312178.png" alt="AFFF/AR" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">AFFF / AR</span>
+          <h3>Alcohol-Resistant AFFF (AFFF/AR)</h3>
+          <p>Proprietary formula for polar-solvent / water-miscible flammable liquids. Optimised foaming forms an insulating layer on the fuel surface; very low surface tension spreads the agent while its penetration depth keeps it in place rather than flowing off. Stable foam structure also supports excellent burn-back resistance.</p>
+          <div class="product-specs"><b>Typical use:</b> alcohols, ketones, polar-solvent storage</div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210053343531.png" alt="Class-A Foam Concentrate" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Class A</span>
+          <h3>Class-A Foam Concentrate</h3>
+          <p>An environmentally oriented Class-A concentrate for ordinary combustible fires. Low surface tension and good penetration let the foam wet fuel quickly and soak into wood, textiles and deep-seated fires. Stable foam structure provides sustained burn-back resistance.</p>
+          <div class="product-specs"><b>Typical use:</b> warehouse, structural, Class-A suppression systems</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. Image-Based Detection ===== -->
+<section class="cat-section dark" id="detection">
+  <div class="container">
+    <div class="cat-head cat-anchor">
+      <span class="eyebrow light">Category 03 · Core battery line</span>
+      <h2>Image-Based Flame &amp; Smoke Detection <span class="cat-count">8 products</span></h2>
+      <p class="lead">Video-based fire detection using our in-house flame / smoke / thermal recognition algorithms. Each unit combines an industrial optical lens, HD video fire-detection module, embedded hardware, and firmware, networked over Ethernet to a central controller. Distributed detection, centralised management. Every line below is available in <b style="color:#fff;">standard</b> and <b style="color:#fff;">explosion-proof</b> variants.</p>
+    </div>
+
+    <div class="product-grid cols-4">
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250208091235795.png" alt="Image flame detector (standard)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Flame · Standard</span>
+          <h3>Image-Based Flame Detector (Standard)</h3>
+          <p>Intelligent video-based fire detection using our flame-recognition algorithm. Early-flame detection over the protected zone with dual functionality: fire detection and video surveillance.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210043140873.png" alt="Image flame detector (ex-proof)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Flame · Explosion-Proof</span>
+          <h3>Image-Based Flame Detector (Ex-Proof)</h3>
+          <p>Explosion-proof housing for IoT-grade video flame detection in hazardous environments (petrochemical, oil &amp; gas, battery manufacturing). Same algorithm stack as the standard unit.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210043222663.png" alt="Linear beam smoke detector (standard)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Linear Smoke · Standard</span>
+          <h3>Linear-Beam Image Smoke Detector (Standard)</h3>
+          <p>Non-contact opposed-beam video-image smoke detection. Early-smoke alarm with 3D volumetric coverage of the protected space; high sensitivity, strong interference immunity. Transmitter + receiver pair; each receiver can cover multiple transmitters.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210043458334.png" alt="Linear beam smoke detector (ex-proof)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Linear Smoke · Explosion-Proof</span>
+          <h3>Linear-Beam Image Smoke Detector (Ex-Proof)</h3>
+          <p>Explosion-proof variant of the linear-beam image smoke detector for hazardous environments. Dust-, moisture- and corrosion-resistant.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210043740950.png" alt="IR thermal detector (standard)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Thermal · Standard</span>
+          <h3>IR Thermal Imaging Fire Detector (Standard)</h3>
+          <p>IoT-grade IR thermal imaging detection. Uses a vanadium-oxide uncooled IR focal-plane imaging module with video-analytics and deep-learning fire recognition for early temperature, flame and smoke detection. Includes video display, control, and storage functions.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210044024574.png" alt="IR thermal detector (ex-proof)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Thermal · Explosion-Proof</span>
+          <h3>IR Thermal Imaging Fire Detector (Ex-Proof)</h3>
+          <p>Explosion-proof variant of the IR thermal imaging detector. Same VOx uncooled focal-plane architecture and deep-learning recognition stack, certified for hazardous environments.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210044203800.png" alt="Combined smoke+flame detector (standard)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Smoke + Flame · Standard</span>
+          <h3>Smoke + Flame Combined Detector (Standard)</h3>
+          <p>IoT-grade AI video-based combined fire detector. Uses an AI neural-network flame-recognition algorithm for simultaneous early-flame + early-smoke detection with integrated video surveillance.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210042434325.png" alt="Combined smoke+flame detector (ex-proof)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Smoke + Flame · Ex-Proof</span>
+          <h3>Smoke + Flame Combined Detector (Ex-Proof)</h3>
+          <p>Explosion-proof version of the combined AI detector. Same dual-mode recognition stack with a hazardous-location housing.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. Auto-Tracking Fire Monitors ===== -->
+<section class="cat-section" id="auto-tracking">
+  <div class="container">
+    <div class="cat-head cat-anchor">
+      <span class="eyebrow">Category 04 · Extended line</span>
+      <h2>Auto-Tracking Positioning Fire Monitors <span class="cat-count">4 products</span></h2>
+      <p class="lead">UV/IR detection paired with digital image processing to automatically track and locate a fire in its early stages, then suppress it under automatic control. For indoor and outdoor protected zones — including hazardous and explosion-risk environments.</p>
+    </div>
+
+    <div class="product-grid cols-4">
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123110804743.png" alt="Auto-tracking positioning fire monitor" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Water · Indoor / Outdoor</span>
+          <h3>Auto-Tracking Positioning Fire Monitor</h3>
+          <p>IoT-grade automatic tracking / positioning / jetting suppression system. Combines the monitor head with valves, piping, pump set, end-of-line testing, intelligent controller, decoder / local control box, and operator console or wireless remote.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123111117346.png" alt="Automatic fire monitor" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">Water · Indoor / Outdoor</span>
+          <h3>Automatic Fire Monitor</h3>
+          <p>IoT-grade automatic fire monitor using UV/IR detection and digital image processing for flame and temperature sensing, early-fire tracking/positioning, and automatic suppression. Fixed indoor or outdoor jetting system.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123110716387.png" alt="Explosion-proof automatic fire monitor (water)" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Water · Explosion-Proof</span>
+          <h3>Explosion-Proof Automatic Fire Monitor</h3>
+          <p>IoT-grade explosion-proof automatic fire monitor for hazardous environments. UV/IR + digital-image tracking and positioning with automatic suppression, for fixed indoor/outdoor explosion-proof jetting systems.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123110625713.png" alt="Explosion-proof automatic foam monitor" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag ex">Foam · Explosion-Proof</span>
+          <h3>Explosion-Proof Automatic Foam Monitor</h3>
+          <p>IoT-grade electrically controlled explosion-proof automatic monitor configured for foam jetting. Same tracking / positioning / auto-suppression logic, in a hazardous-environment foam configuration.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. High-Pressure Water Mist ===== -->
+<section class="cat-section alt" id="water-mist">
+  <div class="container">
+    <div class="cat-head cat-anchor">
+      <span class="eyebrow">Category 05 · Extended line</span>
+      <h2>High-Pressure Water Mist Systems <span class="cat-count">4 products</span></h2>
+      <p class="lead">High-pressure water-mist (HPWM) hardware for facilities where water-based suppression is preferred. Fine mist rapidly absorbs heat, displaces oxygen, and scrubs combustion products — with minimal water volume and collateral damage.</p>
+    </div>
+
+    <div class="product-grid cols-4">
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250210053120544.png" alt="HPWM pump unit" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">HPWM · Pump unit</span>
+          <h3>High-Pressure Water-Mist Pump Unit</h3>
+          <p>Nine-plunger high-pressure pump supply, comprising plunger pump, jockey pump, motor, control cabinet, safety/pressure-sustain valve, check valve, piping, and regulated water tank. Available in domestic and imported series. Compact, uniform flow, multi-path safety relief protection.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123024456243.png" alt="Zone control valve box" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">HPWM · Zone valve</span>
+          <h3>Zone Control Valve Box</h3>
+          <p>Houses motor ball valve, manual ball valve, filter, pressure switch, pressure gauge, enclosure and fittings. Receives the signal from the fire-alarm controller, opens the motor valve, releases mist into the protected zone, and feeds back status via pressure switch. Auto / manual / mechanical emergency control modes.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123111722236.png" alt="HPWM open nozzle" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">HPWM · Open nozzle</span>
+          <h3>High-Pressure Water-Mist Open Nozzle</h3>
+          <p>Austenitic-stainless nozzle comprising shell and multiple centrifugal spray tips on a conical face. The swirl element inside creates rotating liquid that exits as a hollow-cone mist film — velocity differential with air breaks it into fine droplets. Wide atomisation angle, high momentum, good dispersion.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-thumb"><img src="static/upload/image/2025/1015/20250123111823594.png" alt="HPWM closed nozzle" onerror="this.style.opacity='.25'"></div>
+        <div class="product-body">
+          <span class="product-tag">HPWM · Closed nozzle</span>
+          <h3>High-Pressure Water-Mist Closed Nozzle</h3>
+          <p>Closed/sealed variant of the centrifugal-mist nozzle — fires when its thermal element opens. Used in pre-action or wet-pipe HPWM systems where automatic localised release is required.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA band ===== -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Need the full technical specification?</h2>
+    <p>Send us your site constraints — battery chemistry, kWh/MWh, enclosure type, ambient conditions — and we'll come back with a recommended architecture and the datasheets you need.</p>
+    <a href="en-landing.html#contact" class="btn btn-primary">Request the full catalog</a>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap" style="color:#fff">
+          <img src="static/upload/image/20250913/1757746851734252.png" alt="" style="height:34px;filter:brightness(1.4) contrast(1.1)">
+          <div class="wordmark" style="color:#fff">Zhongke Yong'an<small style="color:#9bb4d9">Battery Fire Safety</small></div>
+        </div>
+        <p>Lithium-ion battery fire suppression — engineered in partnership with China's State Key Laboratory for Fire Safety.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#extinguishers">Battery Extinguishers</a></li>
+          <li><a href="#agents">Foam Concentrate Agents</a></li>
+          <li><a href="#detection">Image-Based Detection</a></li>
+          <li><a href="#auto-tracking">Auto-Tracking Monitors</a></li>
+          <li><a href="#water-mist">High-Pressure Water Mist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="en-landing.html#industries">Energy Storage</a></li>
+          <li><a href="en-landing.html#industries">EV &amp; Battery</a></li>
+          <li><a href="en-landing.html#industries">Transit &amp; Fleet</a></li>
+          <li><a href="en-landing.html#industries">Data Centers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="en-landing.html#about">About Zhongke Yong'an</a></li>
+          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="en-landing.html#contact">Contact</a></li>
+          <li><a href="en-landing.html#contact">Become a distributor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Zhongke Yong'an Technology. All rights reserved.</span>
+      <span>Hefei · China &nbsp;·&nbsp; Business License 91440106MAEPF0XFX2</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', function(){
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>

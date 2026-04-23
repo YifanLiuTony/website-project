@@ -41,7 +41,7 @@ try:
 except ImportError:
     sys.exit("opencc-python-reimplemented required: pip install opencc --break-system-packages")
 
-REPO_ROOT_DEFAULT = Path("/sessions/nice-admiring-euler/mnt/website-project")
+REPO_ROOT_DEFAULT = Path(__file__).resolve().parents[1]
 
 CATALOG_I18N = {
     "EN": "Products",
@@ -579,14 +579,31 @@ def render_quote_modal() -> str:
 
 
 def render_quote_js() -> str:
-    """In-memory quote cart (sessionStorage fallback). Uses EmailJS when available."""
+    """Persistent quote cart. Uses EmailJS when available."""
     return r"""
 <script>
   (function () {
-    // Minimal quote cart. In-memory only; resets on navigation.
-    // TODO(post-approval): promote to sessionStorage so it survives page jumps
-    //                      inside /products/.
-    window.__quoteCart = window.__quoteCart || [];
+    var QUOTE_CART_STORAGE_KEY = 'sunfly.quoteCart';
+
+    function loadCart() {
+      try {
+        var stored = localStorage.getItem(QUOTE_CART_STORAGE_KEY);
+        var parsed = stored ? JSON.parse(stored) : [];
+        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }) : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(QUOTE_CART_STORAGE_KEY, JSON.stringify(window.__quoteCart || []));
+      } catch (err) {
+        // Keep the in-memory cart usable if browser storage is unavailable.
+      }
+    }
+
+    window.__quoteCart = Array.isArray(window.__quoteCart) && window.__quoteCart.length ? window.__quoteCart : loadCart();
 
     function selectedLanguageLabel() {
       if (typeof currentLanguage === 'undefined') return '英文';
@@ -610,13 +627,23 @@ def render_quote_js() -> str:
         return;
       }
       window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      saveCart();
       renderCart();
       flashCartButton();
     };
 
     window.removeFromQuote = function (sku) {
       window.__quoteCart = window.__quoteCart.filter(function (x) { return x.sku !== sku; });
+      saveCart();
       renderCart();
+    };
+
+    window.openQuoteModalForProduct = function (sku, title) {
+      if (sku && !window.__quoteCart.find(function (x) { return x.sku === sku; })) {
+        window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+        saveCart();
+      }
+      openQuoteModal();
     };
 
     function flashCartButton() {
@@ -686,6 +713,7 @@ def render_quote_js() -> str:
               alert(t('quote.success') || 'Thanks — your quote request was received. We will reply within one business day.');
               form.reset();
               window.__quoteCart = [];
+              saveCart();
               renderCart();
               closeQuoteModal();
             })
@@ -722,6 +750,17 @@ def render_head(page_title: str, meta_desc: str, canonical: str, alt_langs: dict
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{esc(canonical)}">
     {alt_link_tags}
+    <script>
+      (function () {{
+        var lang = 'EN';
+        try {{
+          var stored = localStorage.getItem('sunfly.language');
+          if (['EN', '繁', '简'].indexOf(stored) !== -1) lang = stored;
+        }} catch (err) {{}}
+        document.documentElement.setAttribute('data-language', lang);
+        document.documentElement.lang = lang === 'EN' ? 'en' : (lang === '繁' ? 'zh-Hant' : 'zh-Hans');
+      }})();
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:url" content="{esc(canonical)}">
     <meta property="og:site_name" content="Sunfly Building Materials">
@@ -752,6 +791,15 @@ def render_head(page_title: str, meta_desc: str, canonical: str, alt_langs: dict
       .smooth-scroll {{ scroll-behavior:smooth; }}
       /* Gallery hover */
       .gallery-thumb.active {{ ring: 2px solid #f97316; border-color: #f97316; }}
+      html[data-language="繁"] #lang-en,
+      html[data-language="简"] #lang-en,
+      html[data-language="EN"] #lang-tc,
+      html[data-language="EN"] #lang-sc,
+      html[data-language="繁"] #lang-sc,
+      html[data-language="简"] #lang-tc {{ background-color: transparent !important; color: inherit !important; }}
+      html[data-language="EN"] #lang-en,
+      html[data-language="繁"] #lang-tc,
+      html[data-language="简"] #lang-sc {{ background-color:#f97316 !important; color:#fff !important; }}
     </style>
 </head>
 <body class="min-h-screen bg-white">
@@ -1157,11 +1205,8 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
 
       <div class="space-y-3 mb-8">
         <button type="button"
-                onclick="addToQuote('{esc(primary_sku)}', document.querySelector('[data-i18n=\\'p.title\\']').textContent);"
+                onclick="openQuoteModalForProduct('{esc(primary_sku)}', document.querySelector('[data-i18n=\\'p.title\\']').textContent);"
                 class="w-full bg-orange-500 text-white px-6 py-4 rounded hover:bg-orange-600 transition-colors font-semibold"
-                data-i18n="product.addToQuote"></button>
-        <button type="button" onclick="openQuoteModal()"
-                class="w-full border-2 border-slate-300 text-slate-700 px-6 py-3 rounded hover:border-orange-500 hover:text-orange-500 transition-colors"
                 data-i18n="product.requestQuote"></button>
       </div>
     </div>
@@ -1173,7 +1218,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     <div class="prose max-w-none text-slate-700">
       {desc_paragraphs_html}
     </div>
-    {overview_media_html}
+{overview_media_html}
   </section>
 
   <!-- Advantages -->
@@ -1202,9 +1247,9 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     <h2 class="text-white mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="services.cta.title"></h2>
     <p class="text-slate-300 mb-6 max-w-2xl mx-auto" data-i18n="services.cta.desc"></p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button onclick="addToQuote('{esc(primary_sku)}', document.querySelector('[data-i18n=\\'p.title\\']').textContent);"
+      <button onclick="openQuoteModalForProduct('{esc(primary_sku)}', document.querySelector('[data-i18n=\\'p.title\\']').textContent);"
               class="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
-              data-i18n="product.addToQuote"></button>
+              data-i18n="product.requestQuote"></button>
       <a href="tel:+85256441916"
          class="border-2 border-white text-white px-8 py-3 rounded hover:bg-white hover:text-slate-900 transition-colors text-center"
          data-i18n="services.cta.quote"></a>

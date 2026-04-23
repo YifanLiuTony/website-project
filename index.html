@@ -47,6 +47,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+    <script>
+        (function () {
+            var lang = 'EN';
+            try {
+                var stored = localStorage.getItem('sunfly.language');
+                if (['EN', '繁', '简'].indexOf(stored) !== -1) lang = stored;
+            } catch (err) {}
+            document.documentElement.setAttribute('data-language', lang);
+            document.documentElement.lang = lang === 'EN' ? 'en' : (lang === '繁' ? 'zh-Hant' : 'zh-Hans');
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -261,6 +273,23 @@
         
         .smooth-scroll {
             scroll-behavior: smooth;
+        }
+
+        html[data-language="繁"] #lang-en,
+        html[data-language="简"] #lang-en,
+        html[data-language="EN"] #lang-tc,
+        html[data-language="EN"] #lang-sc,
+        html[data-language="繁"] #lang-sc,
+        html[data-language="简"] #lang-tc {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        html[data-language="EN"] #lang-en,
+        html[data-language="繁"] #lang-tc,
+        html[data-language="简"] #lang-sc {
+            background-color: #f97316 !important;
+            color: #fff !important;
         }
     </style>
 </head>

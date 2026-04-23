@@ -21,6 +21,17 @@
     <meta property="og:locale:alternate" content="zh_CN">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script>
+      (function () {
+        var lang = 'EN';
+        try {
+          var stored = localStorage.getItem('sunfly.language');
+          if (['EN', '繁', '简'].indexOf(stored) !== -1) lang = stored;
+        } catch (err) {}
+        document.documentElement.setAttribute('data-language', lang);
+        document.documentElement.lang = lang === 'EN' ? 'en' : (lang === '繁' ? 'zh-Hant' : 'zh-Hans');
+      })();
+    </script>
     <script src="/assets/tailwindcss-3_4_17.css"></script>
     <script>
       tailwind.config = {
@@ -41,6 +52,15 @@
       .smooth-scroll { scroll-behavior:smooth; }
       /* Gallery hover */
       .gallery-thumb.active { ring: 2px solid #f97316; border-color: #f97316; }
+      html[data-language="繁"] #lang-en,
+      html[data-language="简"] #lang-en,
+      html[data-language="EN"] #lang-tc,
+      html[data-language="EN"] #lang-sc,
+      html[data-language="繁"] #lang-sc,
+      html[data-language="简"] #lang-tc { background-color: transparent !important; color: inherit !important; }
+      html[data-language="EN"] #lang-en,
+      html[data-language="繁"] #lang-tc,
+      html[data-language="简"] #lang-sc { background-color:#f97316 !important; color:#fff !important; }
     </style>
 </head>
 <body class="min-h-screen bg-white">
@@ -501,10 +521,27 @@
 <script src="/js/main.js"></script>
 <script>
   (function () {
-    // Minimal quote cart. In-memory only; resets on navigation.
-    // TODO(post-approval): promote to sessionStorage so it survives page jumps
-    //                      inside /products/.
-    window.__quoteCart = window.__quoteCart || [];
+    var QUOTE_CART_STORAGE_KEY = 'sunfly.quoteCart';
+
+    function loadCart() {
+      try {
+        var stored = localStorage.getItem(QUOTE_CART_STORAGE_KEY);
+        var parsed = stored ? JSON.parse(stored) : [];
+        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }) : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(QUOTE_CART_STORAGE_KEY, JSON.stringify(window.__quoteCart || []));
+      } catch (err) {
+        // Keep the in-memory cart usable if browser storage is unavailable.
+      }
+    }
+
+    window.__quoteCart = Array.isArray(window.__quoteCart) && window.__quoteCart.length ? window.__quoteCart : loadCart();
 
     function selectedLanguageLabel() {
       if (typeof currentLanguage === 'undefined') return '英文';
@@ -528,12 +565,14 @@
         return;
       }
       window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      saveCart();
       renderCart();
       flashCartButton();
     };
 
     window.removeFromQuote = function (sku) {
       window.__quoteCart = window.__quoteCart.filter(function (x) { return x.sku !== sku; });
+      saveCart();
       renderCart();
     };
 
@@ -604,6 +643,7 @@
               alert(t('quote.success') || 'Thanks — your quote request was received. We will reply within one business day.');
               form.reset();
               window.__quoteCart = [];
+              saveCart();
               renderCart();
               closeQuoteModal();
             })

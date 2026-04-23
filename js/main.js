@@ -1,5 +1,17 @@
+const LANGUAGE_STORAGE_KEY = 'sunfly.language';
+const SUPPORTED_LANGUAGES = ['EN', '繁', '简'];
+
+function getStoredLanguage() {
+    try {
+        const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        return SUPPORTED_LANGUAGES.includes(storedLanguage) ? storedLanguage : 'EN';
+    } catch (error) {
+        return 'EN';
+    }
+}
+
 // Current language (default English)
-let currentLanguage = 'EN';
+let currentLanguage = getStoredLanguage();
 
 // Translation function
 function t(key) {
@@ -37,20 +49,29 @@ function updateTranslations() {
 
 // Change language
 function changeLanguage(lang) {
+    if (!SUPPORTED_LANGUAGES.includes(lang)) {
+        lang = 'EN';
+    }
     currentLanguage = lang;
+    document.documentElement.setAttribute('data-language', lang);
+    document.documentElement.lang = lang === 'EN' ? 'en' : (lang === '繁' ? 'zh-Hant' : 'zh-Hans');
+
+    try {
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+    } catch (error) {
+        // Ignore storage failures; the current page still updates.
+    }
     
     // Update language button styles
-    document.getElementById('lang-en').className = lang === 'EN' 
-        ? 'text-sm px-2 py-1 rounded transition-colors bg-orange-500 text-white'
-        : 'text-sm px-2 py-1 rounded transition-colors hover:text-orange-400';
-    
-    document.getElementById('lang-tc').className = lang === '繁' 
-        ? 'text-sm px-2 py-1 rounded transition-colors bg-orange-500 text-white'
-        : 'text-sm px-2 py-1 rounded transition-colors hover:text-orange-400';
-    
-    document.getElementById('lang-sc').className = lang === '简' 
-        ? 'text-sm px-2 py-1 rounded transition-colors bg-orange-500 text-white'
-        : 'text-sm px-2 py-1 rounded transition-colors hover:text-orange-400';
+    const activeLanguageClass = 'text-sm px-2 py-1 rounded transition-colors bg-orange-500 text-white';
+    const inactiveLanguageClass = 'text-sm px-2 py-1 rounded transition-colors hover:text-orange-400';
+    const langEnButton = document.getElementById('lang-en');
+    const langTcButton = document.getElementById('lang-tc');
+    const langScButton = document.getElementById('lang-sc');
+
+    if (langEnButton) langEnButton.className = lang === 'EN' ? activeLanguageClass : inactiveLanguageClass;
+    if (langTcButton) langTcButton.className = lang === '繁' ? activeLanguageClass : inactiveLanguageClass;
+    if (langScButton) langScButton.className = lang === '简' ? activeLanguageClass : inactiveLanguageClass;
     
     // Update all translations on the page
     updateTranslations();
@@ -141,7 +162,7 @@ function handleFormSubmit(event) {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize translations first (critical for page display)
-    updateTranslations();
+    changeLanguage(currentLanguage);
 
     // Initialize EmailJS if available
     if (typeof emailjs !== 'undefined') {

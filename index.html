@@ -40,7 +40,7 @@
     
     <!-- Business Information -->
     <meta name="contact" content="+852 5644 1916">
-    <meta name="email" content="info@sunfly.com.hk">
+    <meta name="email" content="enquiery@sunfly.hk">
     
     <!-- Favicon (add your favicon files) -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -91,7 +91,7 @@
         "name": "Sunfly Building Materials (Hong Kong) Corporation Limited",
         "image": "https://sunfly.hk/assets/project1.png",
         "telephone": "+852-5644-1916",
-        "email": "info@sunfly.com.hk",
+        "email": "enquiery@sunfly.hk",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "HK",
@@ -279,11 +279,11 @@
                             </svg>
                             <span class="text-sm hidden sm:block">+852 5644 1916</span>
                         </a>
-                        <a href="mailto:info@sunfly.com.hk" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
+                        <a href="mailto:enquiery@sunfly.hk" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <span class="text-sm hidden sm:block">info@sunfly.com.hk</span>
+                            <span class="text-sm hidden sm:block">enquiery@sunfly.hk</span>
                         </a>
                     </div>
                     <div class="flex items-center gap-2">
@@ -401,20 +401,21 @@
     <section id="products" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-slate-900 mb-4 text-4xl font-bold" data-i18n="products.title"></h2>
+                <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="products.title"></h2>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-i18n="products.subtitle"></p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Raised Floor System -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 overflow-hidden">
+                <!-- Raised Floor System — live catalog -->
+                <a href="/products/anti-static-access-floor/" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
+                    <div class="h-48 overflow-hidden relative">
                         <img src="/assets/products1.png"
                              alt="" data-i18n-alt="alt.raisedFloor"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded shadow" data-i18n="products.browseCatalog"></span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-slate-900 mb-2" data-i18n="products.raisedFloor.name"></h3>
+                        <h3 class="text-slate-900 mb-2 group-hover:text-orange-500 transition-colors" data-i18n="products.raisedFloor.name"></h3>
                         <p class="text-slate-600 mb-4" data-i18n="products.raisedFloor.desc"></p>
                         <ul class="space-y-2">
                             <li class="text-slate-700 flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span><span data-i18n="products.raisedFloor.feature1"></span></li>
@@ -423,14 +424,15 @@
                             <li class="text-slate-700 flex items-center gap-2"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span><span data-i18n="products.raisedFloor.feature4"></span></li>
                         </ul>
                     </div>
-                </div>
+                </a>
 
-                <!-- Ceiling System -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 overflow-hidden">
+                <!-- Ceiling System — coming soon -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow">
+                    <div class="h-48 overflow-hidden relative">
                         <img src="/assets/products2.png"
                              alt="" data-i18n-alt="alt.ceiling"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-500 text-white text-xs font-semibold px-3 py-1 rounded shadow" data-i18n="products.comingSoon"></span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-slate-900 mb-2" data-i18n="products.ceiling.name"></h3>
@@ -444,12 +446,13 @@
                     </div>
                 </div>
 
-                <!-- Glazing System -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 overflow-hidden">
+                <!-- Glazing System — coming soon -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow">
+                    <div class="h-48 overflow-hidden relative">
                         <img src="/assets/products3.jpeg"
                              alt="" data-i18n-alt="alt.glazing"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-500 text-white text-xs font-semibold px-3 py-1 rounded shadow" data-i18n="products.comingSoon"></span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-slate-900 mb-2" data-i18n="products.glazing.name"></h3>
@@ -463,12 +466,13 @@
                     </div>
                 </div>
 
-                <!-- Light Steel Framing System -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 overflow-hidden">
+                <!-- Light Steel Framing System — coming soon -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow">
+                    <div class="h-48 overflow-hidden relative">
                         <img src="/assets/products4.jpeg"
                              alt="" data-i18n-alt="alt.steelFraming"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-500 text-white text-xs font-semibold px-3 py-1 rounded shadow" data-i18n="products.comingSoon"></span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-slate-900 mb-2" data-i18n="products.steelFraming.name"></h3>
@@ -482,6 +486,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-12 text-center">
+                <a href="/products/anti-static-access-floor/" class="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded hover:bg-orange-600 transition-colors font-semibold">
+                    <span data-i18n="products.viewAll"></span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -489,7 +502,7 @@
     <section id="job-reference" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-slate-900 mb-4 text-4xl font-bold" data-i18n="jobRef.title"></h2>
+                <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="jobRef.title"></h2>
                 <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="jobRef.subtitle"></p>
             </div>
 
@@ -580,16 +593,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
-                    <h2 class="text-slate-900 mb-6 text-4xl font-bold" data-i18n="about.title"></h2>
+                    <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="about.title"></h2>
                     <p class="text-slate-600 mb-4" data-i18n="about.subtitle"></p>
-                    <p class="text-slate-600 mb-12" data-i18n="about.intro"></p>
-                    <h3 class="text-slate-900 mb-4 text-3xl font-bold" data-i18n="about.whyChoose"></h3>
+                    <p class="text-slate-600" data-i18n="about.intro"></p>
                 </div>
                 <div class="h-96 lg:h-full min-h-[400px]">
                     <img src="/assets/about.jpeg"
                          alt="" data-i18n-alt="alt.about"
                          class="w-full h-full object-cover rounded-lg shadow-lg">
                 </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <h2 class="text-slate-900 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="about.whyChoose"></h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -633,7 +649,7 @@
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-slate-900 mb-4 text-4xl font-bold" data-i18n="services.title"></h2>
+                <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="services.title"></h2>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-i18n="services.subtitle"></p>
             </div>
 
@@ -697,7 +713,7 @@
     <section id="culture" class="py-20 bg-gradient-to-b from-white to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-slate-900 mb-4 text-4xl font-bold" data-i18n="culture.title"></h2>
+                <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="culture.title"></h2>
                 <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="culture.subtitle"></p>
             </div>
 
@@ -779,7 +795,7 @@
     <section id="contact" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-slate-900 mb-4 text-4xl font-bold" data-i18n="contact.title"></h2>
+                <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="contact.title"></h2>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-i18n="contact.subtitle"></p>
             </div>
 
@@ -824,8 +840,7 @@
                             <div>
                                 <h3 class="text-slate-900 mb-2" data-i18n="contact.info.email"></h3>
                                 <p class="text-slate-600">
-                                    <span data-i18n="contact.info.general"></span>: <a href="mailto:info@sunfly.com.hk" class="hover:text-orange-500 transition-colors">info@sunfly.com.hk</a><br>
-                                    <span data-i18n="contact.info.sales"></span>: <a href="mailto:sales@sunfly.com.hk" class="hover:text-orange-500 transition-colors">sales@sunfly.com.hk</a>
+                                    <span data-i18n="contact.info.general"></span>: <a href="mailto:enquiery@sunfly.hk" class="hover:text-orange-500 transition-colors">enquiery@sunfly.hk</a>
                                 </p>
                             </div>
                         </div>
@@ -903,7 +918,7 @@
                     <h3 class="text-white mb-4" data-i18n="nav.home"></h3>
                     <ul class="space-y-2">
                         <li><button onclick="scrollToSection('hero')" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.home"></button></li>
-                        <li><button onclick="scrollToSection('products')" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.products"></button></li>
+                        <li><a href="/#products" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.products"></a></li>
                         <li><button onclick="scrollToSection('about')" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.about"></button></li>
                         <li><button onclick="scrollToSection('services')" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.services"></button></li>
                     </ul>
@@ -924,7 +939,7 @@
                     <ul class="space-y-2 text-slate-400">
                         <li data-i18n="contact.info.addressValue"></li>
                         <li><a href="tel:+85256441916" class="hover:text-orange-400 transition-colors">+852 5644 1916</a></li>
-                        <li><a href="mailto:info@sunfly.com.hk" class="hover:text-orange-400 transition-colors">info@sunfly.com.hk</a></li>
+                        <li><a href="mailto:enquiery@sunfly.hk" class="hover:text-orange-400 transition-colors">enquiery@sunfly.hk</a></li>
                     </ul>
                 </div>
             </div>

@@ -7,9 +7,8 @@ Input:
   parete-scrape/images/        (local image bundle)
 
 Output (into the live site tree):
-  products/index.html                                   (hub stub)
-  products/anti-static-access-floor/index.html          (category grid)
-  products/anti-static-access-floor/<slug>/index.html   (per-SKU pages)
+  products/index.html                                   (grouped catalog)
+  products/<slug>/index.html                            (per-SKU pages)
   assets/products/<slug>/                               (mirrored images)
   assets/datasheets/                                    (empty for now — parete PDFs are 0-byte upstream)
 
@@ -44,11 +43,15 @@ except ImportError:
 
 REPO_ROOT_DEFAULT = Path("/sessions/nice-admiring-euler/mnt/website-project")
 
-CATEGORY_SLUG = "anti-static-access-floor"
-CATEGORY_I18N = {
-    "EN": "Anti-Static Access Floor Systems",
-    "繁": "防靜電架空地板系統",
-    "简": "防静电架空地板系统",
+CATALOG_I18N = {
+    "EN": "Products",
+    "繁": "產品",
+    "简": "产品",
+}
+CATALOG_SUBTITLE_I18N = {
+    "EN": "Browse our raised-floor catalog by product family. Expand a category, compare cards, then open the product detail page for specifications and quote requests.",
+    "繁": "按產品系列瀏覽我們的架空地板目錄。展開分類、比較產品卡片，然後進入產品詳情頁查看規格並索取報價。",
+    "简": "按产品系列浏览我们的架空地板目录。展开分类、比较产品卡片，然后进入产品详情页查看规格并索取报价。",
 }
 
 # s2hkm uses zh-HK-specific phrases where available; fall back to s2hk otherwise.
@@ -67,6 +70,10 @@ def to_zh_hk(text: str) -> str:
 # ----- Rewriting -------------------------------------------------------------
 
 _PARETE_RE = re.compile(r"\bparete\b", re.IGNORECASE)
+BAD_DESCRIPTION_IMAGE_NAMES = {
+    "images_01-__.png",
+    "images_01-__900.jpg",
+}
 _SKU_PRT_RE = re.compile(r"\bPRT-")
 
 
@@ -315,6 +322,8 @@ def parse_description_media(html_text: str) -> dict:
         if img_m:
             attrs = _attrs_from(img_m.group(0))
             src = attrs.get("src", "")
+            if Path(src).name in BAD_DESCRIPTION_IMAGE_NAMES:
+                continue
             alt = attrs.get("alt", "") or attrs.get("title", "")
             if current == "applications":
                 # Start a new pair (previous pending_img is abandoned; shouldn't happen)
@@ -362,6 +371,8 @@ def stage_description_images(product: dict, scrape_root, dest_root, public_slug:
         for m in _IMG_RE.finditer(h):
             attrs = _attrs_from(m.group(0))
             if attrs.get("src"):
+                if _P(attrs["src"]).name in BAD_DESCRIPTION_IMAGE_NAMES:
+                    continue
                 all_imgs.add(attrs["src"])
 
     src_root = _P(scrape_root)
@@ -429,7 +440,7 @@ def render_header(active: str = "") -> str:
       </a>
       <div class="hidden md:flex items-center gap-8">
         <a href="/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.home"></a>
-        <a href="/products/anti-static-access-floor/" class="text-orange-500 font-semibold transition-colors" data-i18n="nav.products"></a>
+        <a href="/products/" class="text-orange-500 font-semibold transition-colors" data-i18n="nav.products"></a>
         <a href="/#job-reference" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
         <a href="/#about" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.about"></a>
         <a href="/#services" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.services"></a>
@@ -445,7 +456,7 @@ def render_header(active: str = "") -> str:
     <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
       <div class="flex flex-col gap-4">
         <a href="/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.home"></a>
-        <a href="/products/anti-static-access-floor/" class="text-orange-500 font-semibold" data-i18n="nav.products"></a>
+        <a href="/products/" class="text-orange-500 font-semibold" data-i18n="nav.products"></a>
         <a href="/#job-reference" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
         <a href="/#about" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.about"></a>
         <a href="/#services" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.services"></a>
@@ -474,7 +485,7 @@ def render_footer() -> str:
         <h3 class="text-white mb-4" data-i18n="nav.home"></h3>
         <ul class="space-y-2">
           <li><a href="/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.home"></a></li>
-          <li><a href="/products/anti-static-access-floor/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.products"></a></li>
+          <li><a href="/products/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.products"></a></li>
           <li><a href="/#about" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.about"></a></li>
           <li><a href="/#contact" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="nav.contact"></a></li>
         </ul>
@@ -482,7 +493,7 @@ def render_footer() -> str:
       <div>
         <h3 class="text-white mb-4" data-i18n="footer.products.title"></h3>
         <ul class="space-y-2">
-          <li><a href="/products/anti-static-access-floor/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="products.raisedFloor.name"></a></li>
+          <li><a href="/products/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="products.raisedFloor.name"></a></li>
           <li class="text-slate-400" data-i18n="products.ceiling.name"></li>
           <li class="text-slate-400" data-i18n="products.glazing.name"></li>
           <li class="text-slate-400" data-i18n="products.steelFraming.name"></li>
@@ -880,13 +891,11 @@ COMMON_LABELS = {
         "繁": "感謝您的查詢，我們將於一個工作天內回覆。",
         "简": "感谢您的查询，我们将于一个工作日内回复。",
     },
-    "category.title": CATEGORY_I18N,
-    "category.subtitle": {
-        "EN": "Browse our full range of anti-static and ventilation access floor systems for computer rooms, data centers and control rooms.",
-        "繁": "瀏覽我們為機房、數據中心與控制室提供的防靜電及通風架空地板系統系列。",
-        "简": "浏览我们为机房、数据中心与控制室提供的防静电及通风架空地板系统系列。",
-    },
+    "category.title": CATALOG_I18N,
+    "category.subtitle": CATALOG_SUBTITLE_I18N,
     "category.viewDetails": {"EN": "View details", "繁": "查看詳情", "简": "查看详情"},
+    "category.countLabel": {"EN": "products", "繁": "個產品", "简": "个产品"},
+    "category.subcategoryLabel": {"EN": "subcategories", "繁": "個子分類", "简": "个子分类"},
 }
 
 
@@ -962,7 +971,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
 
     page_title = f"{i18n['EN']['title']} — Sunfly Building Materials"
     meta_desc = (i18n["EN"]["desc_description"][0] if i18n["EN"]["desc_description"] else i18n["EN"]["title"])[:160]
-    canonical = f"https://sunfly.hk/products/{CATEGORY_SLUG}/{public_slug}/"
+    canonical = f"https://sunfly.hk/products/{public_slug}/"
 
     # ----- Body -----
     # Gallery
@@ -1089,7 +1098,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     <nav class="flex flex-wrap items-center gap-2 text-sm mb-8 pb-4 border-b border-slate-200">
       <a href="/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="nav.home"></a>
       <svg class="w-4 h-4 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-      <a href="/products/{CATEGORY_SLUG}/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="category.title"></a>
+      <a href="/products/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="nav.products"></a>
       <svg class="w-4 h-4 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       <span class="text-slate-900 font-semibold" data-i18n="p.title"></span>
     </nav>
@@ -1184,7 +1193,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
   </section>
 
   <div class="mt-6">
-    <a href="/products/{CATEGORY_SLUG}/" class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600">
+    <a href="/products/" class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
       <span data-i18n="product.backToCategory"></span>
     </a>
@@ -1251,15 +1260,99 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
         "x-default": canonical,
     }) + body + render_body_end(translations_js, list_expander_js=list_expander)
 
-    out_path = dest_root / "products" / CATEGORY_SLUG / public_slug / "index.html"
+    out_path = dest_root / "products" / public_slug / "index.html"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(page_html, encoding="utf-8")
     return out_path
 
 
-# ----- Category grid page ---------------------------------------------------
+# ----- Grouped products catalog page ----------------------------------------
 
-def render_category_page(products: list[dict], slugs: dict[Any, str], scrape_root: Path, dest_root: Path, skip_images: bool = False) -> Path:
+CATALOG_GROUPS = {
+    "steel": {
+        "order": 10,
+        "title": {
+            "EN": "Steel Anti-Static Access Floors",
+            "繁": "全鋼防靜電架空地板",
+            "简": "全钢防静电架空地板",
+        },
+        "desc": {
+            "EN": "Steel access-floor panels for computer rooms, control rooms, data centers and general ESD environments.",
+            "繁": "適用於機房、控制室、數據中心及一般防靜電環境的全鋼架空地板。",
+            "简": "适用于机房、控制室、数据中心及一般防静电环境的全钢架空地板。",
+        },
+    },
+    "calcium": {
+        "order": 20,
+        "title": {
+            "EN": "Calcium Sulphate Access Floors",
+            "繁": "硫酸鈣架空地板",
+            "简": "硫酸钙架空地板",
+        },
+        "desc": {
+            "EN": "Dense calcium sulphate core systems with multiple surface finishes for office, equipment and data-room applications.",
+            "繁": "高密度硫酸鈣芯材系統，提供多種面層選擇，適用於辦公、設備及數據機房。",
+            "简": "高密度硫酸钙芯材系统，提供多种面层选择，适用于办公、设备及数据机房。",
+        },
+    },
+    "aluminum": {
+        "order": 30,
+        "title": {
+            "EN": "Aluminum Access Floors",
+            "繁": "鋁合金架空地板",
+            "简": "铝合金架空地板",
+        },
+        "desc": {
+            "EN": "Solid aluminum panels and ventilation options for clean rooms and demanding technical spaces.",
+            "繁": "實心鋁合金面板及通風型選項，適用於潔淨室與高要求技術空間。",
+            "简": "实心铝合金面板及通风型选项，适用于洁净室与高要求技术空间。",
+        },
+    },
+    "oa": {
+        "order": 40,
+        "title": {
+            "EN": "OA / Network Raised Floors",
+            "繁": "OA / 網絡架空地板",
+            "简": "OA / 网络架空地板",
+        },
+        "desc": {
+            "EN": "Low-height and network-floor systems designed for cable routing, flexible offices and fast installation.",
+            "繁": "為線纜管理、靈活辦公及快速安裝而設計的低淨高與網絡地板系統。",
+            "简": "为线缆管理、灵活办公及快速安装而设计的低净高与网络地板系统。",
+        },
+    },
+    "ventilation": {
+        "order": 50,
+        "title": {
+            "EN": "Ventilation Access Floors",
+            "繁": "通風架空地板",
+            "简": "通风架空地板",
+        },
+        "desc": {
+            "EN": "Perforated and air-flow panels for cooling, clean-room airflow and mission-critical facilities.",
+            "繁": "適用於冷卻、潔淨室氣流及關鍵設施的穿孔與通風地板。",
+            "简": "适用于冷却、洁净室气流及关键设施的穿孔与通风地板。",
+        },
+    },
+}
+
+
+def product_group_key(product: dict) -> str:
+    """Classify a scraped product into the catalog's browsing groups."""
+    title = product["title"]["en"].lower()
+    series = series_code(product["title"]["en"]).lower()
+    if series.startswith("vf") or "ventilation" in title or "perforated" in title:
+        return "ventilation"
+    if "calcium" in title or "calium" in title:
+        return "calcium"
+    if "aluminum" in title or "aluminium" in title:
+        return "aluminum"
+    if series.startswith("c") or "oa" in title or "network" in title or "trunk" in title:
+        return "oa"
+    return "steel"
+
+
+def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root: Path, dest_root: Path, skip_images: bool = False) -> Path:
     staged = []
     for p in products:
         info = stage_product_assets(p, scrape_root, dest_root, slugs[p["id"]], skip_images=skip_images)
@@ -1270,39 +1363,91 @@ def render_category_page(products: list[dict], slugs: dict[Any, str], scrape_roo
             "public_slug": slugs[p["id"]],
             "thumb": info["thumb"],
             "series": series_code(p["title"]["en"]),
+            "group": product_group_key(p),
             "title_en": title_en,
             "title_tc": title_tc,
             "title_sc": title_sc,
         })
 
-    # i18n payload
     extra_i18n: dict[str, dict[str, str]] = {}
     extra_i18n.update(COMMON_LABELS)
+    for group_key, meta in CATALOG_GROUPS.items():
+        extra_i18n[f"group.{group_key}.title"] = meta["title"]
+        extra_i18n[f"group.{group_key}.desc"] = meta["desc"]
     for s in staged:
         key = f"cat.{s['public_slug']}"
         extra_i18n[key] = {"EN": s["title_en"], "繁": s["title_tc"], "简": s["title_sc"]}
     translations_js = build_translations_js_block(extra_i18n)
 
-    cards_html = ""
+    by_group: dict[str, list[dict]] = {}
     for s in staged:
-        slug = s["public_slug"]
-        thumb = s["thumb"] or "/assets/products1.png"
-        series_badge = (
-            f'<span class="inline-block bg-orange-50 text-orange-600 text-xs font-mono font-semibold px-2 py-1 rounded">{esc(s["series"])}</span>'
-            if s["series"] else ""
-        )
-        cards_html += f"""
-        <a href="/products/{CATEGORY_SLUG}/{esc(slug)}/" class="group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-xl hover:border-orange-300 transition-all">
-          <div class="aspect-[4/3] overflow-hidden bg-slate-50">
-            <img src="{esc(thumb)}" alt="{esc(s["title_en"])}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        by_group.setdefault(s["group"], []).append(s)
+    for items in by_group.values():
+        items.sort(key=lambda x: x["public_slug"])
+
+    group_sections = ""
+    ordered_group_keys = sorted(by_group, key=lambda key: CATALOG_GROUPS[key]["order"])
+    for idx, group_key in enumerate(ordered_group_keys):
+        items = by_group[group_key]
+        cards_html = ""
+        for s in items:
+            slug = s["public_slug"]
+            thumb = s["thumb"] or "/assets/products1.png"
+            series_badge = (
+                f'<span class="inline-block bg-orange-50 text-orange-600 text-xs font-mono font-semibold px-2 py-1 rounded">{esc(s["series"])}</span>'
+                if s["series"] else ""
+            )
+            cards_html += f"""
+            <a href="/products/{esc(slug)}/" class="group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-xl hover:border-orange-300 transition-all">
+              <div class="aspect-[4/3] overflow-hidden bg-slate-50">
+                <img src="{esc(thumb)}" alt="{esc(s["title_en"])}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="p-5">
+                <div class="mb-2">{series_badge}</div>
+                <h3 class="text-slate-900 text-base font-semibold mb-3 min-h-[3rem]" data-i18n="cat.{esc(slug)}"></h3>
+                <span class="text-orange-500 text-sm font-semibold flex items-center gap-1" data-i18n="category.viewDetails"></span>
+              </div>
+            </a>
+            """
+
+        group_sections += f"""
+        <details class="catalog-group border border-slate-200 rounded-xl bg-white shadow-sm overflow-hidden" open>
+          <summary class="cursor-pointer list-none p-5 sm:p-6 hover:bg-slate-50 transition-colors">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 class="text-slate-900 text-2xl mb-2" data-i18n="group.{esc(group_key)}.title"></h2>
+                <p class="text-slate-600 max-w-3xl" data-i18n="group.{esc(group_key)}.desc"></p>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-slate-500">
+                <span>{len(items)} <span data-i18n="category.countLabel"></span></span>
+                <svg class="catalog-chevron w-5 h-5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="px-5 sm:px-6 pb-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {cards_html}
+            </div>
           </div>
-          <div class="p-5">
-            <div class="mb-2">{series_badge}</div>
-            <h3 class="text-slate-900 text-base font-semibold mb-3 min-h-[3rem]" data-i18n="cat.{esc(slug)}"></h3>
-            <span class="text-orange-500 text-sm font-semibold flex items-center gap-1" data-i18n="category.viewDetails"></span>
-          </div>
-        </a>
+        </details>
         """
+
+    catalog_js = r"""
+<script>
+(function () {
+  function tuneCatalogGroups() {
+    var groups = document.querySelectorAll('.catalog-group');
+    if (!groups.length || window.innerWidth >= 768) return;
+    groups.forEach(function (group, index) {
+      group.open = index === 0;
+    });
+  }
+  document.addEventListener('DOMContentLoaded', tuneCatalogGroups);
+})();
+</script>
+"""
+    raised_floor_count = len(staged)
+    raised_floor_group_count = len(ordered_group_keys)
 
     body = f"""
 {render_header(active="products")}
@@ -1311,32 +1456,48 @@ def render_category_page(products: list[dict], slugs: dict[Any, str], scrape_roo
   <nav class="flex flex-wrap items-center gap-2 text-sm mb-8 pb-4 border-b border-slate-200">
     <a href="/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="nav.home"></a>
     <svg class="w-4 h-4 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-    <span class="text-slate-900 font-semibold" data-i18n="category.title"></span>
+    <span class="text-slate-900 font-semibold" data-i18n="nav.products"></span>
   </nav>
 
   <header class="mb-10 max-w-3xl">
-    <h1 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="category.title"></h1>
+    <h1 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="nav.products"></h1>
     <p class="text-slate-600 text-lg" data-i18n="category.subtitle"></p>
   </header>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-    {cards_html}
-  </div>
+  <details class="catalog-family border-2 border-orange-200 rounded-2xl bg-orange-50/40 shadow-sm overflow-hidden" open>
+    <summary class="cursor-pointer list-none p-5 sm:p-7 hover:bg-orange-50 transition-colors">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p class="text-sm text-orange-600 font-semibold tracking-wide uppercase mb-2" data-i18n="nav.products"></p>
+          <h2 class="text-slate-900 text-3xl mb-3" data-i18n="products.raisedFloor.name"></h2>
+          <p class="text-slate-600 max-w-3xl" data-i18n="products.raisedFloor.desc"></p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+          <span class="bg-white border border-orange-200 rounded-full px-3 py-1">{raised_floor_count} <span data-i18n="category.countLabel"></span></span>
+          <span class="bg-white border border-orange-200 rounded-full px-3 py-1">{raised_floor_group_count} <span data-i18n="category.subcategoryLabel"></span></span>
+          <svg class="w-5 h-5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </div>
+    </summary>
+    <div class="px-4 sm:px-6 lg:px-7 pb-7 space-y-6">
+      {group_sections}
+    </div>
+  </details>
 </main>
 
 {render_quote_modal()}
 {render_footer()}
 """
 
-    canonical = f"https://sunfly.hk/products/{CATEGORY_SLUG}/"
+    canonical = "https://sunfly.hk/products/"
     page_html = render_head(
-        f"{CATEGORY_I18N['EN']} — Sunfly Building Materials",
-        "Browse our full range of anti-static and ventilation access floor systems for computer rooms, data centers and control rooms.",
+        "Products — Sunfly Building Materials",
+        "Browse Sunfly raised-floor products by category, including steel anti-static, calcium sulphate, aluminum, OA network and ventilation access floors.",
         canonical,
         alt_langs={"en": canonical, "zh-Hant": canonical, "zh-Hans": canonical, "x-default": canonical},
-    ) + body + render_body_end(translations_js)
+    ) + body + render_body_end(translations_js, list_expander_js=catalog_js)
 
-    out_path = dest_root / "products" / CATEGORY_SLUG / "index.html"
+    out_path = dest_root / "products" / "index.html"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(page_html, encoding="utf-8")
     return out_path
@@ -1358,15 +1519,15 @@ def render_hub_page(dest_root: Path) -> Path:
 
     tiles = [
         {
-            "href": f"/products/{CATEGORY_SLUG}/",
+            "href": "/products/",
             "img": "/assets/products1.png",
             "name_key": "products.raisedFloor.name",
             "desc_key": "products.raisedFloor.desc",
             "available": True,
         },
-        {"href": "/#products", "img": "/assets/products2.png", "name_key": "products.ceiling.name", "desc_key": "products.ceiling.desc", "available": False},
-        {"href": "/#products", "img": "/assets/products3.jpeg", "name_key": "products.glazing.name", "desc_key": "products.glazing.desc", "available": False},
-        {"href": "/#products", "img": "/assets/products4.jpeg", "name_key": "products.steelFraming.name", "desc_key": "products.steelFraming.desc", "available": False},
+        {"href": "/products/", "img": "/assets/products2.png", "name_key": "products.ceiling.name", "desc_key": "products.ceiling.desc", "available": False},
+        {"href": "/products/", "img": "/assets/products3.jpeg", "name_key": "products.glazing.name", "desc_key": "products.glazing.desc", "available": False},
+        {"href": "/products/", "img": "/assets/products4.jpeg", "name_key": "products.steelFraming.name", "desc_key": "products.steelFraming.desc", "available": False},
     ]
     cards = ""
     for t in tiles:
@@ -1432,10 +1593,10 @@ def flatten_products(data: dict) -> list[dict]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--site-root", default=str(REPO_ROOT_DEFAULT))
-    ap.add_argument("--only-slug", default=None, help="If set, only generate this one SKU page (plus the hub + category).")
+    ap.add_argument("--only-slug", default=None, help="If set, only generate this one SKU page (plus the catalog).")
     ap.add_argument("--skip-images", action="store_true", help="Skip image copy (faster re-runs while iterating on HTML).")
     ap.add_argument("--skip-hub", action="store_true")
-    ap.add_argument("--skip-category", action="store_true")
+    ap.add_argument("--skip-catalog", action="store_true")
     args = ap.parse_args()
 
     site_root = Path(args.site_root)
@@ -1462,9 +1623,9 @@ def main() -> None:
         out = render_hub_page(site_root)
         print(f"[build] wrote {out.relative_to(site_root)}")
 
-    # Category grid
-    if not args.skip_category:
-        out = render_category_page(products, slugs, scrape_root, site_root, skip_images=args.skip_images)
+    # Grouped products catalog
+    if not args.skip_catalog:
+        out = render_catalog_page(products, slugs, scrape_root, site_root, skip_images=args.skip_images)
         print(f"[build] wrote {out.relative_to(site_root)}")
 
     # SKU pages

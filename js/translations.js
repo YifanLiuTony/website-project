@@ -119,6 +119,8 @@ const translations = {
         'contact.info.email': 'Email',
         'contact.info.general': 'General',
         'contact.info.sales': 'Sales',
+        'quote.company': 'Company',
+        'quote.quantity': 'Estimated quantity',
         
         // Enterprise Culture
         'culture.title': 'Enterprise Culture',
@@ -272,6 +274,8 @@ const translations = {
         'contact.info.email': '電子郵件',
         'contact.info.general': '一般查詢',
         'contact.info.sales': '銷售',
+        'quote.company': '公司',
+        'quote.quantity': '預計數量',
         
         // Enterprise Culture
         'culture.title': '企業文化',
@@ -425,6 +429,8 @@ const translations = {
         'contact.info.email': '电子邮件',
         'contact.info.general': '一般查询',
         'contact.info.sales': '销售',
+        'quote.company': '公司',
+        'quote.quantity': '预计数量',
         
         // Enterprise Culture
         'culture.title': '企业文化',

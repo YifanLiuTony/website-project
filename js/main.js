@@ -150,7 +150,7 @@ function handleFormSubmit(event) {
         })
         .catch((error) => {
             console.error('Email send error:', error);
-            alert('Sorry, there was an error sending your message. Please try again or contact us directly at enquiry@sunfly.hk');
+            alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@sunfly.hk');
         })
         .finally(() => {
             // Restore button state

@@ -54,7 +54,7 @@
 - This parent-family structure is intentional so future product families such as ceiling, glazing, and steel framing can be added alongside Raised Floor System later.
 - Detail pages were generated for all 24 public slugs, e.g. `/products/af-1/`, `/products/vf-3/`, and `/products/c4-oa-600-stringer/`.
 - The older `/products/anti-static-access-floor/` output still exists in the tree as an obsolete generated page from the previous structure; new generated links should not point there.
-- The stray `/products/index 2.html` also still exists as an old draft/generated hub and should eventually be removed or reconciled.
+- The stray `/products/index 2.html` old draft/generated hub was removed.
 
 ## AF-1 Detail Page Pattern
 - `/Users/yifanliu/Desktop/Projects/website-project/products/af-1/index.html` is the current generated reference implementation.
@@ -75,7 +75,6 @@
 - This suggests the data ingestion and asset mirroring work is ahead of the final page-generation / cleanup / commit decisions.
 
 ## Things To Watch
-- `products/index 2.html` is likely a temporary or accidental filename and should eventually be removed if no longer needed.
 - `products/anti-static-access-floor/` is obsolete under the new URL model and should eventually be removed or redirected if desired.
 - The homepage JSON-LD in `index.html` appears to have malformed JSON in some `Offer` objects because of missing commas before `"price"` fields.
 - The site mixes shared global translations (`js/translations.js`) with page-local generated translations inside product pages.
@@ -86,5 +85,5 @@
 
 ## Best Resume Point
 - Continue polishing `/products/` as the grouped catalog and `/products/af-1/` as the reference detail page.
-- Clean up obsolete product outputs (`products/index 2.html`, `products/anti-static-access-floor/`) once the new route structure is accepted.
+- Clean up obsolete product outputs (`products/anti-static-access-floor/`) once the new route structure is accepted.
 - Confirm the quote flow works consistently across homepage, product catalog, and detail pages.

@@ -550,6 +550,8 @@
         </div>
         <!-- Hidden packed cart field — will be filled by JS before submit -->
         <input type="hidden" name="items" id="quote-items-hidden">
+        <input type="hidden" name="language" id="quote-language-hidden">
+        <input type="hidden" name="selected_language" id="quote-selected-language-hidden">
         <button type="submit" class="w-full bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600 transition-colors" data-i18n="quote.submit"></button>
       </form>
     </div>
@@ -634,13 +636,28 @@
     //                      inside /products/.
     window.__quoteCart = window.__quoteCart || [];
 
+    function selectedLanguageLabel() {
+      if (typeof currentLanguage === 'undefined') return '英文';
+      if (currentLanguage === '繁') return '繁體中文';
+      if (currentLanguage === '简') return '簡體中文';
+      return '英文';
+    }
+
+    function chineseProductTitle() {
+      if (typeof translations !== 'undefined' && translations['繁'] && translations['繁']['p.title']) {
+        return translations['繁']['p.title'];
+      }
+      var titleEl = document.querySelector('[data-i18n="p.title"]');
+      return titleEl ? titleEl.textContent : '';
+    }
+
     window.addToQuote = function (sku, title) {
       if (!sku) return;
       if (window.__quoteCart.find(function (x) { return x.sku === sku; })) {
         openQuoteModal();
         return;
       }
-      window.__quoteCart.push({ sku: sku, title: title });
+      window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
       renderCart();
       flashCartButton();
     };
@@ -695,9 +712,11 @@
       if (form) {
         form.addEventListener('submit', function (ev) {
           ev.preventDefault();
-          // Pack cart into items hidden field
-          var items = window.__quoteCart.map(function (it) { return it.sku + ' — ' + it.title; }).join('\n');
-          document.getElementById('quote-items-hidden').value = items || '(no SKUs pinned — general enquiry)';
+          // Pack cart into Chinese items hidden field for EmailJS.
+          var items = window.__quoteCart.map(function (it) { return it.sku + ' — ' + (it.titleChinese || it.title); }).join('\n');
+          document.getElementById('quote-items-hidden').value = items || '未指定產品 — 一般查詢';
+          document.getElementById('quote-language-hidden').value = selectedLanguageLabel();
+          document.getElementById('quote-selected-language-hidden').value = selectedLanguageLabel();
 
           var submitBtn = form.querySelector('button[type="submit"]');
           var originalText = submitBtn.textContent;

@@ -81,9 +81,48 @@ function toggleMobileMenu() {
     }
 }
 
+function setHiddenFormValue(form, name, value) {
+    let input = form.querySelector(`input[name="${name}"]`);
+    if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+    }
+    input.value = value || '';
+}
+
+function prepareContactEmailPayload(form) {
+    const languageLabels = {
+        EN: '英文',
+        '繁': '繁體中文',
+        '简': '簡體中文'
+    };
+    const projectTypeLabels = {
+        residential: '住宅',
+        commercial: '商業',
+        industrial: '工業',
+        renovation: '翻新',
+        '住宅': '住宅',
+        '商業': '商業',
+        '工業': '工業',
+        '翻新': '翻新'
+    };
+    const projectType = form.querySelector('[name="projectType"]');
+
+    const selectedLanguage = languageLabels[currentLanguage] || currentLanguage;
+    setHiddenFormValue(form, 'language', selectedLanguage);
+    setHiddenFormValue(form, 'selected_language', selectedLanguage);
+    if (projectType) {
+        const chineseProjectType = projectTypeLabels[projectType.value] || projectType.value;
+        setHiddenFormValue(form, 'project_type_chinese', chineseProjectType);
+    }
+}
+
 // Handle contact form submission
 function handleFormSubmit(event) {
     event.preventDefault();
+    prepareContactEmailPayload(event.target);
 
     // EmailJS configuration
     const serviceID = 'default_service';

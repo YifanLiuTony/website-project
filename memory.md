@@ -74,6 +74,22 @@
 - The scraped images and mirrored product assets appear far more complete than the checked-in HTML pages.
 - This suggests the data ingestion and asset mirroring work is ahead of the final page-generation / cleanup / commit decisions.
 
+## Product Image URL Branding Inventory (2026-05-25)
+- Scope: the 317 source image files under `/Users/yifanliu/Desktop/Projects/website-project/parete-scrape/images/`. Do not separately count `/assets/products/`, because `tools/build_products.py` mirrors the scrape-source images into that public asset tree.
+- The user confirmed that these public-source images may be used and edited. Cleanup is limited to visible email/URL marks; central `PARETE` logo watermarks are intentionally ignored.
+- Per-file treatment manifest: `/Users/yifanliu/Desktop/Projects/website-project/parete-scrape/image-url-branding-inventory.csv`.
+- Inventory groups:
+
+| Group | Files | Recommended Later Treatment |
+| --- | ---: | --- |
+| `easy_footer_crop_or_cover` | 104 | All `*thickbox*` source images use the removable gray footer containing `export@parete.net`; crop the footer or cover it with the adjacent footer color. |
+| `bottom_url_mask_candidate` | 162 | OCR detected a URL entirely within the bottom 15% of the image, usually `www.parete.net` in a corner; mask or narrowly crop after a visual check. |
+| `manual_review` | 51 | No URL matched automatically; do not assume clean because spot checks found small or low-contrast URL marks that OCR can miss. |
+
+- Representative easy footer crop files: `images/24-steel-access-floor-pvc/24-248-thickbox_steel-access-floor-pvc.jpg`, `images/25-steel-access-floor-ceramic/25-269-thickbox_steel-access-floor-ceramic.jpg`, and `images/51-c5-0a-500-low-height-raised-floor-with-trucks/51-369-thickbox_c5-0a-500-low-height-raised-floor-with-trucks.jpg`.
+- Representative narrow-mask candidates: `images/25-steel-access-floor-ceramic/images_05-steel-ceramic-01.jpg`, `images/40-steel-ventilation-access-floor/images_steel_ventilation_floor-vf1-21-3.jpg`, and `images/shared/images_01-steel_hpl.png`.
+- When processing later, change files in `parete-scrape/images/` first and regenerate or re-stage `assets/products/`; editing only the mirrored public assets will be overwritten on a future product build.
+
 ## Things To Watch
 - `products/anti-static-access-floor/` is obsolete under the new URL model and should eventually be removed or redirected if desired.
 - The homepage JSON-LD in `index.html` appears to have malformed JSON in some `Offer` objects because of missing commas before `"price"` fields.

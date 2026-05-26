@@ -88,6 +88,8 @@ def download_image(url: str, local_rel: str, scrape_root: Path) -> bool:
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists() and target.stat().st_size > 0:
         return False
+    # TODO: If the scrape is refreshed, post-process newly downloaded images
+    # to remove removable footer email/URL marks before they are staged publicly.
     target.write_bytes(fetch_bytes(url))
     return True
 

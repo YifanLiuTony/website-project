@@ -28,6 +28,7 @@ The script is idempotent — it overwrites output files cleanly on each run.
 from __future__ import annotations
 
 import argparse
+import filecmp
 import html
 import json
 import re
@@ -392,7 +393,7 @@ def stage_description_images(product: dict, scrape_root, dest_root, public_slug:
         fname = src_file.name
         target = dest_dir / fname
         if not skip_images:
-            if not target.exists() or target.stat().st_size != src_file.stat().st_size:
+            if not target.exists() or not filecmp.cmp(src_file, target, shallow=False):
                 _sh.copy2(src_file, target)
         rewrite[rel_src] = f"/assets/products/{public_slug}/desc/{fname}"
     return rewrite
@@ -843,7 +844,7 @@ def stage_product_assets(product: dict, scrape_root: Path, dest_root: Path, publ
         for img in src_dir.iterdir():
             if img.is_file():
                 target = dest_dir / img.name
-                if not target.exists() or target.stat().st_size != img.stat().st_size:
+                if not target.exists() or not filecmp.cmp(img, target, shallow=False):
                     shutil.copy2(img, target)
     # Rewrite gallery paths — use EN gallery as canonical (paths are shared between EN/ZH typically)
     new_gallery = []

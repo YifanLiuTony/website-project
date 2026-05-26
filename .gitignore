@@ -1,0 +1,4 @@
+# Local image-cleanup review galleries and preserved originals.
+parete-scrape/image-cleanup-review/
+parete-scrape/image-url-cleanup-preview-*/
+tools/__pycache__/

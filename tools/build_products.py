@@ -34,6 +34,7 @@ import json
 import re
 import shutil
 import sys
+import textwrap
 from pathlib import Path
 from typing import Any
 
@@ -50,9 +51,9 @@ CATALOG_I18N = {
     "简": "产品",
 }
 CATALOG_SUBTITLE_I18N = {
-    "EN": "Browse our raised-floor catalog by product family. Expand a category, compare cards, then open the product detail page for specifications and quote requests.",
-    "繁": "按產品系列瀏覽我們的架空地板目錄。展開分類、比較產品卡片，然後進入產品詳情頁查看規格並索取報價。",
-    "简": "按产品系列浏览我们的架空地板目录。展开分类、比较产品卡片，然后进入产品详情页查看规格并索取报价。",
+    "EN": "Search or filter the raised-floor catalog, then open a product detail page for specifications and quote requests.",
+    "繁": "搜尋或篩選架空地板目錄，然後進入產品詳情頁查看規格並索取報價。",
+    "简": "搜索或筛选架空地板目录，然后进入产品详情页查看规格并索取报价。",
 }
 
 # s2hkm uses zh-HK-specific phrases where available; fall back to s2hk otherwise.
@@ -411,7 +412,7 @@ def render_header(active: str = "") -> str:
 <!-- Header (shared) -->
 <header id="header" class="sticky top-0 z-50 bg-white shadow-sm">
   <div class="bg-slate-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-2">
       <div class="flex justify-between items-center gap-4">
         <div class="flex items-center gap-6">
           <a href="tel:+85256441916" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
@@ -433,7 +434,7 @@ def render_header(active: str = "") -> str:
       </div>
     </div>
   </div>
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <nav class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12">
     <div class="flex justify-between items-center h-20">
       <a href="/" class="flex items-center gap-2">
         <div class="w-10 h-10 bg-orange-500 rounded flex items-center justify-center"><span class="text-white text-xs">SF</span></div>
@@ -473,7 +474,7 @@ def render_header(active: str = "") -> str:
 def render_footer() -> str:
     return r"""
 <footer class="bg-slate-900 text-white mt-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-2 mb-4">
@@ -518,15 +519,13 @@ def render_footer() -> str:
 
 
 def render_quote_modal() -> str:
-    """Floating quote-cart button + modal. Single SKU for v1, with a note that
-    the cart can hold multiple SKUs once the rest of the catalog is generated."""
+    """Floating single-product quote button + modal."""
     return r"""
 <!-- Floating quote-cart button -->
 <button id="quote-cart-btn" onclick="openQuoteModal()"
         class="fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-2xl px-5 py-4 flex items-center gap-2 transition-all">
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
   <span data-i18n="quote.cartButton"></span>
-  <span id="quote-cart-count" class="bg-white text-orange-600 rounded-full w-6 h-6 text-sm font-bold flex items-center justify-center">0</span>
 </button>
 
 <!-- Quote modal -->
@@ -580,7 +579,7 @@ def render_quote_modal() -> str:
 
 
 def render_quote_js() -> str:
-    """Persistent quote cart. Uses EmailJS when available."""
+    """Persistent single-product quote request. Uses EmailJS when available."""
     return r"""
 <script>
   (function () {
@@ -590,7 +589,7 @@ def render_quote_js() -> str:
       try {
         var stored = localStorage.getItem(QUOTE_CART_STORAGE_KEY);
         var parsed = stored ? JSON.parse(stored) : [];
-        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }) : [];
+        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }).slice(0, 1) : [];
       } catch (err) {
         return [];
       }
@@ -623,11 +622,7 @@ def render_quote_js() -> str:
 
     window.addToQuote = function (sku, title) {
       if (!sku) return;
-      if (window.__quoteCart.find(function (x) { return x.sku === sku; })) {
-        openQuoteModal();
-        return;
-      }
-      window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      window.__quoteCart = [{ sku: sku, title: title, titleChinese: chineseProductTitle() || title }];
       saveCart();
       renderCart();
       flashCartButton();
@@ -640,8 +635,8 @@ def render_quote_js() -> str:
     };
 
     window.openQuoteModalForProduct = function (sku, title) {
-      if (sku && !window.__quoteCart.find(function (x) { return x.sku === sku; })) {
-        window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      if (sku) {
+        window.__quoteCart = [{ sku: sku, title: title, titleChinese: chineseProductTitle() || title }];
         saveCart();
       }
       openQuoteModal();
@@ -655,14 +650,12 @@ def render_quote_js() -> str:
     }
 
     function renderCart() {
-      var count = document.getElementById('quote-cart-count');
-      if (count) count.textContent = String(window.__quoteCart.length);
       var host = document.getElementById('quote-cart-items');
       if (!host) return;
       if (!window.__quoteCart.length) {
-        host.innerHTML = '<p class="text-slate-500 text-sm">' + (t('quote.empty') || 'No products selected yet. Browse the catalog and click "Add to quote" on any product.') + '</p>';
+        host.innerHTML = '<p class="text-slate-500 text-sm">' + (t('quote.empty') || 'No product selected yet. Open a product and request a quote.') + '</p>';
       } else {
-        host.innerHTML = '<div class="mb-4"><p class="text-sm text-slate-600 mb-2">' + (t('quote.itemsLabel') || 'Products in your quote:') + '</p><ul class="divide-y border rounded">' +
+        host.innerHTML = '<div class="mb-4"><p class="text-sm text-slate-600 mb-2">' + (t('quote.itemsLabel') || 'Product in your quote:') + '</p><ul class="divide-y border rounded">' +
           window.__quoteCart.map(function (it) {
             return '<li class="flex justify-between items-center px-3 py-2 text-sm">' +
                    '<span><span class="font-mono text-slate-500">' + it.sku + '</span> &middot; ' + it.title + '</span>' +
@@ -945,11 +938,11 @@ COMMON_LABELS = {
     "quote.cartButton": {"EN": "Quote Request", "繁": "報價請求", "简": "报价请求"},
     "quote.modalTitle": {"EN": "Request a Quote", "繁": "索取報價", "简": "索取报价"},
     "quote.empty": {
-        "EN": 'No products selected yet. Browse the catalog and click "Add to quote" on any product.',
-        "繁": "尚未加入任何產品。請在目錄中選取您感興趣的產品。",
-        "简": "尚未加入任何产品。请在目录中选取您感兴趣的产品。",
+        "EN": "No product selected yet. Open a product and request a quote.",
+        "繁": "尚未選取產品。請開啟產品頁並索取報價。",
+        "简": "尚未选取产品。请打开产品页并索取报价。",
     },
-    "quote.itemsLabel": {"EN": "Products in your quote:", "繁": "已加入的產品：", "简": "已加入的产品："},
+    "quote.itemsLabel": {"EN": "Product in your quote:", "繁": "報價產品：", "简": "报价产品："},
     "quote.company": {"EN": "Company", "繁": "公司", "简": "公司"},
     "quote.quantity": {"EN": "Estimated quantity", "繁": "預計數量", "简": "预计数量"},
     "quote.submit": {"EN": "Send Request", "繁": "送出請求", "简": "发送请求"},
@@ -961,6 +954,9 @@ COMMON_LABELS = {
     },
     "category.title": CATALOG_I18N,
     "category.subtitle": CATALOG_SUBTITLE_I18N,
+    "category.searchPlaceholder": {"EN": "Search products...", "繁": "搜尋產品...", "简": "搜索产品..."},
+    "category.filter.all": {"EN": "All Products", "繁": "所有產品", "简": "所有产品"},
+    "category.noResults": {"EN": "No products found matching your search.", "繁": "未找到符合您搜尋條件的產品。", "简": "未找到符合您搜索条件的产品。"},
     "category.viewDetails": {"EN": "View details", "繁": "查看詳情", "简": "查看详情"},
     "category.countLabel": {"EN": "products", "繁": "個產品", "简": "个产品"},
     "category.subcategoryLabel": {"EN": "subcategories", "繁": "個子分類", "简": "个子分类"},
@@ -1177,7 +1173,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     body = f"""
 {render_header(active="products")}
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<main class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-10">
   {breadcrumb}
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
@@ -1450,104 +1446,163 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
     for items in by_group.values():
         items.sort(key=lambda x: x["public_slug"])
 
-    group_sections = ""
     ordered_group_keys = sorted(by_group, key=lambda key: CATALOG_GROUPS[key]["order"])
-    for idx, group_key in enumerate(ordered_group_keys):
+
+    filter_button_chunks = [
+        """
+<button type="button"
+        class="product-filter px-4 py-2 rounded-full border text-sm font-semibold transition-colors bg-orange-500 text-white border-orange-500 shadow-sm"
+        data-product-filter="all"
+        aria-pressed="true">
+  <span data-i18n="category.filter.all"></span>
+</button>
+        """.strip()
+    ]
+    for group_key in ordered_group_keys:
+        filter_button_chunks.append(f"""
+<button type="button"
+        class="product-filter px-4 py-2 rounded-full border text-sm font-semibold transition-colors bg-white text-slate-700 border-slate-200 hover:border-orange-300 hover:text-orange-600"
+        data-product-filter="{esc(group_key)}"
+        aria-pressed="false">
+  <span data-i18n="group.{esc(group_key)}.title"></span>
+</button>
+        """.strip())
+    product_filter_buttons = textwrap.indent("\n".join(filter_button_chunks), "          ")
+
+    catalog_card_chunks = []
+    for group_key in ordered_group_keys:
         items = by_group[group_key]
-        cards_html = ""
         for s in items:
             slug = s["public_slug"]
             thumb = s["thumb"] or "/assets/products1.png"
+            group_meta = CATALOG_GROUPS[group_key]
+            search_blob = " ".join(
+                [
+                    s["title_en"],
+                    s["title_tc"],
+                    s["title_sc"],
+                    s["series"],
+                    group_meta["title"]["EN"],
+                    group_meta["title"]["繁"],
+                    group_meta["title"]["简"],
+                    group_meta["desc"]["EN"],
+                    group_meta["desc"]["繁"],
+                    group_meta["desc"]["简"],
+                ]
+            )
             series_badge = (
                 f'<span class="inline-block bg-orange-50 text-orange-600 text-xs font-mono font-semibold px-2 py-1 rounded">{esc(s["series"])}</span>'
                 if s["series"] else ""
             )
-            cards_html += f"""
-            <a href="/products/{esc(slug)}/" class="group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-xl hover:border-orange-300 transition-all">
-              <div class="aspect-[4/3] overflow-hidden bg-slate-50">
-                <img src="{esc(thumb)}" alt="{esc(s["title_en"])}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-              </div>
-              <div class="p-5">
-                <div class="mb-2">{series_badge}</div>
-                <h3 class="text-slate-900 text-base font-semibold mb-3 min-h-[3rem]" data-i18n="cat.{esc(slug)}"></h3>
-                <span class="text-orange-500 text-sm font-semibold flex items-center gap-1" data-i18n="category.viewDetails"></span>
-              </div>
-            </a>
-            """
-
-        group_sections += f"""
-        <details class="catalog-group border border-slate-200 rounded-xl bg-white shadow-sm overflow-hidden" open>
-          <summary class="cursor-pointer list-none p-5 sm:p-6 hover:bg-slate-50 transition-colors">
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h2 class="text-slate-900 text-2xl mb-2" data-i18n="group.{esc(group_key)}.title"></h2>
-                <p class="text-slate-600 max-w-3xl" data-i18n="group.{esc(group_key)}.desc"></p>
-              </div>
-              <div class="flex items-center gap-3 text-sm text-slate-500">
-                <span>{len(items)} <span data-i18n="category.countLabel"></span></span>
-                <svg class="catalog-chevron w-5 h-5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
-            </div>
-          </summary>
-          <div class="px-5 sm:px-6 pb-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {cards_html}
-            </div>
-          </div>
-        </details>
-        """
+            catalog_card_chunks.append(f"""
+<a href="/products/{esc(slug)}/"
+   class="product-card group bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-xl hover:border-orange-300 transition-all"
+   data-product-card
+   data-product-group="{esc(group_key)}"
+   data-product-search="{esc(search_blob)}">
+  <div class="aspect-[4/3] overflow-hidden bg-slate-50">
+    <img src="{esc(thumb)}" alt="{esc(s["title_en"])}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+  </div>
+  <div class="p-5">
+    <div class="mb-3 flex flex-wrap items-center gap-2">
+      {series_badge}
+      <span class="inline-flex items-center rounded-full bg-blue-100 px-2 py-1 text-xs font-semibold text-blue-700" data-i18n="group.{esc(group_key)}.title"></span>
+    </div>
+    <h3 class="text-slate-900 text-base font-semibold mb-3 min-h-[3rem]" data-i18n="cat.{esc(slug)}"></h3>
+    <span class="text-orange-500 text-sm font-semibold flex items-center gap-1" data-i18n="category.viewDetails"></span>
+  </div>
+</a>
+            """.strip())
+    catalog_cards = textwrap.indent("\n".join(catalog_card_chunks), "        ")
 
     catalog_js = r"""
 <script>
 (function () {
-  function tuneCatalogGroups() {
-    var groups = document.querySelectorAll('.catalog-group');
-    if (!groups.length || window.innerWidth >= 768) return;
-    groups.forEach(function (group, index) {
-      group.open = index === 0;
+  var activeProductFilter = 'all';
+  var activeClasses = ['bg-orange-500', 'text-white', 'border-orange-500', 'shadow-sm'];
+  var inactiveClasses = ['bg-white', 'text-slate-700', 'border-slate-200', 'hover:border-orange-300', 'hover:text-orange-600'];
+
+  function setProductFilterButtonState() {
+    document.querySelectorAll('.product-filter').forEach(function (button) {
+      var isActive = button.getAttribute('data-product-filter') === activeProductFilter;
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      activeClasses.concat(inactiveClasses).forEach(function (className) {
+        button.classList.remove(className);
+      });
+      (isActive ? activeClasses : inactiveClasses).forEach(function (className) {
+        button.classList.add(className);
+      });
     });
   }
-  document.addEventListener('DOMContentLoaded', tuneCatalogGroups);
+
+  function applyProductFilters() {
+    var searchInput = document.getElementById('product-search');
+    var query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    var visibleCount = 0;
+    document.querySelectorAll('[data-product-card]').forEach(function (card) {
+      var matchesGroup = activeProductFilter === 'all' || card.getAttribute('data-product-group') === activeProductFilter;
+      var searchText = (card.getAttribute('data-product-search') || '').toLowerCase();
+      var matchesQuery = !query || searchText.indexOf(query) !== -1;
+      var isVisible = matchesGroup && matchesQuery;
+      card.classList.toggle('hidden', !isVisible);
+      if (isVisible) visibleCount += 1;
+    });
+
+    var noResults = document.getElementById('product-no-results');
+    if (noResults) noResults.classList.toggle('hidden', visibleCount > 0);
+    setProductFilterButtonState();
+  }
+
+  function initializeProductCatalog() {
+    if (!document.getElementById('product-grid')) return;
+    document.querySelectorAll('.product-filter').forEach(function (button) {
+      button.addEventListener('click', function () {
+        activeProductFilter = button.getAttribute('data-product-filter') || 'all';
+        applyProductFilters();
+      });
+    });
+    var searchInput = document.getElementById('product-search');
+    if (searchInput) searchInput.addEventListener('input', applyProductFilters);
+    applyProductFilters();
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeProductCatalog);
+  document.addEventListener('sunfly:languagechange', applyProductFilters);
 })();
 </script>
 """
-    raised_floor_count = len(staged)
-    raised_floor_group_count = len(ordered_group_keys)
 
     body = f"""
 {render_header(active="products")}
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-  <nav class="flex flex-wrap items-center gap-2 text-sm mb-8 pb-4 border-b border-slate-200">
-    <a href="/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="nav.home"></a>
-    <svg class="w-4 h-4 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-    <span class="text-slate-900 font-semibold" data-i18n="nav.products"></span>
-  </nav>
-
-  <header class="mb-10 max-w-3xl">
-    <h1 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="nav.products"></h1>
-    <p class="text-slate-600 text-lg" data-i18n="category.subtitle"></p>
-  </header>
-
-  <details class="catalog-family border-2 border-orange-200 rounded-2xl bg-orange-50/40 shadow-sm overflow-hidden" open>
-    <summary class="cursor-pointer list-none p-5 sm:p-7 hover:bg-orange-50 transition-colors">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <p class="text-sm text-orange-600 font-semibold tracking-wide uppercase mb-2" data-i18n="nav.products"></p>
-          <h2 class="text-slate-900 text-3xl mb-3" data-i18n="products.raisedFloor.name"></h2>
-          <p class="text-slate-600 max-w-3xl" data-i18n="products.raisedFloor.desc"></p>
+<main class="bg-slate-50">
+  <section class="py-10 lg:py-14">
+    <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12">
+      <div class="flex flex-col gap-5 mb-8">
+        <div class="relative w-full">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.6-5.15a6.75 6.75 0 11-13.5 0 6.75 6.75 0 0113.5 0z"></path>
+          </svg>
+          <input id="product-search"
+                 type="search"
+                 placeholder="Search products..."
+                 data-i18n="category.searchPlaceholder"
+                 class="w-full rounded-lg border border-slate-300 bg-white py-3 pl-12 pr-4 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
         </div>
-        <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <span class="bg-white border border-orange-200 rounded-full px-3 py-1">{raised_floor_count} <span data-i18n="category.countLabel"></span></span>
-          <span class="bg-white border border-orange-200 rounded-full px-3 py-1">{raised_floor_group_count} <span data-i18n="category.subcategoryLabel"></span></span>
-          <svg class="w-5 h-5 text-orange-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        <div id="product-filters" class="flex flex-wrap gap-3">
+{product_filter_buttons}
         </div>
       </div>
-    </summary>
-    <div class="px-4 sm:px-6 lg:px-7 pb-7 space-y-6">
-      {group_sections}
+
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+{catalog_cards}
+      </div>
+
+      <div id="product-no-results" class="hidden bg-white border border-slate-200 rounded-lg py-14 text-center">
+        <p class="text-slate-600" data-i18n="category.noResults"></p>
+      </div>
     </div>
-  </details>
+  </section>
 </main>
 
 {render_quote_modal()}
@@ -1616,7 +1671,7 @@ def render_hub_page(dest_root: Path) -> Path:
 
     body = f"""
 {render_header(active="products")}
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<main class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-10">
   <header class="mb-10 max-w-3xl">
     <h1 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="nav.products"></h1>
     <p class="text-slate-600 text-lg" data-i18n="hub.subtitle"></p>

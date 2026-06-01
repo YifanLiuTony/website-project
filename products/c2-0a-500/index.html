@@ -68,7 +68,7 @@
 <!-- Header (shared) -->
 <header id="header" class="sticky top-0 z-50 bg-white shadow-sm">
   <div class="bg-slate-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-2">
       <div class="flex justify-between items-center gap-4">
         <div class="flex items-center gap-6">
           <a href="tel:+85256441916" class="flex items-center gap-2 hover:text-orange-400 transition-colors">
@@ -90,7 +90,7 @@
       </div>
     </div>
   </div>
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <nav class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12">
     <div class="flex justify-between items-center h-20">
       <a href="/" class="flex items-center gap-2">
         <div class="w-10 h-10 bg-orange-500 rounded flex items-center justify-center"><span class="text-white text-xs">SF</span></div>
@@ -125,7 +125,7 @@
   </nav>
 </header>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<main class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-10">
   
     <nav class="flex flex-wrap items-center gap-2 text-sm mb-8 pb-4 border-b border-slate-200">
       <a href="/" class="text-slate-500 hover:text-orange-500 hover:underline underline-offset-2" data-i18n="nav.home"></a>
@@ -239,7 +239,6 @@
         class="fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-2xl px-5 py-4 flex items-center gap-2 transition-all">
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
   <span data-i18n="quote.cartButton"></span>
-  <span id="quote-cart-count" class="bg-white text-orange-600 rounded-full w-6 h-6 text-sm font-bold flex items-center justify-center">0</span>
 </button>
 
 <!-- Quote modal -->
@@ -290,7 +289,7 @@
   </div>
 </div>
 <footer class="bg-slate-900 text-white mt-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-2 mb-4">
@@ -340,9 +339,9 @@
 <script>
 (function(){
   if (typeof translations === 'undefined') return;
-  Object.assign(translations["EN"], {"p.title": "Raised floor with independent support", "p.category": "Anti Static Access Floor", "p.heading": "Steel Bare finish raised floor for office application (OA-C2)-Steel Raised Floor with independent support", "p.description.0": "Office steel raised", "p.description.1": "access floor is specifically designed for office buildingit is convenient for cabling and wiring. The independent support system is easy for installation. The pedestal can be aluminum cast pedestal or steel form pedestal with PVC gasket.", "p.description.2": "The size of the panel is 500*500*28.", "p.description.count": "3", "p.advantages.0": "Made of steel plate, high mechanical strength, high loading capacity, good fire resistance.", "p.advantages.1": "Epoxy power painting on surface, matt and soft, wear resistant and anti-corrosion.", "p.advantages.2": "Covering is glued under high pressure.  Multiple choices and good decorated surface. Wear resistant and anti scratch, excellent electrical conductivity, anti pollution and easy cleaning.", "p.advantages.3": "High dimensional accuracy,  interchangeable, flexible assembly, easy maintenance.", "p.advantages.4": "Products can be upgraded or adjusted according to the loading requirements.", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "Series", "product.sku": "SKU", "product.overview": "Overview", "product.advantages": "Key Advantages", "product.covering": "Technical Notes", "product.applications": "Applications", "product.datasheet": "Full Datasheet", "product.datasheetCta": "Request the full technical datasheet as part of your quote", "product.requestQuote": "Request a Quote", "product.addToQuote": "Add to Quote", "product.inCart": "Added to quote", "product.backToCategory": "Back to all products", "quote.cartButton": "Quote Request", "quote.modalTitle": "Request a Quote", "quote.empty": "No products selected yet. Browse the catalog and click \"Add to quote\" on any product.", "quote.itemsLabel": "Products in your quote:", "quote.company": "Company", "quote.quantity": "Estimated quantity", "quote.submit": "Send Request", "quote.sending": "Sending…", "quote.success": "Thanks — your quote request was received. We'll reply within one business day.", "category.title": "Products", "category.subtitle": "Browse our raised-floor catalog by product family. Expand a category, compare cards, then open the product detail page for specifications and quote requests.", "category.viewDetails": "View details", "category.countLabel": "products", "category.subcategoryLabel": "subcategories"});
-  Object.assign(translations["\u7e41"], {"p.title": "獨立支撐網絡地板", "p.category": "防靜電架空地板", "p.heading": "辦公用全鋼無貼面網絡地板 (OA-C2) — 獨立支撐鋼製網絡地板", "p.description.0": "辦公用全鋼", "p.description.1": "網絡地板專為辦公樓設計,便於佈線。獨立支撐系統安裝便捷,支架可選用鑄鋁支座或帶PVC墊片的鋼製支座。", "p.description.2": "面板尺寸為500*500*28。", "p.description.count": "3", "p.advantages.0": "鋼板結構,機械強度高,承載能力強,防火性能好。", "p.advantages.1": "表面環氧粉末塗層,啞光柔和,耐磨防腐。", "p.advantages.2": "貼面經高壓粘合,多種款式可選,表面美觀,耐磨抗刮,導電性優異,防污易清潔。", "p.advantages.3": "尺寸精度高,互換性強,組裝靈活,便於維護。", "p.advantages.4": "可根據承載需求升級或調整。", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "系列", "product.sku": "型號", "product.overview": "產品概覽", "product.advantages": "主要優勢", "product.covering": "技術說明", "product.applications": "應用場景", "product.datasheet": "完整產品資料", "product.datasheetCta": "索取完整技術資料，將隨報價一併提供", "product.requestQuote": "索取報價", "product.addToQuote": "加入報價單", "product.inCart": "已加入報價單", "product.backToCategory": "返回所有產品", "quote.cartButton": "報價請求", "quote.modalTitle": "索取報價", "quote.empty": "尚未加入任何產品。請在目錄中選取您感興趣的產品。", "quote.itemsLabel": "已加入的產品：", "quote.company": "公司", "quote.quantity": "預計數量", "quote.submit": "送出請求", "quote.sending": "傳送中…", "quote.success": "感謝您的查詢，我們將於一個工作天內回覆。", "category.title": "產品", "category.subtitle": "按產品系列瀏覽我們的架空地板目錄。展開分類、比較產品卡片，然後進入產品詳情頁查看規格並索取報價。", "category.viewDetails": "查看詳情", "category.countLabel": "個產品", "category.subcategoryLabel": "個子分類"});
-  Object.assign(translations["\u7b80"], {"p.title": "独立支撑网络地板", "p.category": "防静电架空地板", "p.heading": "办公用全钢无贴面网络地板 (OA-C2) — 独立支撑钢制网络地板", "p.description.0": "办公用全钢", "p.description.1": "网络地板专为办公楼设计,便于布线。独立支撑系统安装便捷,支架可选用铸铝支座或带PVC垫片的钢制支座。", "p.description.2": "面板尺寸为500*500*28。", "p.description.count": "3", "p.advantages.0": "钢板结构,机械强度高,承载能力强,防火性能好。", "p.advantages.1": "表面环氧粉末涂层,哑光柔和,耐磨防腐。", "p.advantages.2": "贴面经高压粘合,多种款式可选,表面美观,耐磨抗刮,导电性优异,防污易清洁。", "p.advantages.3": "尺寸精度高,互换性强,组装灵活,便于维护。", "p.advantages.4": "可根据承载需求升级或调整。", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "系列", "product.sku": "型号", "product.overview": "产品概览", "product.advantages": "主要优势", "product.covering": "技术说明", "product.applications": "应用场景", "product.datasheet": "完整产品资料", "product.datasheetCta": "索取完整技术资料，将随报价一并提供", "product.requestQuote": "索取报价", "product.addToQuote": "加入报价单", "product.inCart": "已加入报价单", "product.backToCategory": "返回所有产品", "quote.cartButton": "报价请求", "quote.modalTitle": "索取报价", "quote.empty": "尚未加入任何产品。请在目录中选取您感兴趣的产品。", "quote.itemsLabel": "已加入的产品：", "quote.company": "公司", "quote.quantity": "预计数量", "quote.submit": "发送请求", "quote.sending": "发送中…", "quote.success": "感谢您的查询，我们将于一个工作日内回复。", "category.title": "产品", "category.subtitle": "按产品系列浏览我们的架空地板目录。展开分类、比较产品卡片，然后进入产品详情页查看规格并索取报价。", "category.viewDetails": "查看详情", "category.countLabel": "个产品", "category.subcategoryLabel": "个子分类"});
+  Object.assign(translations["EN"], {"p.title": "Raised floor with independent support", "p.category": "Anti Static Access Floor", "p.heading": "Steel Bare finish raised floor for office application (OA-C2)-Steel Raised Floor with independent support", "p.description.0": "Office steel raised", "p.description.1": "access floor is specifically designed for office buildingit is convenient for cabling and wiring. The independent support system is easy for installation. The pedestal can be aluminum cast pedestal or steel form pedestal with PVC gasket.", "p.description.2": "The size of the panel is 500*500*28.", "p.description.count": "3", "p.advantages.0": "Made of steel plate, high mechanical strength, high loading capacity, good fire resistance.", "p.advantages.1": "Epoxy power painting on surface, matt and soft, wear resistant and anti-corrosion.", "p.advantages.2": "Covering is glued under high pressure.  Multiple choices and good decorated surface. Wear resistant and anti scratch, excellent electrical conductivity, anti pollution and easy cleaning.", "p.advantages.3": "High dimensional accuracy,  interchangeable, flexible assembly, easy maintenance.", "p.advantages.4": "Products can be upgraded or adjusted according to the loading requirements.", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "Series", "product.sku": "SKU", "product.overview": "Overview", "product.advantages": "Key Advantages", "product.covering": "Technical Notes", "product.applications": "Applications", "product.datasheet": "Full Datasheet", "product.datasheetCta": "Request the full technical datasheet as part of your quote", "product.requestQuote": "Request a Quote", "product.addToQuote": "Add to Quote", "product.inCart": "Added to quote", "product.backToCategory": "Back to all products", "quote.cartButton": "Quote Request", "quote.modalTitle": "Request a Quote", "quote.empty": "No product selected yet. Open a product and request a quote.", "quote.itemsLabel": "Product in your quote:", "quote.company": "Company", "quote.quantity": "Estimated quantity", "quote.submit": "Send Request", "quote.sending": "Sending…", "quote.success": "Thanks — your quote request was received. We'll reply within one business day.", "category.title": "Products", "category.subtitle": "Search or filter the raised-floor catalog, then open a product detail page for specifications and quote requests.", "category.searchPlaceholder": "Search products...", "category.filter.all": "All Products", "category.noResults": "No products found matching your search.", "category.viewDetails": "View details", "category.countLabel": "products", "category.subcategoryLabel": "subcategories"});
+  Object.assign(translations["\u7e41"], {"p.title": "獨立支撐網絡地板", "p.category": "防靜電架空地板", "p.heading": "辦公用全鋼無貼面網絡地板 (OA-C2) — 獨立支撐鋼製網絡地板", "p.description.0": "辦公用全鋼", "p.description.1": "網絡地板專為辦公樓設計,便於佈線。獨立支撐系統安裝便捷,支架可選用鑄鋁支座或帶PVC墊片的鋼製支座。", "p.description.2": "面板尺寸為500*500*28。", "p.description.count": "3", "p.advantages.0": "鋼板結構,機械強度高,承載能力強,防火性能好。", "p.advantages.1": "表面環氧粉末塗層,啞光柔和,耐磨防腐。", "p.advantages.2": "貼面經高壓粘合,多種款式可選,表面美觀,耐磨抗刮,導電性優異,防污易清潔。", "p.advantages.3": "尺寸精度高,互換性強,組裝靈活,便於維護。", "p.advantages.4": "可根據承載需求升級或調整。", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "系列", "product.sku": "型號", "product.overview": "產品概覽", "product.advantages": "主要優勢", "product.covering": "技術說明", "product.applications": "應用場景", "product.datasheet": "完整產品資料", "product.datasheetCta": "索取完整技術資料，將隨報價一併提供", "product.requestQuote": "索取報價", "product.addToQuote": "加入報價單", "product.inCart": "已加入報價單", "product.backToCategory": "返回所有產品", "quote.cartButton": "報價請求", "quote.modalTitle": "索取報價", "quote.empty": "尚未選取產品。請開啟產品頁並索取報價。", "quote.itemsLabel": "報價產品：", "quote.company": "公司", "quote.quantity": "預計數量", "quote.submit": "送出請求", "quote.sending": "傳送中…", "quote.success": "感謝您的查詢，我們將於一個工作天內回覆。", "category.title": "產品", "category.subtitle": "搜尋或篩選架空地板目錄，然後進入產品詳情頁查看規格並索取報價。", "category.searchPlaceholder": "搜尋產品...", "category.filter.all": "所有產品", "category.noResults": "未找到符合您搜尋條件的產品。", "category.viewDetails": "查看詳情", "category.countLabel": "個產品", "category.subcategoryLabel": "個子分類"});
+  Object.assign(translations["\u7b80"], {"p.title": "独立支撑网络地板", "p.category": "防静电架空地板", "p.heading": "办公用全钢无贴面网络地板 (OA-C2) — 独立支撑钢制网络地板", "p.description.0": "办公用全钢", "p.description.1": "网络地板专为办公楼设计,便于布线。独立支撑系统安装便捷,支架可选用铸铝支座或带PVC垫片的钢制支座。", "p.description.2": "面板尺寸为500*500*28。", "p.description.count": "3", "p.advantages.0": "钢板结构,机械强度高,承载能力强,防火性能好。", "p.advantages.1": "表面环氧粉末涂层,哑光柔和,耐磨防腐。", "p.advantages.2": "贴面经高压粘合,多种款式可选,表面美观,耐磨抗刮,导电性优异,防污易清洁。", "p.advantages.3": "尺寸精度高,互换性强,组装灵活,便于维护。", "p.advantages.4": "可根据承载需求升级或调整。", "p.advantages.count": "5", "p.covering.count": "0", "p.applications.count": "0", "product.series": "系列", "product.sku": "型号", "product.overview": "产品概览", "product.advantages": "主要优势", "product.covering": "技术说明", "product.applications": "应用场景", "product.datasheet": "完整产品资料", "product.datasheetCta": "索取完整技术资料，将随报价一并提供", "product.requestQuote": "索取报价", "product.addToQuote": "加入报价单", "product.inCart": "已加入报价单", "product.backToCategory": "返回所有产品", "quote.cartButton": "报价请求", "quote.modalTitle": "索取报价", "quote.empty": "尚未选取产品。请打开产品页并索取报价。", "quote.itemsLabel": "报价产品：", "quote.company": "公司", "quote.quantity": "预计数量", "quote.submit": "发送请求", "quote.sending": "发送中…", "quote.success": "感谢您的查询，我们将于一个工作日内回复。", "category.title": "产品", "category.subtitle": "搜索或筛选架空地板目录，然后进入产品详情页查看规格并索取报价。", "category.searchPlaceholder": "搜索产品...", "category.filter.all": "所有产品", "category.noResults": "未找到符合您搜索条件的产品。", "category.viewDetails": "查看详情", "category.countLabel": "个产品", "category.subcategoryLabel": "个子分类"});
 })();
 </script>
 <!-- Shared site behavior -->
@@ -402,7 +401,7 @@
       try {
         var stored = localStorage.getItem(QUOTE_CART_STORAGE_KEY);
         var parsed = stored ? JSON.parse(stored) : [];
-        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }) : [];
+        return Array.isArray(parsed) ? parsed.filter(function (it) { return it && it.sku; }).slice(0, 1) : [];
       } catch (err) {
         return [];
       }
@@ -435,11 +434,7 @@
 
     window.addToQuote = function (sku, title) {
       if (!sku) return;
-      if (window.__quoteCart.find(function (x) { return x.sku === sku; })) {
-        openQuoteModal();
-        return;
-      }
-      window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      window.__quoteCart = [{ sku: sku, title: title, titleChinese: chineseProductTitle() || title }];
       saveCart();
       renderCart();
       flashCartButton();
@@ -452,8 +447,8 @@
     };
 
     window.openQuoteModalForProduct = function (sku, title) {
-      if (sku && !window.__quoteCart.find(function (x) { return x.sku === sku; })) {
-        window.__quoteCart.push({ sku: sku, title: title, titleChinese: chineseProductTitle() || title });
+      if (sku) {
+        window.__quoteCart = [{ sku: sku, title: title, titleChinese: chineseProductTitle() || title }];
         saveCart();
       }
       openQuoteModal();
@@ -467,14 +462,12 @@
     }
 
     function renderCart() {
-      var count = document.getElementById('quote-cart-count');
-      if (count) count.textContent = String(window.__quoteCart.length);
       var host = document.getElementById('quote-cart-items');
       if (!host) return;
       if (!window.__quoteCart.length) {
-        host.innerHTML = '<p class="text-slate-500 text-sm">' + (t('quote.empty') || 'No products selected yet. Browse the catalog and click "Add to quote" on any product.') + '</p>';
+        host.innerHTML = '<p class="text-slate-500 text-sm">' + (t('quote.empty') || 'No product selected yet. Open a product and request a quote.') + '</p>';
       } else {
-        host.innerHTML = '<div class="mb-4"><p class="text-sm text-slate-600 mb-2">' + (t('quote.itemsLabel') || 'Products in your quote:') + '</p><ul class="divide-y border rounded">' +
+        host.innerHTML = '<div class="mb-4"><p class="text-sm text-slate-600 mb-2">' + (t('quote.itemsLabel') || 'Product in your quote:') + '</p><ul class="divide-y border rounded">' +
           window.__quoteCart.map(function (it) {
             return '<li class="flex justify-between items-center px-3 py-2 text-sm">' +
                    '<span><span class="font-mono text-slate-500">' + it.sku + '</span> &middot; ' + it.title + '</span>' +

@@ -280,6 +280,99 @@
             min-height: calc(100svh - 124px);
         }
 
+        .hero-inner {
+            min-width: 0;
+            padding-top: 3.5rem;
+            padding-bottom: 3.5rem;
+        }
+
+        .hero-content {
+            width: 100%;
+            min-width: 0;
+            max-width: 22rem;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 0;
+            overflow-wrap: break-word;
+            text-wrap: balance;
+        }
+
+        .hero-copy {
+            max-width: 22rem;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            overflow-wrap: break-word;
+            text-wrap: pretty;
+        }
+
+        .hero-actions {
+            margin-top: 2rem;
+            margin-bottom: 2.75rem;
+        }
+
+        .hero-action {
+            min-height: 3.5rem;
+        }
+
+        .hero-features {
+            max-width: 44rem;
+        }
+
+        .hero-feature {
+            min-height: 2.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                max-width: 46rem;
+            }
+
+            .hero-title {
+                font-size: 3.25rem;
+                line-height: 1.04;
+            }
+
+            .hero-copy {
+                font-size: 1.1875rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-inner {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+
+            .hero-content {
+                max-width: 54rem;
+            }
+
+            .hero-title {
+                font-size: 4.25rem;
+                line-height: 1;
+            }
+
+            .hero-copy {
+                max-width: 47rem;
+                font-size: 1.25rem;
+            }
+
+            .hero-actions {
+                margin-top: 2.5rem;
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .hero-title {
+                font-size: 4.75rem;
+            }
+        }
+
         html[data-language="繁"] #lang-en,
         html[data-language="简"] #lang-en,
         html[data-language="EN"] #lang-tc,
@@ -392,35 +485,35 @@
                  alt="" data-i18n-alt="alt.hero" class="w-full h-full object-cover opacity-30">
         </div>
 
-        <div class="relative max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-16 lg:py-20">
-            <div class="max-w-3xl">
-                <h1 class="text-white mb-6" data-i18n="hero.title"></h1>
-                <p class="text-xl text-slate-300 mb-8" data-i18n="hero.subtitle"></p>
+        <div class="hero-inner relative max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12">
+            <div class="hero-content">
+                <h1 class="hero-title text-white mb-6 lg:mb-8" data-i18n="hero.title"></h1>
+                <p class="hero-copy text-slate-300" data-i18n="hero.subtitle"></p>
 
-                <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <button onclick="scrollToSection('contact')" class="bg-orange-500 text-white px-8 py-4 rounded hover:bg-orange-600 transition-colors flex items-center justify-center gap-2">
+                <div class="hero-actions flex flex-col sm:flex-row gap-4 sm:gap-5">
+                    <button onclick="scrollToSection('contact')" class="hero-action bg-orange-500 text-white px-7 sm:px-8 py-4 rounded hover:bg-orange-600 transition-colors flex items-center justify-center gap-2 font-semibold">
                         <span data-i18n="hero.cta.secondary"></span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
                     </button>
-                    <button onclick="scrollToSection('products')" class="border-2 border-white text-white px-8 py-4 rounded hover:bg-white hover:text-slate-900 transition-colors" data-i18n="hero.cta.primary"></button>
+                    <button onclick="scrollToSection('products')" class="hero-action border-2 border-white text-white px-7 sm:px-8 py-4 rounded hover:bg-white hover:text-slate-900 transition-colors font-semibold" data-i18n="hero.cta.primary"></button>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="flex items-center gap-3">
+                <div class="hero-features grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 lg:gap-6">
+                    <div class="hero-feature flex items-center gap-3">
                         <svg class="w-6 h-6 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <span data-i18n="hero.feature1"></span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="hero-feature flex items-center gap-3">
                         <svg class="w-6 h-6 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <span data-i18n="hero.feature2"></span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="hero-feature flex items-center gap-3">
                         <svg class="w-6 h-6 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>

@@ -442,7 +442,7 @@ def render_header(active: str = "") -> str:
       <div class="hidden md:flex items-center gap-8">
         <a href="/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.home"></a>
         <a href="/products/" class="text-orange-500 font-semibold transition-colors" data-i18n="nav.products"></a>
-        <a href="/#job-reference" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
+        <a href="/job-references/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
         <a href="/#about" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.about"></a>
         <a href="/#services" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.services"></a>
         <a href="/#culture" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.culture"></a>
@@ -458,7 +458,7 @@ def render_header(active: str = "") -> str:
       <div class="flex flex-col gap-4">
         <a href="/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.home"></a>
         <a href="/products/" class="text-orange-500 font-semibold" data-i18n="nav.products"></a>
-        <a href="/#job-reference" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
+        <a href="/job-references/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
         <a href="/#about" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.about"></a>
         <a href="/#services" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.services"></a>
         <a href="/#culture" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.culture"></a>

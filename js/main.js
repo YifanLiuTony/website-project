@@ -75,6 +75,10 @@ function changeLanguage(lang) {
     
     // Update all translations on the page
     updateTranslations();
+
+    document.dispatchEvent(new CustomEvent('sunfly:languagechange', {
+        detail: { language: currentLanguage }
+    }));
 }
 
 // Smooth scroll to section

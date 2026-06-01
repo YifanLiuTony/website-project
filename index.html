@@ -346,7 +346,7 @@
                 <div class="hidden md:flex items-center gap-8">
                     <button onclick="scrollToSection('hero')" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.home"></button>
                     <a href="/products/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.products"></a>
-                    <button onclick="scrollToSection('job-reference')" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></button>
+                    <a href="/job-references/" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.jobReference"></a>
                     <button onclick="scrollToSection('about')" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.about"></button>
                     <button onclick="scrollToSection('services')" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.services"></button>
                     <button onclick="scrollToSection('culture')" class="text-slate-600 hover:text-orange-500 transition-colors" data-i18n="nav.culture"></button>
@@ -370,7 +370,7 @@
                 <div class="flex flex-col gap-4">
                     <button onclick="scrollToSection('hero'); toggleMobileMenu()" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.home"></button>
                     <a href="/products/" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.products"></a>
-                    <button onclick="scrollToSection('job-reference'); toggleMobileMenu()" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.jobReference"></button>
+                    <a href="/job-references/" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.jobReference"></a>
                     <button onclick="scrollToSection('about'); toggleMobileMenu()" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.about"></button>
                     <button onclick="scrollToSection('services'); toggleMobileMenu()" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.services"></button>
                     <button onclick="scrollToSection('culture'); toggleMobileMenu()" class="text-slate-600 hover:text-orange-500 transition-colors text-left" data-i18n="nav.culture"></button>
@@ -538,7 +538,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-64 overflow-hidden">
-                        <img src="assets/project1.png"
+                        <img src="/assets/job-references/macau-galaxy-3a-gaming-area.png"
                              alt="" data-i18n-alt="alt.project1"
                              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
@@ -577,7 +577,7 @@
                 
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-64 overflow-hidden">
-                        <img src="assets/project2.png"
+                        <img src="/assets/job-references/de-montfort-university-office-building.png"
                              alt="" data-i18n-alt="alt.project2"
                              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
@@ -613,6 +613,15 @@
                         <p class="text-slate-600" data-i18n="jobRef.project2.desc"></p>
                     </div>
                 </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="/job-references/" class="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded hover:bg-orange-600 transition-colors font-semibold">
+                    <span data-i18n="jobRef.more"></span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>

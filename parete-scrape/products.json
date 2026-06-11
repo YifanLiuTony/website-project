@@ -206,6 +206,179 @@
                 "url": "https://www.parete.net/attachment.php?id_attachment="
               }
             ]
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-1 Steel Anti-Static Access Floor with HPL Finish",
+              "zh": "AF-1 全钢防静电架空地板（HPL 饰面）"
+            },
+            "category": {
+              "en": "Anti-Static Access Floor",
+              "zh": "防静电架空地板"
+            },
+            "catalog_group": "steel",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "A steel cementitious raised-floor panel designed for ESD-sensitive rooms that need underfloor cabling, equipment access and stable load performance.",
+                "The panel body is paired with the selected surface finish and an understructure of pedestals and stringers, so the finished floor height and load class can be matched to the project."
+              ],
+              "zh": [
+                "全钢水泥填充架空地板，适用于需要防静电、架空布线、设备检修和稳定承载的技术空间。",
+                "面板可配合不同表面面层，以及支架和横梁支承系统，使完成面高度和承载等级可按项目要求配置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Steel shell with cementitious infill for rigidity and load capacity",
+                "Anti-static finish options for ESD control",
+                "Stringer understructure supports stable installation and maintenance access",
+                "Suitable for cable-heavy rooms where panels need to be lifted and reconfigured"
+              ],
+              "zh": [
+                "钢壳配水泥基填充，兼顾刚性和承载能力",
+                "可选择防静电面层，用于静电控制",
+                "横梁支承系统有利于稳定安装和后期检修",
+                "适合线缆密集且需要拆装、调整的空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and server rooms",
+                "Computer rooms and control rooms",
+                "Laboratories and electronics workshops",
+                "Power, telecom and equipment rooms"
+              ],
+              "zh": [
+                "数据中心和服务器机房",
+                "计算机房和控制室",
+                "实验室和电子车间",
+                "电力、通信及设备用房"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Welded steel shell filled with cementitious core"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Anti-static high-pressure laminate (HPL)"
+                },
+                {
+                  "label": "Materials",
+                  "value": "Steel, cementitious infill, conductive edge trim"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Installation",
+                  "value": "Stringer system with grounded accessories where required"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "焊接钢壳，内填水泥基芯材"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "防静电高压层压板 HPL"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢板、水泥基填充、导电封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "安装方式",
+                  "value": "横梁支承系统，按需要配置接地配件"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative load classes",
+                "zh": "代表性承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Uniform load",
+                  "Concentrated load",
+                  "Rolling load",
+                  "Ultimate load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "均布载荷",
+                  "集中载荷",
+                  "滚动载荷",
+                  "极限载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "600 x 600 x 35 mm",
+                  "11.77 kN/m2",
+                  "2.94 kN",
+                  "2.45 / 2.00 kN",
+                  "8.85 kN"
+                ],
+                [
+                  "FS800",
+                  "600 x 600 x 35 mm",
+                  "14.22 kN/m2",
+                  "3.56 kN",
+                  "2.94 / 2.45 kN",
+                  "11.25 kN"
+                ],
+                [
+                  "FS1000",
+                  "600 x 600 x 35 mm",
+                  "17.78 kN/m2",
+                  "4.45 kN",
+                  "3.56 / 2.67 kN",
+                  "14.50 kN"
+                ]
+              ],
+              "note": {
+                "en": "Values are representative class data for steel cementitious access-floor panels; final selection should match project load requirements.",
+                "zh": "数值为全钢水泥填充架空地板的代表性等级数据；最终选型应按项目承载要求确认。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/anti-static-flooring/"
+            ]
           }
         },
         {
@@ -395,6 +568,179 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-2 Steel Anti-Static Access Floor with PVC Finish",
+              "zh": "AF-2 全钢防静电架空地板（PVC 饰面）"
+            },
+            "category": {
+              "en": "Anti-Static Access Floor",
+              "zh": "防静电架空地板"
+            },
+            "catalog_group": "steel",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "A steel cementitious raised-floor panel designed for ESD-sensitive rooms that need underfloor cabling, equipment access and stable load performance.",
+                "The panel body is paired with the selected surface finish and an understructure of pedestals and stringers, so the finished floor height and load class can be matched to the project."
+              ],
+              "zh": [
+                "全钢水泥填充架空地板，适用于需要防静电、架空布线、设备检修和稳定承载的技术空间。",
+                "面板可配合不同表面面层，以及支架和横梁支承系统，使完成面高度和承载等级可按项目要求配置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Steel shell with cementitious infill for rigidity and load capacity",
+                "Anti-static finish options for ESD control",
+                "Stringer understructure supports stable installation and maintenance access",
+                "Suitable for cable-heavy rooms where panels need to be lifted and reconfigured"
+              ],
+              "zh": [
+                "钢壳配水泥基填充，兼顾刚性和承载能力",
+                "可选择防静电面层，用于静电控制",
+                "横梁支承系统有利于稳定安装和后期检修",
+                "适合线缆密集且需要拆装、调整的空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and server rooms",
+                "Computer rooms and control rooms",
+                "Laboratories and electronics workshops",
+                "Power, telecom and equipment rooms"
+              ],
+              "zh": [
+                "数据中心和服务器机房",
+                "计算机房和控制室",
+                "实验室和电子车间",
+                "电力、通信及设备用房"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Welded steel shell filled with cementitious core"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC / vinyl tile"
+                },
+                {
+                  "label": "Materials",
+                  "value": "Steel, cementitious infill, conductive edge trim"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Installation",
+                  "value": "Stringer system with grounded accessories where required"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "焊接钢壳，内填水泥基芯材"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基地板面层"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢板、水泥基填充、导电封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "安装方式",
+                  "value": "横梁支承系统，按需要配置接地配件"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative load classes",
+                "zh": "代表性承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Uniform load",
+                  "Concentrated load",
+                  "Rolling load",
+                  "Ultimate load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "均布载荷",
+                  "集中载荷",
+                  "滚动载荷",
+                  "极限载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "600 x 600 x 35 mm",
+                  "11.77 kN/m2",
+                  "2.94 kN",
+                  "2.45 / 2.00 kN",
+                  "8.85 kN"
+                ],
+                [
+                  "FS800",
+                  "600 x 600 x 35 mm",
+                  "14.22 kN/m2",
+                  "3.56 kN",
+                  "2.94 / 2.45 kN",
+                  "11.25 kN"
+                ],
+                [
+                  "FS1000",
+                  "600 x 600 x 35 mm",
+                  "17.78 kN/m2",
+                  "4.45 kN",
+                  "3.56 / 2.67 kN",
+                  "14.50 kN"
+                ]
+              ],
+              "note": {
+                "en": "Values are representative class data for steel cementitious access-floor panels; final selection should match project load requirements.",
+                "zh": "数值为全钢水泥填充架空地板的代表性等级数据；最终选型应按项目承载要求确认。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/anti-static-flooring/"
+            ]
           }
         },
         {
@@ -584,6 +930,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-5 Steel Anti-Static Access Floor with Ceramic Tile",
+              "zh": "AF-5 全钢防静电架空地板（陶瓷面层）"
+            },
+            "category": {
+              "en": "Anti-Static Access Floor",
+              "zh": "防静电架空地板"
+            },
+            "catalog_group": "steel",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "A steel cementitious raised-floor panel designed for ESD-sensitive rooms that need underfloor cabling, equipment access and stable load performance.",
+                "The panel body is paired with the selected surface finish and an understructure of pedestals and stringers, so the finished floor height and load class can be matched to the project."
+              ],
+              "zh": [
+                "全钢水泥填充架空地板，适用于需要防静电、架空布线、设备检修和稳定承载的技术空间。",
+                "面板可配合不同表面面层，以及支架和横梁支承系统，使完成面高度和承载等级可按项目要求配置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Steel shell with cementitious infill for rigidity and load capacity",
+                "Anti-static finish options for ESD control",
+                "Stringer understructure supports stable installation and maintenance access",
+                "Suitable for cable-heavy rooms where panels need to be lifted and reconfigured"
+              ],
+              "zh": [
+                "钢壳配水泥基填充，兼顾刚性和承载能力",
+                "可选择防静电面层，用于静电控制",
+                "横梁支承系统有利于稳定安装和后期检修",
+                "适合线缆密集且需要拆装、调整的空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and server rooms",
+                "Computer rooms and control rooms",
+                "Laboratories and electronics workshops",
+                "Power, telecom and equipment rooms"
+              ],
+              "zh": [
+                "数据中心和服务器机房",
+                "计算机房和控制室",
+                "实验室和电子车间",
+                "电力、通信及设备用房"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Welded steel shell filled with cementitious core"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Anti-static ceramic tile"
+                },
+                {
+                  "label": "Materials",
+                  "value": "Steel, cementitious infill, conductive edge trim"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Installation",
+                  "value": "Stringer system with grounded accessories where required"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "焊接钢壳，内填水泥基芯材"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "防静电陶瓷砖"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢板、水泥基填充、导电封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "安装方式",
+                  "value": "横梁支承系统，按需要配置接地配件"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative ceramic-panel load classes",
+                "zh": "代表性陶瓷面板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Uniform load",
+                  "Concentrated load",
+                  "Rolling load",
+                  "Ultimate load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "均布载荷",
+                  "集中载荷",
+                  "滚动载荷",
+                  "极限载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS800",
+                  "602 x 602 x 40 mm",
+                  "14.22 kN/m2",
+                  "3.56 kN",
+                  "2.94 / 2.45 kN",
+                  "11.25 kN"
+                ],
+                [
+                  "FS1000",
+                  "602 x 602 x 40 mm",
+                  "17.78 kN/m2",
+                  "4.45 kN",
+                  "3.56 / 2.67 kN",
+                  "14.50 kN"
+                ],
+                [
+                  "FS1250",
+                  "602 x 602 x 40 mm",
+                  "22.23 kN/m2",
+                  "5.56 kN",
+                  "4.45 / 3.56 kN",
+                  "18.36 kN"
+                ],
+                [
+                  "FS1500",
+                  "602 x 602 x 40 mm",
+                  "26.67 kN/m2",
+                  "6.67 kN",
+                  "5.56 / 4.45 kN",
+                  "22.17 kN"
+                ]
+              ],
+              "note": {
+                "en": "Ceramic-surfaced panels use a thicker module and should be selected by required static and rolling loads.",
+                "zh": "陶瓷面板采用较厚模数，应按项目静载和滚动载荷要求选型。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/anti-static-flooring/"
+            ]
           }
         },
         {
@@ -725,6 +1252,179 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-4 Steel Access Floor with Linoleum Finish",
+              "zh": "AF-4 全钢架空地板（亚麻地板面层）"
+            },
+            "category": {
+              "en": "Anti-Static Access Floor",
+              "zh": "防静电架空地板"
+            },
+            "catalog_group": "steel",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "A steel cementitious raised-floor panel designed for ESD-sensitive rooms that need underfloor cabling, equipment access and stable load performance.",
+                "The panel body is paired with the selected surface finish and an understructure of pedestals and stringers, so the finished floor height and load class can be matched to the project."
+              ],
+              "zh": [
+                "全钢水泥填充架空地板，适用于需要防静电、架空布线、设备检修和稳定承载的技术空间。",
+                "面板可配合不同表面面层，以及支架和横梁支承系统，使完成面高度和承载等级可按项目要求配置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Steel shell with cementitious infill for rigidity and load capacity",
+                "Anti-static finish options for ESD control",
+                "Stringer understructure supports stable installation and maintenance access",
+                "Suitable for cable-heavy rooms where panels need to be lifted and reconfigured"
+              ],
+              "zh": [
+                "钢壳配水泥基填充，兼顾刚性和承载能力",
+                "可选择防静电面层，用于静电控制",
+                "横梁支承系统有利于稳定安装和后期检修",
+                "适合线缆密集且需要拆装、调整的空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and server rooms",
+                "Computer rooms and control rooms",
+                "Laboratories and electronics workshops",
+                "Power, telecom and equipment rooms"
+              ],
+              "zh": [
+                "数据中心和服务器机房",
+                "计算机房和控制室",
+                "实验室和电子车间",
+                "电力、通信及设备用房"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Welded steel shell filled with cementitious core"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Factory-bonded linoleum wear surface"
+                },
+                {
+                  "label": "Materials",
+                  "value": "Steel, cementitious infill, conductive edge trim"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Installation",
+                  "value": "Stringer system with grounded accessories where required"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "焊接钢壳，内填水泥基芯材"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "工厂复合亚麻地板耐磨面层"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢板、水泥基填充、导电封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "安装方式",
+                  "value": "横梁支承系统，按需要配置接地配件"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative load classes",
+                "zh": "代表性承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Uniform load",
+                  "Concentrated load",
+                  "Rolling load",
+                  "Ultimate load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "均布载荷",
+                  "集中载荷",
+                  "滚动载荷",
+                  "极限载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "600 x 600 x 35 mm",
+                  "11.77 kN/m2",
+                  "2.94 kN",
+                  "2.45 / 2.00 kN",
+                  "8.85 kN"
+                ],
+                [
+                  "FS800",
+                  "600 x 600 x 35 mm",
+                  "14.22 kN/m2",
+                  "3.56 kN",
+                  "2.94 / 2.45 kN",
+                  "11.25 kN"
+                ],
+                [
+                  "FS1000",
+                  "600 x 600 x 35 mm",
+                  "17.78 kN/m2",
+                  "4.45 kN",
+                  "3.56 / 2.67 kN",
+                  "14.50 kN"
+                ]
+              ],
+              "note": {
+                "en": "Values are representative class data for steel cementitious access-floor panels; final selection should match project load requirements.",
+                "zh": "数值为全钢水泥填充架空地板的代表性等级数据；最终选型应按项目承载要求确认。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/anti-static-flooring/"
+            ]
           }
         },
         {
@@ -878,6 +1578,179 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-3 Steel Access Floor with Rubber Finish",
+              "zh": "AF-3 全钢架空地板（橡胶面层）"
+            },
+            "category": {
+              "en": "Anti-Static Access Floor",
+              "zh": "防静电架空地板"
+            },
+            "catalog_group": "steel",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "A steel cementitious raised-floor panel designed for ESD-sensitive rooms that need underfloor cabling, equipment access and stable load performance.",
+                "The panel body is paired with the selected surface finish and an understructure of pedestals and stringers, so the finished floor height and load class can be matched to the project."
+              ],
+              "zh": [
+                "全钢水泥填充架空地板，适用于需要防静电、架空布线、设备检修和稳定承载的技术空间。",
+                "面板可配合不同表面面层，以及支架和横梁支承系统，使完成面高度和承载等级可按项目要求配置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Steel shell with cementitious infill for rigidity and load capacity",
+                "Anti-static finish options for ESD control",
+                "Stringer understructure supports stable installation and maintenance access",
+                "Suitable for cable-heavy rooms where panels need to be lifted and reconfigured"
+              ],
+              "zh": [
+                "钢壳配水泥基填充，兼顾刚性和承载能力",
+                "可选择防静电面层，用于静电控制",
+                "横梁支承系统有利于稳定安装和后期检修",
+                "适合线缆密集且需要拆装、调整的空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and server rooms",
+                "Computer rooms and control rooms",
+                "Laboratories and electronics workshops",
+                "Power, telecom and equipment rooms"
+              ],
+              "zh": [
+                "数据中心和服务器机房",
+                "计算机房和控制室",
+                "实验室和电子车间",
+                "电力、通信及设备用房"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Welded steel shell filled with cementitious core"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Factory-bonded rubber wear surface"
+                },
+                {
+                  "label": "Materials",
+                  "value": "Steel, cementitious infill, conductive edge trim"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Installation",
+                  "value": "Stringer system with grounded accessories where required"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "焊接钢壳，内填水泥基芯材"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "35 mm"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "工厂复合橡胶耐磨面层"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢板、水泥基填充、导电封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "安装方式",
+                  "value": "横梁支承系统，按需要配置接地配件"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative load classes",
+                "zh": "代表性承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Uniform load",
+                  "Concentrated load",
+                  "Rolling load",
+                  "Ultimate load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "均布载荷",
+                  "集中载荷",
+                  "滚动载荷",
+                  "极限载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "600 x 600 x 35 mm",
+                  "11.77 kN/m2",
+                  "2.94 kN",
+                  "2.45 / 2.00 kN",
+                  "8.85 kN"
+                ],
+                [
+                  "FS800",
+                  "600 x 600 x 35 mm",
+                  "14.22 kN/m2",
+                  "3.56 kN",
+                  "2.94 / 2.45 kN",
+                  "11.25 kN"
+                ],
+                [
+                  "FS1000",
+                  "600 x 600 x 35 mm",
+                  "17.78 kN/m2",
+                  "4.45 kN",
+                  "3.56 / 2.67 kN",
+                  "14.50 kN"
+                ]
+              ],
+              "note": {
+                "en": "Values are representative class data for steel cementitious access-floor panels; final selection should match project load requirements.",
+                "zh": "数值为全钢水泥填充架空地板的代表性等级数据；最终选型应按项目承载要求确认。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/anti-static-flooring/"
+            ]
           }
         },
         {
@@ -1055,6 +1928,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-6 Calcium Sulphate Access Floor with HPL Finish",
+              "zh": "AF-6 硫酸钙架空地板（HPL 饰面）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Anti-static high-pressure laminate (HPL)"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "防静电高压层压板 HPL"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -1244,6 +2298,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-7 Calcium Sulphate Access Floor with Ceramic Tile",
+              "zh": "AF-7 硫酸钙架空地板（陶瓷面层）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Ceramic tile finish"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "陶瓷砖面层"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -1397,6 +2632,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-8 Calcium Sulphate Access Floor with PVC Finish",
+              "zh": "AF-8 硫酸钙架空地板（PVC 饰面）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC / vinyl tile"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基地板面层"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -1538,6 +2954,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-9 Calcium Sulphate Access Floor with Linoleum Finish",
+              "zh": "AF-9 硫酸钙架空地板（亚麻地板面层）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Factory-bonded linoleum wear surface"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "工厂复合亚麻地板耐磨面层"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -1691,6 +3288,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-10 Calcium Sulphate Access Floor with Wood Parquet Finish",
+              "zh": "AF-10 硫酸钙架空地板（木拼花面层）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Factory-bonded wood parquet finish"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "工厂复合木拼花面层"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -1844,6 +3622,187 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-11 Calcium Sulphate Access Floor with Wood Laminate Finish",
+              "zh": "AF-11 硫酸钙架空地板（木纹复合面层）"
+            },
+            "category": {
+              "en": "Calcium Sulphate Access Floor",
+              "zh": "硫酸钙架空地板"
+            },
+            "catalog_group": "calcium",
+            "skus": [
+              "SF-Class-3",
+              "SF-Class-4",
+              "SF-Class-5"
+            ],
+            "description": {
+              "en": [
+                "A calcium-sulphate raised-floor system with a dense mineral core, finished with the selected surface layer for office, equipment and ESD-sensitive areas.",
+                "The sandwich panel construction supports high rolling loads, acoustic comfort and strong fire performance while keeping removable access for services below the floor."
+              ],
+              "zh": [
+                "硫酸钙架空地板采用高密度矿物芯材，可配合不同表面面层，适用于办公、设备及防静电需求空间。",
+                "夹层式面板结构兼顾高滚动载荷、声学舒适性和防火性能，同时保留架空层的可检修性。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Dense calcium-sulphate core for acoustic comfort and dimensional stability",
+                "High rolling-load capacity for office and technical environments",
+                "Non-combustible mineral core with strong fire performance",
+                "Multiple factory-bonded surface finishes available"
+              ],
+              "zh": [
+                "高密度硫酸钙芯材，提升声学舒适性和尺寸稳定性",
+                "较高滚动载荷能力，适合办公和技术空间",
+                "不燃矿物芯材，防火性能良好",
+                "可配置多种工厂复合表面面层"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Grade-A offices and equipment rooms",
+                "Data rooms and control rooms",
+                "Trading floors and command centers",
+                "Projects requiring improved acoustics and fire performance"
+              ],
+              "zh": [
+                "甲级办公室和设备用房",
+                "数据机房和控制室",
+                "交易大厅和指挥中心",
+                "对声学和防火性能要求较高的项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "High-density calcium sulphate core with bottom galvanized steel sheet or aluminum foil"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "30-40 mm project-dependent"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Factory-bonded wood laminate finish"
+                },
+                {
+                  "label": "Edge protection",
+                  "value": "PVC edge trim on four sides"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals and stringers; finished floor height by project drawings"
+                },
+                {
+                  "label": "Performance focus",
+                  "value": "High rolling load capacity, acoustic performance and non-combustible core"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "高密度硫酸钙芯材，底面可配镀锌钢板或铝箔"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "30-40 mm，按项目要求确定"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "工厂复合木纹复合面层"
+                },
+                {
+                  "label": "边部保护",
+                  "value": "四边 PVC 封边"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架和横梁；完成面高度按项目图纸确定"
+                },
+                {
+                  "label": "性能重点",
+                  "value": "高滚动载荷、良好声学表现和不燃芯材"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative calcium-sulphate classes",
+                "zh": "代表性硫酸钙面板等级"
+              },
+              "headers": {
+                "en": [
+                  "Class",
+                  "Panel size",
+                  "Ultimate load",
+                  "Safety factor",
+                  "Working load",
+                  "Fire rating"
+                ],
+                "zh": [
+                  "等级",
+                  "面板尺寸",
+                  "极限载荷",
+                  "安全系数",
+                  "工作载荷",
+                  "防火等级"
+                ]
+              },
+              "rows": [
+                [
+                  "Class 3",
+                  "600 x 600 x 30-40 mm",
+                  ">= 8 kN",
+                  "3",
+                  ">= 2.6 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 4",
+                  "600 x 600 x 30-40 mm",
+                  ">= 9 kN",
+                  "3",
+                  ">= 3.0 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 5",
+                  "600 x 600 x 30-40 mm",
+                  ">= 10 kN",
+                  "3",
+                  ">= 3.3 kN",
+                  "A1 f1"
+                ],
+                [
+                  "Class 6",
+                  "600 x 600 x 30-40 mm",
+                  ">= 12 kN",
+                  "3",
+                  ">= 4.0 kN",
+                  "A1 f1"
+                ]
+              ],
+              "note": {
+                "en": "Representative classes for calcium-sulphate raised-floor panels; confirm finish, thickness and class in the project submittal.",
+                "zh": "硫酸钙架空地板代表性等级；面层、厚度和等级应以项目送审资料确认为准。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/calcium-sulphate-floor/"
+            ]
           }
         },
         {
@@ -2021,6 +3980,173 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "AF-12 Solid Aluminum Access Floor with PVC or HPL Finish",
+              "zh": "AF-12 实心铝合金架空地板（PVC 或 HPL 饰面）"
+            },
+            "category": {
+              "en": "Aluminum Access Floor",
+              "zh": "铝合金架空地板"
+            },
+            "catalog_group": "aluminum",
+            "skus": [
+              "SF-AL300",
+              "SF-AL700",
+              "SF-AL1000"
+            ],
+            "description": {
+              "en": [
+                "A solid aluminum access-floor system for clean rooms, electronics manufacturing and precision technical spaces.",
+                "Die-cast aluminum panels provide lightweight strength, corrosion resistance and compatibility with matching perforated or grating panels."
+              ],
+              "zh": [
+                "适用于洁净室、电子制造和精密技术空间的实心铝合金架空地板系统。",
+                "压铸铝合金面板兼具轻量化强度、耐腐蚀性能，并可与同系统通风或格栅面板配合使用。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Die-cast aluminum body with high dimensional accuracy",
+                "Lightweight panel with strong load performance",
+                "Non-ferrous construction for sensitive technical environments",
+                "Can coordinate with perforated panels for airflow zones"
+              ],
+              "zh": [
+                "压铸铝合金主体，尺寸精度高",
+                "面板轻量，同时具备良好承载表现",
+                "非铁磁材料，适合敏感技术空间",
+                "可与通风面板配合形成气流分区"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Clean rooms and semiconductor facilities",
+                "Electronics manufacturing and testing areas",
+                "Precision laboratories",
+                "Areas requiring corrosion-resistant access flooring"
+              ],
+              "zh": [
+                "洁净室和半导体厂房",
+                "电子制造及测试区域",
+                "精密实验室",
+                "需要耐腐蚀架空地板的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Solid die-cast aluminum access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Material",
+                  "value": "Die-cast aluminum alloy"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl, anti-static HPL or project-selected finish"
+                },
+                {
+                  "label": "Ventilation",
+                  "value": "Not applicable"
+                },
+                {
+                  "label": "Compatibility",
+                  "value": "Designed to interchange with matching solid or perforated panels"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "实心压铸铝合金架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "压铸铝合金"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基、防静电 HPL 或项目指定面层"
+                },
+                {
+                  "label": "通风性能",
+                  "value": "不适用"
+                },
+                {
+                  "label": "兼容性",
+                  "value": "可与同系统实心或通风面板互换"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative aluminum-panel load classes",
+                "zh": "代表性铝合金面板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Concentrated load",
+                  "Ultimate load",
+                  "Uniform load",
+                  "Rolling load"
+                ],
+                "zh": [
+                  "型号",
+                  "集中载荷",
+                  "极限载荷",
+                  "均布载荷",
+                  "滚动载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "AL300",
+                  "300 kgf / 6.45 cm2",
+                  "600 kgf / 6.45 cm2",
+                  "800 kgf/m2",
+                  "100 kgf"
+                ],
+                [
+                  "AL700",
+                  "700 kgf / 6.45 cm2",
+                  "1400 kgf / 6.45 cm2",
+                  "1700 kgf/m2",
+                  "200 kgf"
+                ],
+                [
+                  "AL1000",
+                  "1000 kgf / 6.45 cm2",
+                  "2000 kgf / 6.45 cm2",
+                  "2000 kgf/m2",
+                  "300 kgf"
+                ],
+                [
+                  "AL1500",
+                  "1500 kgf / 6.45 cm2",
+                  "3000 kgf / 6.45 cm2",
+                  "2500 kgf/m2",
+                  "400 kgf"
+                ]
+              ],
+              "note": {
+                "en": "Representative solid aluminum classes; perforated panels should be checked by airflow rate and load class together.",
+                "zh": "实心铝合金面板代表性等级；通风型面板需同时核对通风率和承载等级。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/aluminum-solid-panel/"
+            ]
           }
         }
       ]
@@ -2170,6 +4296,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C5-OA 500 Low-Height Raised Floor with Trunking",
+              "zh": "C5-OA 500 低净高线槽架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "500 x 500 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "33 mm typical"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "35-150 mm"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Low-height pedestal with removable trunking cover boards"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "500 × 500 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "33 mm typical"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "35-150 mm"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "低高度支架，配可开启线槽盖板"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative low-height floor load classes",
+                "zh": "代表性低净高地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500 x 500 x 25-33 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500 x 500 x 25-33 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500 x 500 x 25-33 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/low-profile-raised-floor/"
+            ]
           }
         },
         {
@@ -2299,6 +4590,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C4-OA 600 Bracing Support Raised Floor",
+              "zh": "C4-OA 600 斜撑支承架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestal support with bracing for added lateral stability"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架配斜撑，提高侧向稳定性"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative OA floor load classes",
+                "zh": "代表性 OA 地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500/600 x 500/600 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500/600 x 500/600 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500/600 x 500/600 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
+            ]
           }
         },
         {
@@ -2428,6 +4884,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C4-OA 600 Raised Floor with Stringer",
+              "zh": "C4-OA 600 横梁式架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Pedestals with stringers for a continuous support grid"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "支架配横梁，形成连续支承网格"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative OA floor load classes",
+                "zh": "代表性 OA 地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500/600 x 500/600 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500/600 x 500/600 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500/600 x 500/600 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
+            ]
           }
         },
         {
@@ -2557,6 +5178,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C3-OA 600 Raised Floor with Independent Supports",
+              "zh": "C3-OA 600 独立支架架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Corner-lock independent pedestal support"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "角锁式独立支架支承"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative OA floor load classes",
+                "zh": "代表性 OA 地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500/600 x 500/600 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500/600 x 500/600 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500/600 x 500/600 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
+            ]
           }
         },
         {
@@ -2698,6 +5484,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C2-OA 500 Raised Floor with Independent Supports",
+              "zh": "C2-OA 500 独立支架架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "500 x 500 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Corner-lock independent pedestal support"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "500 × 500 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "角锁式独立支架支承"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative OA floor load classes",
+                "zh": "代表性 OA 地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500/600 x 500/600 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500/600 x 500/600 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500/600 x 500/600 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
+            ]
           }
         },
         {
@@ -2839,6 +5790,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "C1-OA 500 Steel Raised Floor with Trunking",
+              "zh": "C1-OA 500 全钢线槽架空地板"
+            },
+            "category": {
+              "en": "OA / Network Raised Floor",
+              "zh": "OA / 网络架空地板"
+            },
+            "catalog_group": "oa",
+            "skus": [
+              "SF-FS662",
+              "SF-FS800",
+              "SF-FS1000"
+            ],
+            "description": {
+              "en": [
+                "An office raised-floor system for routing power and data services below the walking surface while keeping panels removable for maintenance.",
+                "Corner-lock, trunking or stringer arrangements can be selected to suit the finished floor height, cable density and outlet layout."
+              ],
+              "zh": [
+                "办公架空地板系统用于在行走面下方组织电力和数据线缆，同时保持面板可拆卸，便于检修。",
+                "可按完成面高度、线缆密度和出线口布置选择角锁、线槽或横梁支承方案。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Flexible routing for power, data and communication lines",
+                "Panels can be lifted for inspection and future changes",
+                "Low-height options help projects with limited floor build-up",
+                "Corner-lock or supported systems available by layout"
+              ],
+              "zh": [
+                "便于电力、数据和通信线缆灵活布置",
+                "面板可拆卸，便于检查和后期调整",
+                "低净高方案适合地面构造高度受限项目",
+                "可按布置选择角锁或支承系统"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Modern offices and intelligent buildings",
+                "Fit-out projects requiring cable flexibility",
+                "Meeting rooms and trading floors",
+                "Renovations with restricted floor height"
+              ],
+              "zh": [
+                "现代办公室和智能建筑",
+                "需要线缆灵活性的装修项目",
+                "会议室和交易大厅",
+                "地面高度受限的改造项目"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Steel cementitious panel for office wire-management floors"
+                },
+                {
+                  "label": "Module size",
+                  "value": "500 x 500 mm"
+                },
+                {
+                  "label": "Panel thickness",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "Finished floor height",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "Understructure",
+                  "value": "Corner-lock floor with integrated trunking paths"
+                },
+                {
+                  "label": "Application focus",
+                  "value": "Power/data routing, outlet flexibility and future access"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "办公线缆管理用全钢水泥填充面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "500 × 500 mm"
+                },
+                {
+                  "label": "面板厚度",
+                  "value": "28-35 mm"
+                },
+                {
+                  "label": "完成面高度",
+                  "value": "50 mm-2.5 m"
+                },
+                {
+                  "label": "支承系统",
+                  "value": "角锁式地板，配集成线槽路径"
+                },
+                {
+                  "label": "应用重点",
+                  "value": "电力 / 数据线缆管理、出线灵活性及后期检修"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative OA floor load classes",
+                "zh": "代表性 OA 地板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Panel size",
+                  "Rolling load",
+                  "Uniform load",
+                  "Ultimate load",
+                  "Concentrated load"
+                ],
+                "zh": [
+                  "型号",
+                  "面板尺寸",
+                  "滚动载荷",
+                  "均布载荷",
+                  "极限载荷",
+                  "集中载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "FS662",
+                  "500/600 x 500/600 mm",
+                  "2.45 / 2.00 kN",
+                  "14.71 kN/m2",
+                  "8.85 kN",
+                  "2.94 / 2.67 kN"
+                ],
+                [
+                  "FS800",
+                  "500/600 x 500/600 mm",
+                  "2.94 / 2.45 kN",
+                  "17.78 kN/m2",
+                  "11.25 kN",
+                  "3.56 / 3.34 kN"
+                ],
+                [
+                  "FS1000",
+                  "500/600 x 500/600 mm",
+                  "3.56 / 2.67 kN",
+                  "22.22 kN/m2",
+                  "14.50 kN",
+                  "4.45 / 3.56 kN"
+                ]
+              ],
+              "note": {
+                "en": "Representative office/network floor classes; final layout should coordinate finished floor height, trunking and outlet positions.",
+                "zh": "办公 / 网络地板代表性等级；最终布置需协调完成面高度、线槽和出线口位置。"
+              }
+            },
+            "source_urls": [
+              "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
+            ]
           }
         },
         {
@@ -2969,6 +6085,171 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-7 Aluminum Ventilation Access Floor",
+              "zh": "VF-7 铝合金通风架空地板"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-7"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated aluminum alloy access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "17%-43% ventilation range"
+                },
+                {
+                  "label": "Material",
+                  "value": "Aluminum alloy"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔铝合金架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "17%-43% 通风率范围"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "铝合金"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Representative aluminum-panel load classes",
+                "zh": "代表性铝合金面板承载等级"
+              },
+              "headers": {
+                "en": [
+                  "Model",
+                  "Concentrated load",
+                  "Ultimate load",
+                  "Uniform load",
+                  "Rolling load"
+                ],
+                "zh": [
+                  "型号",
+                  "集中载荷",
+                  "极限载荷",
+                  "均布载荷",
+                  "滚动载荷"
+                ]
+              },
+              "rows": [
+                [
+                  "AL300",
+                  "300 kgf / 6.45 cm2",
+                  "600 kgf / 6.45 cm2",
+                  "800 kgf/m2",
+                  "100 kgf"
+                ],
+                [
+                  "AL700",
+                  "700 kgf / 6.45 cm2",
+                  "1400 kgf / 6.45 cm2",
+                  "1700 kgf/m2",
+                  "200 kgf"
+                ],
+                [
+                  "AL1000",
+                  "1000 kgf / 6.45 cm2",
+                  "2000 kgf / 6.45 cm2",
+                  "2000 kgf/m2",
+                  "300 kgf"
+                ],
+                [
+                  "AL1500",
+                  "1500 kgf / 6.45 cm2",
+                  "3000 kgf / 6.45 cm2",
+                  "2500 kgf/m2",
+                  "400 kgf"
+                ]
+              ],
+              "note": {
+                "en": "Representative solid aluminum classes; perforated panels should be checked by airflow rate and load class together.",
+                "zh": "实心铝合金面板代表性等级；通风型面板需同时核对通风率和承载等级。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/aluminum-perforated-panel/"
+            ]
           }
         },
         {
@@ -3098,6 +6379,157 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-5 Steel Ventilation Access Floor, 38% Open Area",
+              "zh": "VF-5 全钢通风架空地板（38% 开孔率）"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-5"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated steel access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "38% nominal open area"
+                },
+                {
+                  "label": "Material",
+                  "value": "Steel"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔钢架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "38% 名义开孔率"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Ventilation panel reference",
+                "zh": "通风面板参考"
+              },
+              "headers": {
+                "en": [
+                  "Panel type",
+                  "Module",
+                  "Ventilation range",
+                  "Damper range",
+                  "Typical use"
+                ],
+                "zh": [
+                  "面板类型",
+                  "模数",
+                  "通风率范围",
+                  "调节阀范围",
+                  "典型用途"
+                ]
+              },
+              "rows": [
+                [
+                  "Steel perforated",
+                  "600 x 600 mm",
+                  "20%-75%",
+                  "0%-40% / 0%-90%",
+                  "Data rooms and equipment cooling"
+                ],
+                [
+                  "Aluminum perforated",
+                  "600 x 600 mm",
+                  "17%-43%",
+                  "0% to panel rate",
+                  "Clean rooms and precision spaces"
+                ]
+              ],
+              "note": {
+                "en": "Nominal airflow depends on perforation pattern, damper setting and plenum design.",
+                "zh": "名义通风量受孔型、调节阀开度和架空层设计影响。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/perforated-panel-3/"
+            ]
           }
         },
         {
@@ -3239,6 +6671,157 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-4 Steel Ventilation Access Floor, 31% Open Area",
+              "zh": "VF-4 全钢通风架空地板（31% 开孔率）"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-4"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated steel access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "31% nominal open area"
+                },
+                {
+                  "label": "Material",
+                  "value": "Steel"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔钢架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "31% 名义开孔率"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Ventilation panel reference",
+                "zh": "通风面板参考"
+              },
+              "headers": {
+                "en": [
+                  "Panel type",
+                  "Module",
+                  "Ventilation range",
+                  "Damper range",
+                  "Typical use"
+                ],
+                "zh": [
+                  "面板类型",
+                  "模数",
+                  "通风率范围",
+                  "调节阀范围",
+                  "典型用途"
+                ]
+              },
+              "rows": [
+                [
+                  "Steel perforated",
+                  "600 x 600 mm",
+                  "20%-75%",
+                  "0%-40% / 0%-90%",
+                  "Data rooms and equipment cooling"
+                ],
+                [
+                  "Aluminum perforated",
+                  "600 x 600 mm",
+                  "17%-43%",
+                  "0% to panel rate",
+                  "Clean rooms and precision spaces"
+                ]
+              ],
+              "note": {
+                "en": "Nominal airflow depends on perforation pattern, damper setting and plenum design.",
+                "zh": "名义通风量受孔型、调节阀开度和架空层设计影响。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/perforated-panel-3/"
+            ]
           }
         },
         {
@@ -3380,6 +6963,157 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-3 Steel Ventilation Access Floor, 27% Open Area",
+              "zh": "VF-3 全钢通风架空地板（27% 开孔率）"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-3"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated steel access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "27% nominal open area"
+                },
+                {
+                  "label": "Material",
+                  "value": "Steel"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔钢架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "27% 名义开孔率"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Ventilation panel reference",
+                "zh": "通风面板参考"
+              },
+              "headers": {
+                "en": [
+                  "Panel type",
+                  "Module",
+                  "Ventilation range",
+                  "Damper range",
+                  "Typical use"
+                ],
+                "zh": [
+                  "面板类型",
+                  "模数",
+                  "通风率范围",
+                  "调节阀范围",
+                  "典型用途"
+                ]
+              },
+              "rows": [
+                [
+                  "Steel perforated",
+                  "600 x 600 mm",
+                  "20%-75%",
+                  "0%-40% / 0%-90%",
+                  "Data rooms and equipment cooling"
+                ],
+                [
+                  "Aluminum perforated",
+                  "600 x 600 mm",
+                  "17%-43%",
+                  "0% to panel rate",
+                  "Clean rooms and precision spaces"
+                ]
+              ],
+              "note": {
+                "en": "Nominal airflow depends on perforation pattern, damper setting and plenum design.",
+                "zh": "名义通风量受孔型、调节阀开度和架空层设计影响。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/perforated-panel-3/"
+            ]
           }
         },
         {
@@ -3545,6 +7279,157 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-1 Steel Ventilation Access Floor, 21% Open Area",
+              "zh": "VF-1 全钢通风架空地板（21% 开孔率）"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-1"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated steel access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "21% nominal open area"
+                },
+                {
+                  "label": "Material",
+                  "value": "Steel"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔钢架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "21% 名义开孔率"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Ventilation panel reference",
+                "zh": "通风面板参考"
+              },
+              "headers": {
+                "en": [
+                  "Panel type",
+                  "Module",
+                  "Ventilation range",
+                  "Damper range",
+                  "Typical use"
+                ],
+                "zh": [
+                  "面板类型",
+                  "模数",
+                  "通风率范围",
+                  "调节阀范围",
+                  "典型用途"
+                ]
+              },
+              "rows": [
+                [
+                  "Steel perforated",
+                  "600 x 600 mm",
+                  "20%-75%",
+                  "0%-40% / 0%-90%",
+                  "Data rooms and equipment cooling"
+                ],
+                [
+                  "Aluminum perforated",
+                  "600 x 600 mm",
+                  "17%-43%",
+                  "0% to panel rate",
+                  "Clean rooms and precision spaces"
+                ]
+              ],
+              "note": {
+                "en": "Nominal airflow depends on perforation pattern, damper setting and plenum design.",
+                "zh": "名义通风量受孔型、调节阀开度和架空层设计影响。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/perforated-panel-3/"
+            ]
           }
         },
         {
@@ -3686,6 +7571,157 @@
           "downloads": {
             "en": [],
             "zh": []
+          },
+          "sunfly": {
+            "title": {
+              "en": "VF-2 Steel Ventilation Access Floor, 23% Open Area",
+              "zh": "VF-2 全钢通风架空地板（23% 开孔率）"
+            },
+            "category": {
+              "en": "Ventilation Access Floor",
+              "zh": "通风架空地板"
+            },
+            "catalog_group": "ventilation",
+            "skus": [
+              "SF-VF-2"
+            ],
+            "description": {
+              "en": [
+                "A ventilation access-floor panel used with underfloor air distribution, equipment cooling and clean-room airflow strategies.",
+                "Perforation ratio, damper setting and panel material are selected together so airflow and load performance suit the room layout."
+              ],
+              "zh": [
+                "通风架空地板面板适用于架空送风、设备冷却和洁净室气流组织。",
+                "开孔率、调节阀设定和面板材质需同步选型，使气流量和承载性能匹配空间布置。"
+              ]
+            },
+            "advantages": {
+              "en": [
+                "Supports configurable underfloor airflow",
+                "Panel finish can coordinate with surrounding access-floor panels",
+                "Optional dampers help balance air volume by zone",
+                "Useful for cooling equipment rooms and clean technical spaces"
+              ],
+              "zh": [
+                "支持可配置的架空层送风",
+                "面层可与周边架空地板保持一致",
+                "可选调节阀，便于分区平衡风量",
+                "适用于设备房冷却和洁净技术空间"
+              ]
+            },
+            "applications": {
+              "en": [
+                "Data centers and computer rooms",
+                "Communication and exchange equipment rooms",
+                "Clean rooms and electronic workshops",
+                "Areas requiring controlled air circulation"
+              ],
+              "zh": [
+                "数据中心和计算机房",
+                "通信及交换设备房",
+                "洁净室和电子车间",
+                "需要受控空气循环的空间"
+              ]
+            },
+            "specs": {
+              "en": [
+                {
+                  "label": "Panel construction",
+                  "value": "Perforated steel access-floor panel"
+                },
+                {
+                  "label": "Module size",
+                  "value": "600 x 600 mm"
+                },
+                {
+                  "label": "Nominal open area",
+                  "value": "23% nominal open area"
+                },
+                {
+                  "label": "Material",
+                  "value": "Steel"
+                },
+                {
+                  "label": "Surface finish",
+                  "value": "Conductive PVC/vinyl or anti-static HPL to match adjacent panels"
+                },
+                {
+                  "label": "Airflow control",
+                  "value": "Optional damper for adjustable air volume"
+                }
+              ],
+              "zh": [
+                {
+                  "label": "面板结构",
+                  "value": "穿孔钢架空地板面板"
+                },
+                {
+                  "label": "模数尺寸",
+                  "value": "600 × 600 mm"
+                },
+                {
+                  "label": "名义开孔率",
+                  "value": "23% 名义开孔率"
+                },
+                {
+                  "label": "主要材料",
+                  "value": "钢"
+                },
+                {
+                  "label": "表面面层",
+                  "value": "导电 PVC / 乙烯基或防静电 HPL，可与相邻面板匹配"
+                },
+                {
+                  "label": "气流调节",
+                  "value": "可选调节阀，用于调节送风量"
+                }
+              ]
+            },
+            "load_table": {
+              "title": {
+                "en": "Ventilation panel reference",
+                "zh": "通风面板参考"
+              },
+              "headers": {
+                "en": [
+                  "Panel type",
+                  "Module",
+                  "Ventilation range",
+                  "Damper range",
+                  "Typical use"
+                ],
+                "zh": [
+                  "面板类型",
+                  "模数",
+                  "通风率范围",
+                  "调节阀范围",
+                  "典型用途"
+                ]
+              },
+              "rows": [
+                [
+                  "Steel perforated",
+                  "600 x 600 mm",
+                  "20%-75%",
+                  "0%-40% / 0%-90%",
+                  "Data rooms and equipment cooling"
+                ],
+                [
+                  "Aluminum perforated",
+                  "600 x 600 mm",
+                  "17%-43%",
+                  "0% to panel rate",
+                  "Clean rooms and precision spaces"
+                ]
+              ],
+              "note": {
+                "en": "Nominal airflow depends on perforation pattern, damper setting and plenum design.",
+                "zh": "名义通风量受孔型、调节阀开度和架空层设计影响。"
+              }
+            },
+            "source_urls": [
+              "https://www.titanflor.com/products/perforated-panel-3/"
+            ]
           }
         }
       ]

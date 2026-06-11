@@ -523,7 +523,7 @@ def render_quote_modal() -> str:
     return r"""
 <!-- Floating quote-cart button -->
 <button id="quote-cart-btn" onclick="openQuoteModal()"
-        class="fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-2xl px-5 py-4 flex items-center gap-2 transition-all">
+        class="hidden sm:flex fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-2xl px-5 py-4 items-center gap-2 transition-all">
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
   <span data-i18n="quote.cartButton"></span>
 </button>
@@ -841,14 +841,19 @@ def stage_product_assets(product: dict, scrape_root: Path, dest_root: Path, publ
                     shutil.copy2(img, target)
     # Rewrite gallery paths — use EN gallery as canonical (paths are shared between EN/ZH typically)
     new_gallery = []
+    seen_srcs: set[str] = set()
     for entry in product["gallery"]["en"]:
         fname = Path(entry["path"]).name
         # prefer EN-captioned variant; zh-CN variants have "-cn" suffix on parete,
         # drop zh-CN-only shots from the public gallery to keep it tight.
         if "-cn." in fname.lower():
             continue
+        src = f"/assets/products/{public_slug}/{fname}"
+        if src in seen_srcs:
+            continue
+        seen_srcs.add(src)
         new_gallery.append({
-            "src": f"/assets/products/{public_slug}/{fname}",
+            "src": src,
             "alt_en": entry.get("alt") or entry.get("caption") or "",
         })
     # Also pick a thumbnail
@@ -866,6 +871,62 @@ def stage_product_assets(product: dict, scrape_root: Path, dest_root: Path, publ
 def product_i18n_payload(product: dict) -> dict:
     """Build EN / 繁 / 简 string sets for a single product. Uses the ZH scraped
     text as zh-CN, OpenCC-converts to zh-HK for 繁."""
+    sunfly = product.get("sunfly") or {}
+    if sunfly:
+        title_en = strip_brand(sunfly.get("title", {}).get("en") or display_title(product["title"]["en"]))
+        title_sc = strip_brand(sunfly.get("title", {}).get("zh") or display_title(product["title"]["zh"]))
+        title_tc = to_zh_hk(title_sc)
+
+        category_en = sunfly.get("category", {}).get("en") or product["category"]["en"]
+        category_sc = sunfly.get("category", {}).get("zh") or product["category"]["zh"]
+        category_tc = to_zh_hk(category_sc)
+
+        desc_en = [strip_brand(x) for x in sunfly.get("description", {}).get("en", [])]
+        desc_sc = [strip_brand(x) for x in sunfly.get("description", {}).get("zh", [])]
+        desc_tc = [to_zh_hk(x) for x in desc_sc]
+
+        advantages_en = [strip_brand(x) for x in sunfly.get("advantages", {}).get("en", [])]
+        advantages_sc = [strip_brand(x) for x in sunfly.get("advantages", {}).get("zh", [])]
+        advantages_tc = [to_zh_hk(x) for x in advantages_sc]
+
+        applications_en = [strip_brand(x) for x in sunfly.get("applications", {}).get("en", [])]
+        applications_sc = [strip_brand(x) for x in sunfly.get("applications", {}).get("zh", [])]
+        applications_tc = [to_zh_hk(x) for x in applications_sc]
+
+        series = sunfly.get("series") or series_code(product["title"]["en"])
+        return {
+            "EN": {
+                "title": title_en,
+                "series": series,
+                "category": category_en,
+                "desc_heading": title_en,
+                "desc_description": desc_en,
+                "desc_advantages": advantages_en,
+                "desc_covering": [],
+                "desc_applications": applications_en,
+            },
+            "繁": {
+                "title": title_tc,
+                "series": series,
+                "category": category_tc,
+                "desc_heading": title_tc,
+                "desc_description": desc_tc,
+                "desc_advantages": advantages_tc,
+                "desc_covering": [],
+                "desc_applications": applications_tc,
+            },
+            "简": {
+                "title": title_sc,
+                "series": series,
+                "category": category_sc,
+                "desc_heading": title_sc,
+                "desc_description": desc_sc,
+                "desc_advantages": advantages_sc,
+                "desc_covering": [],
+                "desc_applications": applications_sc,
+            },
+        }
+
     title_en = strip_brand(display_title(product["title"]["en"]))
     title_sc = strip_brand(display_title(product["title"]["zh"]))
     title_tc = to_zh_hk(title_sc)
@@ -923,7 +984,7 @@ COMMON_LABELS = {
     "product.sku": {"EN": "SKU", "繁": "型號", "简": "型号"},
     "product.overview": {"EN": "Overview", "繁": "產品概覽", "简": "产品概览"},
     "product.advantages": {"EN": "Key Advantages", "繁": "主要優勢", "简": "主要优势"},
-    "product.covering": {"EN": "Technical Notes", "繁": "技術說明", "简": "技术说明"},
+    "product.covering": {"EN": "Specifications", "繁": "規格", "简": "规格"},
     "product.applications": {"EN": "Applications", "繁": "應用場景", "简": "应用场景"},
     "product.datasheet": {"EN": "Full Datasheet", "繁": "完整產品資料", "简": "完整产品资料"},
     "product.datasheetCta": {
@@ -998,6 +1059,7 @@ def build_translations_js_block(extra: dict[str, dict[str, str | list[str]]]) ->
 
 
 def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_slug: str, skip_images: bool = False) -> Path:
+    sunfly = product.get("sunfly") or {}
     staged = stage_product_assets(product, scrape_root, dest_root, public_slug, skip_images=skip_images)
     gallery = staged["gallery"]
 
@@ -1012,10 +1074,23 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
 
     i18n = product_i18n_payload(product)
     series = i18n["EN"]["series"]
-    skus = sunfly_sku_codes(product.get("summary", {}).get("en", {}).get("Product No.", ""))
+    skus = [strip_brand(s) for s in sunfly.get("skus", [])] if sunfly else sunfly_sku_codes(product.get("summary", {}).get("en", {}).get("Product No.", ""))
     # If no explicit SKU list, use the series code
     if not skus and series:
         skus = [f"SF-{series}"]
+
+    def _zh_rows(rows: list[dict]) -> list[dict]:
+        return [{"label": to_zh_hk(row.get("label", "")), "value": to_zh_hk(row.get("value", ""))} for row in rows]
+
+    curated_specs = sunfly.get("specs") or {}
+    spec_rows_en = curated_specs.get("en", [])
+    spec_rows_sc = curated_specs.get("zh", [])
+    spec_rows_tc = _zh_rows(spec_rows_sc)
+
+    load_table = sunfly.get("load_table") or {}
+    load_headers_en = load_table.get("headers", {}).get("en", [])
+    load_headers_sc = load_table.get("headers", {}).get("zh", [])
+    load_headers_tc = [to_zh_hk(x) for x in load_headers_sc]
 
     # Build per-page translation keys
     page_key = "p"  # scope all keys under `p.` for this page
@@ -1028,6 +1103,37 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
         f"{page_key}.covering": {lang: i18n[lang]["desc_covering"] for lang in ["EN", "繁", "简"]},
         f"{page_key}.applications": {lang: i18n[lang]["desc_applications"] for lang in ["EN", "繁", "简"]},
     }
+    for i, row in enumerate(spec_rows_en):
+        row_sc = spec_rows_sc[i] if i < len(spec_rows_sc) else {"label": "", "value": ""}
+        row_tc = spec_rows_tc[i] if i < len(spec_rows_tc) else {"label": "", "value": ""}
+        extra_i18n[f"{page_key}.specs.{i}.label"] = {
+            "EN": row.get("label", ""),
+            "繁": row_tc.get("label", ""),
+            "简": row_sc.get("label", ""),
+        }
+        extra_i18n[f"{page_key}.specs.{i}.value"] = {
+            "EN": row.get("value", ""),
+            "繁": row_tc.get("value", ""),
+            "简": row_sc.get("value", ""),
+        }
+    if load_table:
+        load_title = load_table.get("title", {})
+        load_note = load_table.get("note", {})
+        extra_i18n[f"{page_key}.load.title"] = {
+            "EN": load_title.get("en", "Representative Load Classes"),
+            "繁": to_zh_hk(load_title.get("zh", "代表性承载等级")),
+            "简": load_title.get("zh", "代表性承载等级"),
+        }
+        extra_i18n[f"{page_key}.load.note"] = {
+            "EN": load_note.get("en", ""),
+            "繁": to_zh_hk(load_note.get("zh", "")),
+            "简": load_note.get("zh", ""),
+        }
+        extra_i18n[f"{page_key}.load.headers"] = {
+            "EN": load_headers_en,
+            "繁": load_headers_tc,
+            "简": load_headers_sc,
+        }
     # Also include the common labels the SKU page needs
     extra_i18n.update(COMMON_LABELS)
 
@@ -1153,6 +1259,75 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
         for i in range(len(i18n["EN"]["desc_covering"]))
     )
 
+    def render_specs_table() -> str:
+        if not spec_rows_en:
+            return ""
+        rows = []
+        for i, row in enumerate(spec_rows_en):
+            rows.append(
+                '<tr class="border-b border-slate-200 last:border-b-0">'
+                f'<th scope="row" class="w-1/3 bg-slate-50 px-4 py-3 text-left text-sm font-semibold text-slate-800" data-i18n="p.specs.{i}.label">{esc(row.get("label", ""))}</th>'
+                f'<td class="px-4 py-3 text-sm text-slate-700" data-i18n="p.specs.{i}.value">{esc(row.get("value", ""))}</td>'
+                '</tr>'
+            )
+        return (
+            '<div class="overflow-hidden rounded-lg border border-slate-200 bg-white">'
+            '<table class="w-full border-collapse">'
+            '<tbody>'
+            + "\n".join(rows) +
+            '</tbody></table></div>'
+        )
+
+    def render_load_table() -> str:
+        if not load_table or not load_headers_en or not load_table.get("rows"):
+            return ""
+        header_cells = "".join(
+            f'<th scope="col" class="whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase text-slate-600" data-i18n="p.load.headers.{i}">{esc(header)}</th>'
+            for i, header in enumerate(load_headers_en)
+        )
+        body_rows = []
+        for row in load_table.get("rows", []):
+            cells = "".join(
+                f'<td class="whitespace-nowrap px-4 py-3 text-sm text-slate-700">{esc(str(cell))}</td>'
+                for cell in row
+            )
+            body_rows.append(f'<tr class="border-t border-slate-200">{cells}</tr>')
+        note_html = '<p class="mt-3 text-xs text-slate-500" data-i18n="p.load.note"></p>' if load_table.get("note") else ""
+        return (
+            '<div class="mt-6">'
+            '<h3 class="mb-3 text-base font-semibold text-slate-900" data-i18n="p.load.title"></h3>'
+            '<div class="overflow-x-auto rounded-lg border border-slate-200 bg-white">'
+            '<table class="min-w-full border-collapse">'
+            f'<thead class="bg-slate-50"><tr>{header_cells}</tr></thead>'
+            '<tbody>'
+            + "\n".join(body_rows) +
+            '</tbody></table></div>'
+            f'{note_html}'
+            '</div>'
+        )
+
+    specs_table_html = render_specs_table()
+    load_table_html = render_load_table()
+    technical_section_html = ""
+    if specs_table_html or load_table_html:
+        technical_section_html = f"""
+  <section class="mb-14">
+    <h2 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="product.covering"></h2>
+    {specs_table_html}
+    {load_table_html}
+  </section>
+"""
+    elif i18n["EN"]["desc_covering"]:
+        technical_section_html = f"""
+  <section class="mb-14">
+    <h2 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="product.covering"></h2>
+    <div class="prose max-w-none text-slate-700">
+      {covering_paragraphs_html}
+    </div>
+    {covering_media_html}
+  </section>
+"""
+
     sku_badges_html = " ".join(
         f'<span class="inline-block bg-slate-100 text-slate-700 font-mono text-xs px-2 py-1 rounded border border-slate-200">{esc(s)}</span>'
         for s in skus
@@ -1224,14 +1399,8 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     {advantages_list}
   </section>
 
-  <!-- Covering / technical notes -->
-  {f'''<section class="mb-14">
-    <h2 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="product.covering"></h2>
-    <div class="prose max-w-none text-slate-700">
-      {covering_paragraphs_html}
-    </div>
-    {covering_media_html}
-  </section>''' if i18n["EN"]["desc_covering"] else ''}
+  <!-- Specifications -->
+  {technical_section_html}
 
   <!-- Applications -->
   <section class="mb-14">
@@ -1400,6 +1569,9 @@ CATALOG_GROUPS = {
 
 def product_group_key(product: dict) -> str:
     """Classify a scraped product into the catalog's browsing groups."""
+    sunfly_group = (product.get("sunfly") or {}).get("catalog_group")
+    if sunfly_group in CATALOG_GROUPS:
+        return sunfly_group
     title = product["title"]["en"].lower()
     series = series_code(product["title"]["en"]).lower()
     if series.startswith("vf") or "ventilation" in title or "perforated" in title:
@@ -1417,17 +1589,15 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
     staged = []
     for p in products:
         info = stage_product_assets(p, scrape_root, dest_root, slugs[p["id"]], skip_images=skip_images)
-        title_en = strip_brand(display_title(p["title"]["en"]))
-        title_sc = strip_brand(display_title(p["title"]["zh"]))
-        title_tc = to_zh_hk(title_sc)
+        p_i18n = product_i18n_payload(p)
         staged.append({
             "public_slug": slugs[p["id"]],
             "thumb": info["thumb"],
-            "series": series_code(p["title"]["en"]),
+            "series": p_i18n["EN"]["series"],
             "group": product_group_key(p),
-            "title_en": title_en,
-            "title_tc": title_tc,
-            "title_sc": title_sc,
+            "title_en": p_i18n["EN"]["title"],
+            "title_tc": p_i18n["繁"]["title"],
+            "title_sc": p_i18n["简"]["title"],
         })
 
     extra_i18n: dict[str, dict[str, str]] = {}
@@ -1623,6 +1793,45 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
     return out_path
 
 
+# ----- Legacy redirects -----------------------------------------------------
+
+def render_legacy_redirect_page(dest_root: Path, relative_path: str, target_path: str) -> Path:
+    """Replace old generated product/category URLs with a clean redirect page.
+
+    These legacy paths predate the grouped catalog and can otherwise keep stale
+    technical copy indexed even after the canonical product pages are rebuilt.
+    """
+    target_url = f"https://sunfly.hk{target_path}"
+    page_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting — Sunfly Building Materials</title>
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url={esc(target_path)}">
+  <link rel="canonical" href="{esc(target_url)}">
+  <script>window.location.replace({json.dumps(target_path)});</script>
+</head>
+<body>
+  <p>Redirecting to <a href="{esc(target_path)}">Sunfly product catalog</a>.</p>
+</body>
+</html>
+"""
+    out_path = dest_root / relative_path
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(page_html, encoding="utf-8")
+    return out_path
+
+
+def render_legacy_redirects(dest_root: Path) -> list[Path]:
+    redirects = [
+        ("products/anti-static-access-floor/index.html", "/products/"),
+        ("products/anti-static-access-floor/af-1/index.html", "/products/af-1/"),
+    ]
+    return [render_legacy_redirect_page(dest_root, src, target) for src, target in redirects]
+
+
 # ----- Hub stub page --------------------------------------------------------
 
 def render_hub_page(dest_root: Path) -> Path:
@@ -1747,6 +1956,8 @@ def main() -> None:
     if not args.skip_catalog:
         out = render_catalog_page(products, slugs, scrape_root, site_root, skip_images=args.skip_images)
         print(f"[build] wrote {out.relative_to(site_root)}")
+        for legacy_out in render_legacy_redirects(site_root):
+            print(f"[build] wrote {legacy_out.relative_to(site_root)}")
 
     # SKU pages
     target_products: list[dict]

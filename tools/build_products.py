@@ -1088,6 +1088,9 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     spec_rows_tc = _zh_rows(spec_rows_sc)
 
     load_table = sunfly.get("load_table") or {}
+    reference_tables = sunfly.get("reference_tables") or []
+    if not isinstance(reference_tables, list):
+        reference_tables = []
     load_headers_en = load_table.get("headers", {}).get("en", [])
     load_headers_sc = load_table.get("headers", {}).get("zh", [])
     load_headers_tc = [to_zh_hk(x) for x in load_headers_sc]
@@ -1134,6 +1137,36 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
             "繁": load_headers_tc,
             "简": load_headers_sc,
         }
+    for table_idx, table in enumerate(reference_tables):
+        headers_en = table.get("headers", {}).get("en", [])
+        headers_sc = table.get("headers", {}).get("zh", [])
+        rows_en = table.get("rows", [])
+        rows_sc = table.get("rows_zh") or table.get("rows", [])
+        title = table.get("title", {})
+        note = table.get("note", {})
+        table_key = f"{page_key}.referenceTables.{table_idx}"
+        extra_i18n[f"{table_key}.title"] = {
+            "EN": title.get("en", ""),
+            "繁": to_zh_hk(title.get("zh", "")),
+            "简": title.get("zh", ""),
+        }
+        extra_i18n[f"{table_key}.note"] = {
+            "EN": note.get("en", ""),
+            "繁": to_zh_hk(note.get("zh", "")),
+            "简": note.get("zh", ""),
+        }
+        extra_i18n[f"{table_key}.headers"] = {
+            "EN": headers_en,
+            "繁": [to_zh_hk(x) for x in headers_sc],
+            "简": headers_sc,
+        }
+        for row_idx, row_en in enumerate(rows_en):
+            row_sc = rows_sc[row_idx] if row_idx < len(rows_sc) else row_en
+            extra_i18n[f"{table_key}.rows.{row_idx}"] = {
+                "EN": [str(x) for x in row_en],
+                "繁": [to_zh_hk(str(x)) for x in row_sc],
+                "简": [str(x) for x in row_sc],
+            }
     # Also include the common labels the SKU page needs
     extra_i18n.update(COMMON_LABELS)
 
@@ -1278,24 +1311,29 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
             '</tbody></table></div>'
         )
 
-    def render_load_table() -> str:
-        if not load_table or not load_headers_en or not load_table.get("rows"):
+    def render_data_table(table: dict, key_prefix: str) -> str:
+        headers_en = table.get("headers", {}).get("en", [])
+        if not table or not headers_en or not table.get("rows"):
             return ""
         header_cells = "".join(
-            f'<th scope="col" class="whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase text-slate-600" data-i18n="p.load.headers.{i}">{esc(header)}</th>'
-            for i, header in enumerate(load_headers_en)
+            f'<th scope="col" class="whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase text-slate-600" data-i18n="{key_prefix}.headers.{i}">{esc(header)}</th>'
+            for i, header in enumerate(headers_en)
         )
         body_rows = []
-        for row in load_table.get("rows", []):
-            cells = "".join(
-                f'<td class="whitespace-nowrap px-4 py-3 text-sm text-slate-700">{esc(str(cell))}</td>'
-                for cell in row
-            )
+        has_row_translations = bool(table.get("rows_zh"))
+        for row_idx, row in enumerate(table.get("rows", [])):
+            cells = []
+            for cell_idx, cell in enumerate(row):
+                i18n_attr = f' data-i18n="{key_prefix}.rows.{row_idx}.{cell_idx}"' if has_row_translations else ""
+                cells.append(
+                    f'<td class="whitespace-nowrap px-4 py-3 text-sm text-slate-700"{i18n_attr}>{esc(str(cell))}</td>'
+                )
+            cells = "".join(cells)
             body_rows.append(f'<tr class="border-t border-slate-200">{cells}</tr>')
-        note_html = '<p class="mt-3 text-xs text-slate-500" data-i18n="p.load.note"></p>' if load_table.get("note") else ""
+        note_html = f'<p class="mt-3 text-xs text-slate-500" data-i18n="{key_prefix}.note"></p>' if table.get("note") else ""
         return (
             '<div class="mt-6">'
-            '<h3 class="mb-3 text-base font-semibold text-slate-900" data-i18n="p.load.title"></h3>'
+            f'<h3 class="mb-3 text-base font-semibold text-slate-900" data-i18n="{key_prefix}.title"></h3>'
             '<div class="overflow-x-auto rounded-lg border border-slate-200 bg-white">'
             '<table class="min-w-full border-collapse">'
             f'<thead class="bg-slate-50"><tr>{header_cells}</tr></thead>'
@@ -1307,13 +1345,18 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
         )
 
     specs_table_html = render_specs_table()
-    load_table_html = render_load_table()
+    reference_tables_html = "\n".join(
+        render_data_table(table, f"p.referenceTables.{i}")
+        for i, table in enumerate(reference_tables)
+    )
+    load_table_html = render_data_table(load_table, "p.load")
     technical_section_html = ""
-    if specs_table_html or load_table_html:
+    if specs_table_html or reference_tables_html or load_table_html:
         technical_section_html = f"""
   <section class="mb-14">
     <h2 class="text-slate-900 mb-6 pb-2 inline-block border-b-4 border-orange-500" data-i18n="product.covering"></h2>
     {specs_table_html}
+    {reference_tables_html}
     {load_table_html}
   </section>
 """

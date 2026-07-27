@@ -241,6 +241,30 @@
     .footer-grid{grid-template-columns:1fr}
     .topbar{font-size:.78rem}
   }
+  /* ---- Shared full-screen photographic hero ---- */
+  .photo-hero{padding:0;height:calc(100svh - 108px);min-height:0;background:#0f1b38}
+  .photo-hero::before{z-index:1;opacity:.12}
+  .photo-hero .hero-grid{grid-template-columns:minmax(0,680px) 300px;gap:clamp(64px,8vw,124px);justify-content:space-between;width:100%;max-width:1200px;height:calc(100svh - 108px);min-height:0;margin:0 auto;padding:0 48px;align-items:center;position:relative;z-index:2}
+  .photo-hero .hero-grid > div:first-child{max-width:680px;padding:0;position:relative;z-index:2;transform:translateY(-18px)}
+  .photo-hero .eyebrow{font-size:.78rem;letter-spacing:.14em;margin-bottom:18px}
+  .photo-hero h1{max-width:720px;margin-bottom:22px;font-size:clamp(3rem,4.05vw,5.15rem);line-height:1.08;letter-spacing:-.045em;text-wrap:balance}
+  .photo-hero p.lead{max-width:650px;font-size:clamp(1rem,1.08vw,1.15rem);line-height:1.85;color:#d9e2f2}
+  .photo-hero .hero-cta{margin-top:28px}
+  .photo-hero .hero-trust{margin-top:34px;gap:16px 28px;color:#b9c7dc}
+  .photo-hero .hero-trust span::before{content:"";width:18px;height:2px;border-radius:2px;background:var(--red)}
+  .photo-hero .hero-visual{position:absolute;top:0;bottom:0;left:50%;right:auto;width:100vw;transform:translateX(-50%);z-index:0;border-radius:0;box-shadow:none;aspect-ratio:auto;background:#0f1b38}
+  .photo-hero .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;filter:saturate(.9) contrast(1.05)}
+  .photo-hero .hero-visual::after{background:linear-gradient(90deg,rgba(6,16,38,.94) 0%,rgba(8,20,46,.88) 34%,rgba(10,23,51,.54) 60%,rgba(7,18,42,.28) 76%,rgba(5,14,34,.62) 100%),linear-gradient(0deg,rgba(5,14,34,.66) 0%,transparent 42%)}
+  .photo-hero .hero-metrics{left:calc(50% + min(25vw,420px));right:auto;top:50%;bottom:auto;width:360px;transform:translate(-50%,-50%)}
+  .photo-hero .hm-row{display:grid;grid-template-columns:1fr;gap:0;margin:0;padding:10px 28px;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:rgba(7,18,42,.54);box-shadow:0 24px 60px rgba(0,0,0,.24);backdrop-filter:blur(12px)}
+  .photo-hero .hm-stat{display:grid;grid-template-columns:128px 1fr;align-items:center;padding:26px 4px;border:0;border-radius:0;background:transparent;backdrop-filter:none;text-align:left}
+  .photo-hero .hm-stat + .hm-stat{border-top:1px solid rgba(255,255,255,.24)}
+  .photo-hero .hm-stat b{margin:0;font-size:3rem;letter-spacing:-.04em}
+  .photo-hero .hm-stat span{font-size:.84rem;line-height:1.55;letter-spacing:.03em;color:#d5deed}
+  .photo-hero .hm-note:empty{display:none}
+  @media (max-width:1180px){.photo-hero .hero-grid{grid-template-columns:minmax(0,58vw) 300px;gap:30px;max-width:none;padding:0 44px}.photo-hero h1{font-size:clamp(2.8rem,4.4vw,3.7rem)}.photo-hero .hero-metrics{left:auto;right:40px;width:320px;transform:translateY(-50%)}.photo-hero .hm-row{padding:8px 22px}.photo-hero .hm-stat{grid-template-columns:112px 1fr;padding:22px 2px}.photo-hero .hm-stat b{font-size:2.65rem}.photo-hero .hm-stat span{font-size:.78rem}}
+  @media (max-width:980px){.photo-hero,.photo-hero .hero-grid{height:auto;min-height:calc(100svh - 108px)}.photo-hero .hero-grid{display:block;padding:0 36px}.photo-hero .hero-grid > div:first-child{max-width:680px;padding:74px 0 230px;transform:none}.photo-hero .hero-metrics{left:50%;right:auto;top:auto;bottom:52px;width:min(520px,calc(100vw - 72px));transform:translateX(-50%)}.photo-hero .hm-row{grid-template-columns:1fr 1fr;padding:24px 14px}.photo-hero .hm-stat{display:block;padding:2px 18px;text-align:center}.photo-hero .hm-stat + .hm-stat{border-top:0;border-left:1px solid rgba(255,255,255,.24)}.photo-hero .hm-stat b{margin-bottom:9px}}
+  @media (max-width:640px){.photo-hero,.photo-hero .hero-grid{min-height:calc(100svh - 124px)}.photo-hero .hero-grid{padding:0 22px}.photo-hero .hero-grid > div:first-child{padding:64px 0 210px}.photo-hero .eyebrow{font-size:.72rem}.photo-hero h1{font-size:clamp(2.25rem,10.8vw,3rem);line-height:1.12}.photo-hero p.lead{font-size:1rem;line-height:1.72}.photo-hero .hero-visual img{object-position:62% center}.photo-hero .hero-trust{gap:14px;margin-top:34px}.photo-hero .hero-metrics{bottom:30px;width:calc(100vw - 44px)}.photo-hero .hm-row{padding:21px 8px;border-radius:14px}.photo-hero .hm-stat{padding:0 10px}.photo-hero .hm-stat b{font-size:2.2rem}.photo-hero .hm-stat span{font-size:.7rem;letter-spacing:0}}
 </style>
 </head>
 <body>
@@ -270,7 +294,7 @@
 </header>
 
 <!-- ===== Hero ===== -->
-<section class="hero" id="top">
+<section class="hero photo-hero" id="top">
   <div class="container hero-grid">
     <div>
       <span class="eyebrow light">Purpose-Built for Lithium-Ion Fires</span>
@@ -289,13 +313,13 @@
       </div>
     </div>
     <div class="hero-visual">
-      <img src="static/upload/image/20250913/1757730678673248.jpg" alt="Lithium-ion battery fire suppression test" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1F519F,#18264C)'">
+      <img src="static/upload/image/20250913/1757730678673248-clean.png" alt="Lithium-ion battery fire suppression test" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1F519F,#18264C)'">
       <div class="hero-metrics">
         <div class="hm-row">
-          <div class="hm-stat"><b>5s</b><span>Open-flame knockdown</span></div>
-          <div class="hm-stat"><b>60 min</b><span>No re-ignition</span></div>
+          <div class="hm-stat"><b>200+</b><span>Large-scale project validations</span></div>
+          <div class="hm-stat"><b>50+</b><span>Core technology patents</span></div>
         </div>
-        <div class="hm-note">On a 48 V / 20 Ah e-vehicle lithium pack — certified by the Anhui Provincial Product Quality Supervision &amp; Research Institute.</div>
+        <div class="hm-note"></div>
       </div>
     </div>
   </div>

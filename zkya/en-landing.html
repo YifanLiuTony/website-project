@@ -160,6 +160,52 @@
   .case-more a{color:#fff;border:1px solid rgba(255,255,255,.3);padding:12px 26px;border-radius:8px;display:inline-block;transition:background .15s}
   .case-more a:hover{background:rgba(255,255,255,.08)}
 
+  /* ---- Patents, inspection reports, and honors ---- */
+  .credentials{padding:78px 0}
+  .credentials-patents{background:#fff}
+  .credentials-honors{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .credentials-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
+  .credentials-copy{max-width:760px}
+  .credentials-copy .lead{margin-bottom:0}
+  .gallery-open{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;padding:11px 17px;border:1px solid #b9c9dc;border-radius:8px;background:#fff;color:var(--blue-dark);font-size:.88rem;font-weight:650;box-shadow:var(--shadow-sm);transition:border-color .15s,box-shadow .15s,transform .15s}
+  .gallery-open::after{content:"→";color:var(--blue);transition:transform .15s}
+  .gallery-open:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+  .gallery-open:hover::after{transform:translateX(3px)}
+  .certificate-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:38px}
+  .certificate-card{min-width:0;padding:12px 12px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:left;box-shadow:0 6px 20px rgba(15,23,42,.06);transition:transform .2s,border-color .2s,box-shadow .2s}
+  .certificate-card:hover,.certificate-card:focus-visible{transform:translateY(-4px);border-color:#a9bdd8;box-shadow:0 15px 36px rgba(15,23,42,.12);outline:none}
+  .certificate-media{height:320px;border-radius:9px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f3f6fa;border:1px solid #edf1f5}
+  .certificate-media img{width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
+  .certificate-caption{display:block;padding:14px 3px 0}
+  .certificate-caption strong{display:block;color:var(--blue-dark);font-size:.93rem;line-height:1.45;font-weight:650}
+  .certificate-caption small{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px;color:var(--ink-muted);font-size:.77rem}
+  .certificate-caption small::after{content:"View full size";color:var(--blue);white-space:nowrap}
+  .honor-showcase{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:20px;margin-top:38px;height:570px}
+  .honor-card{display:grid;grid-template-columns:minmax(0,1fr) 190px;align-items:stretch;padding:12px}
+  .honor-card .certificate-media{height:auto;min-height:0}
+  .honor-card .certificate-caption{display:flex;flex-direction:column;justify-content:center;padding:24px 18px 24px 24px}
+  .honor-card .certificate-caption strong{font-size:1.02rem}
+  .honor-card--featured{grid-row:1 / 3;display:flex;flex-direction:column}
+  .honor-card--featured .certificate-media{height:auto;min-height:0;flex:1}
+  .honor-card--featured .certificate-caption{display:block;padding:17px 5px 3px}
+  .honor-card--featured .certificate-caption strong{font-size:1.12rem}
+
+  .cert-lightbox{width:min(1040px,calc(100vw - 40px));height:min(90vh,920px);padding:0;border:0;border-radius:16px;background:#fff;box-shadow:0 32px 90px rgba(0,0,0,.45);overflow:hidden}
+  .cert-lightbox::backdrop{background:rgba(5,14,34,.82);backdrop-filter:blur(5px)}
+  .cert-lightbox-inner{height:100%;display:flex;flex-direction:column}
+  .cert-lightbox-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 16px 13px 22px;border-bottom:1px solid var(--line)}
+  .cert-lightbox-heading{min-width:0;display:flex;align-items:center;gap:12px}
+  .cert-lightbox-title{margin:0;color:var(--blue-dark);font-size:.94rem;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cert-lightbox-counter{flex:0 0 auto;color:var(--ink-muted);font-size:.78rem}
+  .cert-lightbox-close{width:38px;height:38px;flex:0 0 auto;border-radius:50%;background:var(--bg-soft);color:var(--blue-dark);font-size:1.5rem;line-height:1;transition:background .15s}
+  .cert-lightbox-close:hover{background:var(--blue-light)}
+  .cert-lightbox-image-wrap{position:relative;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;padding:22px 78px;background:#eef2f7}
+  .cert-lightbox-image{width:100%;height:100%;object-fit:contain}
+  .cert-lightbox-nav{position:absolute;top:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.94);color:var(--blue-dark);font-size:1.5rem;box-shadow:var(--shadow-md);transform:translateY(-50%);transition:background .15s,transform .15s}
+  .cert-lightbox-nav:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
+  .cert-lightbox-prev{left:18px}
+  .cert-lightbox-next{right:18px}
+
   /* ---- About ---- */
   .about{background:#fff}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -167,9 +213,11 @@
   .about-stat{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
   .about-stat b{display:block;color:var(--blue-dark);font-size:1.5rem;font-weight:700;margin-bottom:4px}
   .about-stat span{color:var(--ink-muted);font-size:.85rem}
-  .about-image{border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;background:#0f1b38;position:relative}
-  .about-image img{width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.75)}
-  .about-image::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,27,56,.6),rgba(32,100,174,.35))}
+  .about-visuals{display:grid;gap:18px}
+  .about-image{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:#0f1b38;position:relative;box-shadow:var(--shadow-md)}
+  .about-image img{width:100%;height:100%;object-fit:cover}
+  .research-logos{display:flex;justify-content:center;align-items:center;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-soft)}
+  .research-logo-institute{width:100%;height:auto;max-height:68px;object-fit:contain;object-position:center}
   .affiliations-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px;align-items:center}
   .aff-chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:10px 20px;font-size:.85rem;color:var(--blue-dark);font-weight:500}
   /* Dark-mode chips used inside the cases section */
@@ -192,6 +240,8 @@
   .contact-info .ci-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);min-width:92px;padding-top:3px}
   .contact-info .ci-value{flex:1;color:var(--ink-muted)}
   .contact-info .ci-value b{color:var(--ink);font-weight:500;display:block}
+  .contact-info .email-link{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+  .contact-info .email-link:hover{text-decoration:underline}
 
   .lead-form{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:34px 32px}
   .lead-form h3{color:var(--blue-dark);margin-bottom:6px;font-size:1.3rem}
@@ -218,6 +268,10 @@
   footer a{color:#9bb4d9}
   footer a:hover{color:#fff}
   .footer-brand p{color:#9bb4d9;font-size:.88rem;margin-top:14px;max-width:320px}
+  .footer-lab-badge{display:flex;align-items:center;gap:14px;width:min(100%,280px);margin-top:18px;padding:12px 14px;border-radius:12px;background:#fff;color:var(--blue-dark);box-shadow:0 8px 24px rgba(0,0,0,.16)}
+  .footer-lab-badge img{width:72px;height:72px;flex:0 0 auto;object-fit:contain}
+  .footer-lab-badge span{font-size:.72rem;line-height:1.5;color:var(--ink-muted)}
+  .footer-lab-badge b{display:block;margin-top:2px;color:var(--blue-dark);font-size:.84rem;line-height:1.45;font-weight:650}
   .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7687a8}
 
   /* ---- Responsive ---- */
@@ -240,6 +294,31 @@
     .contact{padding:60px 0}
     .footer-grid{grid-template-columns:1fr}
     .topbar{font-size:.78rem}
+    .credentials{padding:60px 0}
+    .credentials-head{align-items:flex-start;flex-direction:column;gap:20px}
+    .certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+    .certificate-card{padding:8px 8px 12px;border-radius:11px}
+    .certificate-media{height:214px}
+    .certificate-caption{padding:11px 2px 0}
+    .certificate-caption strong{font-size:.82rem}
+    .certificate-caption small{font-size:.7rem}
+    .research-logos{padding:14px 16px}
+    .footer-lab-badge{width:min(100%,300px)}
+    .honor-showcase{display:grid;grid-template-columns:1fr;grid-template-rows:auto;height:auto;gap:12px;margin-top:28px}
+    .honor-card,.honor-card--featured{grid-row:auto;display:flex;flex-direction:column}
+    .honor-card .certificate-media,.honor-card--featured .certificate-media{height:220px;min-height:220px;flex:none}
+    .honor-card--featured .certificate-media{height:260px;min-height:260px}
+    .honor-card .certificate-caption,.honor-card--featured .certificate-caption{display:block;padding:12px 3px 2px}
+    .honor-card .certificate-caption strong,.honor-card--featured .certificate-caption strong{font-size:.9rem}
+    .cert-lightbox{width:calc(100vw - 24px);height:calc(100svh - 32px)}
+    .cert-lightbox-bar{padding:10px 10px 10px 14px}
+    .cert-lightbox-heading{display:block}
+    .cert-lightbox-title{font-size:.82rem}
+    .cert-lightbox-counter{display:block;margin-top:2px}
+    .cert-lightbox-image-wrap{padding:10px 44px}
+    .cert-lightbox-nav{width:36px;height:36px;font-size:1.15rem}
+    .cert-lightbox-prev{left:5px}
+    .cert-lightbox-next{right:5px}
   }
   /* ---- Shared full-screen photographic hero ---- */
   .photo-hero{padding:0;height:calc(100svh - 108px);min-height:0;background:#0f1b38}
@@ -507,6 +586,66 @@
   </div>
 </section>
 
+<!-- ===== Patents & Inspection Reports ===== -->
+<section class="credentials credentials-patents" aria-labelledby="patents-title">
+  <div class="container">
+    <div class="credentials-head">
+      <div class="credentials-copy">
+        <span class="eyebrow">Technical Achievements</span>
+        <h2 id="patents-title">Patents &amp; Inspection Reports</h2>
+        <p class="lead">Proprietary intellectual property and professional inspection continuously validate the technical capability and reliability of our lithium-battery fire-protection products.</p>
+      </div>
+      <button class="gallery-open" type="button" data-gallery-open="patents">View all 10 items</button>
+    </div>
+    <div class="certificate-grid" aria-label="Featured patents and inspection reports">
+      <button class="certificate-card" type="button" data-gallery="patents" data-gallery-index="0">
+        <span class="certificate-media"><img src="static/images/certificates/patent-report-01.jpg" alt="Utility model patent for a backpack premixed compressed-air foam fire suppression unit" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>Backpack Premixed Compressed-Air Foam Unit</strong><small>Utility Model Patent</small></span>
+      </button>
+      <button class="certificate-card" type="button" data-gallery="patents" data-gallery-index="1">
+        <span class="certificate-media"><img src="static/images/certificates/patent-report-01.png" alt="Inspection report for a wheeled lithium-battery fire extinguisher" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>Wheeled Lithium-Battery Fire Extinguisher</strong><small>Product Inspection Report</small></span>
+      </button>
+      <button class="certificate-card" type="button" data-gallery="patents" data-gallery-index="2">
+        <span class="certificate-media"><img src="static/images/certificates/patent-report-02.jpg" alt="Utility model patent for an IoT high-pressure water mist fire suppression system" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>IoT High-Pressure Water Mist System</strong><small>Utility Model Patent</small></span>
+      </button>
+      <button class="certificate-card" type="button" data-gallery="patents" data-gallery-index="7">
+        <span class="certificate-media"><img src="static/images/certificates/patent-report-04.png" alt="Inspection report for a composite micro-foam lithium-battery fire suppression agent" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>Composite Micro-Foam Lithium-Battery Agent</strong><small>Product Inspection Report</small></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Honors & Certifications ===== -->
+<section class="credentials credentials-honors" aria-labelledby="honors-title">
+  <div class="container">
+    <div class="credentials-head">
+      <div class="credentials-copy">
+        <span class="eyebrow">Company Recognition</span>
+        <h2 id="honors-title">Honors &amp; Certifications</h2>
+        <p class="lead">Recognition from industry and professional institutions reflects Zhongke Yong'an's sustained investment in technical innovation, product capability, and company development.</p>
+      </div>
+      <button class="gallery-open" type="button" data-gallery-open="honors">View all 5 items</button>
+    </div>
+    <div class="honor-showcase" aria-label="Featured honors and certifications">
+      <button class="certificate-card honor-card honor-card--featured" type="button" data-gallery="honors" data-gallery-index="0">
+        <span class="certificate-media"><img src="static/images/certificates/honor-04.jpg" alt="National High-Tech Enterprise certificate" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>National High-Tech Enterprise</strong><small>Corporate Qualification</small></span>
+      </button>
+      <button class="certificate-card honor-card" type="button" data-gallery="honors" data-gallery-index="1">
+        <span class="certificate-media"><img src="static/images/certificates/honor-03.png" alt="Technology-Based SME certificate" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>Technology-Based SME</strong><small>Corporate Qualification</small></span>
+      </button>
+      <button class="certificate-card honor-card" type="button" data-gallery="honors" data-gallery-index="2">
+        <span class="certificate-media"><img src="static/images/certificates/honor-01.jpg" alt="2022 Hefei High-Tech Zone Eagle Enterprise certificate" loading="lazy" draggable="false"></span>
+        <span class="certificate-caption"><strong>2022 Hefei High-Tech Zone Eagle Enterprise</strong><small>Corporate Honor</small></span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- ===== About ===== -->
 <section class="section about" id="about">
   <div class="container about-grid">
@@ -522,8 +661,13 @@
         <div class="about-stat"><b>National-level</b><span>Deployed in priority security zones</span></div>
       </div>
     </div>
-    <div class="about-image">
-      <img src="static/upload/image/20250919/1758262400249067.jpg" alt="Battery fire safety deployment" onerror="this.parentElement.style.background='linear-gradient(135deg,#E8F0FA,#2064AE)'">
+    <div class="about-visuals">
+      <div class="about-image">
+        <img src="static/images/about/fire-tests.jpg" alt="Annual fire suppression tests conducted with regional emergency authorities, including five-second flame suppression and a sixty-minute anti-reignition test" onerror="this.parentElement.style.background='linear-gradient(135deg,#E8F0FA,#2064AE)'">
+      </div>
+      <div class="research-logos" aria-label="Research affiliation">
+        <img class="research-logo-institute" src="static/images/about/ustc-advanced-technology-institute.png" alt="Institute of Advanced Technology, University of Science and Technology of China">
+      </div>
     </div>
   </div>
 </section>
@@ -546,6 +690,7 @@
       <p>Tell us about the asset you're protecting — battery chemistry, approximate energy (kWh/MWh), application, and location. We'll come back with a recommended architecture and pricing.</p>
       <ul>
         <li><span class="ci-label">Sales contact</span><span class="ci-value"><b>Mr. Yang Zhenhua</b>International inquiries</span></li>
+        <li><span class="ci-label">Email</span><span class="ci-value"><b><a class="email-link" href="mailto:3371770136@qq.com">3371770136@qq.com</a></b>Business inquiries</span></li>
         <li><span class="ci-label">Phone</span><span class="ci-value"><b>+86 137-6123-4686</b>Mobile (English inquiries routed via form)</span></li>
         <li><span class="ci-label">Hotline</span><span class="ci-value"><b>400-8500-900</b>China domestic</span></li>
         <li><span class="ci-label">Headquarters</span><span class="ci-value"><b>Hefei High-Tech Zone, China</b>USTC Advanced Tech Research Institute, Future Center, 9F B907</span></li>
@@ -623,6 +768,10 @@
           <div class="wordmark" style="color:#fff">Zhongke Yong'an<small style="color:#9bb4d9">Battery Fire Safety</small></div>
         </div>
         <p>Lithium-ion battery fire suppression — engineered in partnership with China's State Key Laboratory for Fire Safety.</p>
+        <div class="footer-lab-badge">
+          <img src="static/images/about/state-key-laboratory-of-fire-science.png" alt="State Key Laboratory of Fire Science">
+          <span>Research affiliation<b>State Key Laboratory of Fire Science</b></span>
+        </div>
       </div>
       <div>
         <h4>Products</h4>
@@ -660,6 +809,23 @@
   </div>
 </footer>
 
+<dialog class="cert-lightbox" id="certificateLightbox" aria-labelledby="certificateLightboxTitle">
+  <div class="cert-lightbox-inner">
+    <div class="cert-lightbox-bar">
+      <div class="cert-lightbox-heading">
+        <p class="cert-lightbox-title" id="certificateLightboxTitle"></p>
+        <span class="cert-lightbox-counter" aria-live="polite"></span>
+      </div>
+      <button class="cert-lightbox-close" type="button" aria-label="Close full-size image">×</button>
+    </div>
+    <div class="cert-lightbox-image-wrap">
+      <button class="cert-lightbox-nav cert-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+      <img class="cert-lightbox-image" src="" alt="">
+      <button class="cert-lightbox-nav cert-lightbox-next" type="button" aria-label="Next image">›</button>
+    </div>
+  </div>
+</dialog>
+
 <script>
   // Mobile nav toggle
   document.getElementById('nav-toggle').addEventListener('click', function(){
@@ -669,6 +835,88 @@
     a.addEventListener('click', function(){
       document.getElementById('nav-links').classList.remove('open');
     });
+  });
+
+  // Full-size certificate galleries
+  var certificateGalleries = {
+    patents: [
+      {src:'static/images/certificates/patent-report-01.jpg',label:'Backpack Premixed Compressed-Air Foam Fire Suppression Unit | Utility Model Patent'},
+      {src:'static/images/certificates/patent-report-01.png',label:'Wheeled Lithium-Battery Fire Extinguisher | Inspection Report'},
+      {src:'static/images/certificates/patent-report-02.jpg',label:'IoT High-Pressure Water Mist Fire Suppression System | Utility Model Patent'},
+      {src:'static/images/certificates/patent-report-02.png',label:'Wheeled Compressed-Air-Driven Foam Fire Suppression Unit | Inspection Report'},
+      {src:'static/images/certificates/patent-report-03.jpg',label:'High-Pressure Open Water Mist Nozzle for Fire-Protection Systems | Utility Model Patent'},
+      {src:'static/images/certificates/patent-report-03.png',label:'Backpack Compressed-Air-Driven Foam Fire Suppression Unit | Inspection Report'},
+      {src:'static/images/certificates/patent-report-04.jpg',label:'High-Pressure Water Mist Zone Control Valve | Utility Model Patent'},
+      {src:'static/images/certificates/patent-report-04.png',label:'Composite High-Stability Micro-Foam Lithium-Battery Fire Suppression Agent | Inspection Report'},
+      {src:'static/images/certificates/patent-report-05.jpg',label:'Low-Torque High-Pressure Electric Shutoff Valve | Utility Model Patent'},
+      {src:'static/images/certificates/patent-report-05.png',label:'Mobile Compressed-Air-Driven Foam Fire Suppression Unit | Inspection Report'}
+    ],
+    honors: [
+      {src:'static/images/certificates/honor-04.jpg',label:'National High-Tech Enterprise'},
+      {src:'static/images/certificates/honor-03.png',label:'Technology-Based SME'},
+      {src:'static/images/certificates/honor-01.jpg',label:'2022 Hefei High-Tech Zone Eagle Enterprise'},
+      {src:'static/images/certificates/honor-02.jpg',label:'Member of Anhui Software Industry Association'},
+      {src:'static/images/certificates/honor-05.jpg',label:'Certificate of Achievement — Second Prize, National Science and Technology Progress Award'}
+    ]
+  };
+  var certificateLightbox = document.getElementById('certificateLightbox');
+  var certificateLightboxImage = certificateLightbox.querySelector('.cert-lightbox-image');
+  var certificateLightboxTitle = document.getElementById('certificateLightboxTitle');
+  var certificateLightboxCounter = certificateLightbox.querySelector('.cert-lightbox-counter');
+  var certificateLightboxClose = certificateLightbox.querySelector('.cert-lightbox-close');
+  var certificateLightboxPrev = certificateLightbox.querySelector('.cert-lightbox-prev');
+  var certificateLightboxNext = certificateLightbox.querySelector('.cert-lightbox-next');
+  var activeCertificateGallery = 'patents';
+  var activeCertificateIndex = 0;
+
+  function renderCertificate(){
+    var gallery = certificateGalleries[activeCertificateGallery];
+    var item = gallery[activeCertificateIndex];
+    certificateLightboxImage.src = item.src;
+    certificateLightboxImage.alt = item.label;
+    certificateLightboxTitle.textContent = item.label;
+    certificateLightboxCounter.textContent = (activeCertificateIndex + 1) + ' / ' + gallery.length;
+  }
+
+  function openCertificateGallery(galleryName,index){
+    activeCertificateGallery = galleryName;
+    activeCertificateIndex = index || 0;
+    renderCertificate();
+    certificateLightbox.showModal();
+  }
+
+  function stepCertificate(direction){
+    var gallery = certificateGalleries[activeCertificateGallery];
+    activeCertificateIndex = (activeCertificateIndex + direction + gallery.length) % gallery.length;
+    renderCertificate();
+  }
+
+  document.querySelectorAll('[data-gallery]').forEach(function(card){
+    card.addEventListener('click', function(){
+      openCertificateGallery(card.getAttribute('data-gallery'),Number(card.getAttribute('data-gallery-index')));
+    });
+  });
+
+  document.querySelectorAll('[data-gallery-open]').forEach(function(button){
+    button.addEventListener('click', function(){
+      openCertificateGallery(button.getAttribute('data-gallery-open'),0);
+    });
+  });
+
+  certificateLightboxPrev.addEventListener('click', function(){stepCertificate(-1)});
+  certificateLightboxNext.addEventListener('click', function(){stepCertificate(1)});
+
+  certificateLightboxClose.addEventListener('click', function(){
+    certificateLightbox.close();
+  });
+
+  certificateLightbox.addEventListener('click', function(e){
+    if (e.target === certificateLightbox) certificateLightbox.close();
+  });
+
+  certificateLightbox.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') stepCertificate(-1);
+    if (e.key === 'ArrowRight') stepCertificate(1);
   });
 
   // Lead form stub — show thank-you message until backend is wired

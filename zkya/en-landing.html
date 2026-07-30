@@ -237,7 +237,7 @@
   .contact-info ul{list-style:none;padding:0;margin:28px 0 0}
   .contact-info li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;align-items:flex-start;font-size:.95rem;color:var(--ink)}
   .contact-info li:last-child{border-bottom:1px solid var(--line)}
-  .contact-info .ci-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);min-width:92px;padding-top:3px}
+  .contact-info .ci-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);flex:0 0 120px;padding-top:3px}
   .contact-info .ci-value{flex:1;color:var(--ink-muted)}
   .contact-info .ci-value b{color:var(--ink);font-weight:500;display:block}
   .contact-info .email-link{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
@@ -255,6 +255,9 @@
   .form-field textarea{min-height:96px;resize:vertical}
   .form-submit{width:100%;margin-top:6px;padding:14px;font-size:1rem}
   .form-notice{font-size:.78rem;color:var(--ink-muted);margin-top:14px;text-align:center}
+  .form-error{display:none;margin:14px 0 0;padding:12px 14px;border:1px solid #fecaca;border-radius:7px;background:#fef2f2;color:#991b1b;font-size:.86rem;line-height:1.5}
+  .form-error.show{display:block}
+  .form-submit:disabled{cursor:wait;opacity:.72}
   .form-success{background:#dcfce7;border:1px solid #86efac;color:#166534;padding:22px;border-radius:8px;text-align:center;font-size:.95rem;display:none}
   .form-success.show{display:block}
   .form-success b{display:block;font-size:1.05rem;margin-bottom:4px;color:#14532d}
@@ -748,9 +751,10 @@
 
         <button type="submit" class="btn btn-primary form-submit">Send inquiry</button>
         <p class="form-notice">We'll never share your details. Used only to respond to your inquiry.</p>
+        <p class="form-error" id="formError" role="alert"></p>
       </div>
 
-      <div class="form-success" id="formSuccess">
+      <div class="form-success" id="formSuccess" role="status" aria-live="polite">
         <b>Thanks — we'll be in touch.</b>
         Your inquiry has been received. Our team typically responds within one business day.
       </div>
@@ -798,7 +802,6 @@
           <li><a href="#about">About Zhongke Yong'an</a></li>
           <li><a href="cases.html">Case Studies</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Become a distributor</a></li>
         </ul>
       </div>
     </div>
@@ -826,6 +829,7 @@
   </div>
 </dialog>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   // Mobile nav toggle
   document.getElementById('nav-toggle').addEventListener('click', function(){
@@ -919,25 +923,54 @@
     if (e.key === 'ArrowRight') stepCertificate(1);
   });
 
-  // Lead form stub — show thank-you message until backend is wired
+  // Lead form — send through the same EmailJS service used by the Sunfly site.
   var form = document.getElementById('leadForm');
+  var formFields = document.getElementById('formFields');
+  var formSuccess = document.getElementById('formSuccess');
+  var formError = document.getElementById('formError');
+  var submitButton = form.querySelector('.form-submit');
+  var submitButtonLabel = submitButton.textContent;
+
+  if (typeof emailjs !== 'undefined'){
+    emailjs.init('7OufI5CIU1Q7BV8Cr');
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    // Basic validation
-    var required = form.querySelectorAll('[required]');
-    for (var i=0; i<required.length; i++){
-      if (!required[i].value.trim()){
-        required[i].focus();
-        required[i].style.borderColor = '#C0392B';
-        return;
-      }
+
+    formError.classList.remove('show');
+    formError.textContent = '';
+
+    if (!form.checkValidity()){
+      form.reportValidity();
+      return;
     }
-    // In production this will POST to a PHP mailer / Formspree endpoint.
-    // For v1 preview we acknowledge the submission client-side.
-    document.getElementById('formFields').style.display = 'none';
-    var success = document.getElementById('formSuccess');
-    success.classList.add('show');
-    success.scrollIntoView({behavior:'smooth', block:'center'});
+
+    if (typeof emailjs === 'undefined'){
+      formError.textContent = 'The email service is unavailable. Please refresh the page and try again.';
+      formError.classList.add('show');
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+
+    emailjs.sendForm('default_service', 'template_qje299r', form)
+      .then(function(){
+        form.reset();
+        formFields.style.display = 'none';
+        formSuccess.classList.add('show');
+        formSuccess.scrollIntoView({behavior:'smooth', block:'center'});
+      })
+      .catch(function(error){
+        console.error('EmailJS send error:', error);
+        formError.textContent = "We couldn't send your inquiry. Please try again or email 3371770136@qq.com directly.";
+        formError.classList.add('show');
+      })
+      .finally(function(){
+        submitButton.disabled = false;
+        submitButton.textContent = submitButtonLabel;
+      });
   });
 </script>
 </body>

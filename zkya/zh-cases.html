@@ -92,9 +92,6 @@
   .page-hero .quick-links{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 12px}
   .page-hero .ql-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#dde4f4;padding:8px 16px;border-radius:99px;font-size:.85rem;font-weight:500;transition:background .15s,border-color .15s}
   .page-hero .ql-chip:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
-  .crumbs{font-size:.82rem;color:#9bb4d9;margin-bottom:14px}
-  .crumbs a{color:#9bb4d9;text-decoration:underline;text-underline-offset:2px}
-  .crumbs a:hover{color:#fff}
 
   /* ---- Stats strip (below hero) ---- */
   .stats-strip{background:var(--bg-soft);border-bottom:1px solid var(--line);padding:28px 0}
@@ -168,6 +165,9 @@
   .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7687a8}
 
   /* ---- Responsive ---- */
+  @media (min-width: 1440px){
+    :root{--container:1440px}
+  }
   @media (max-width: 980px){
     .featured-case-grid,.case-grid,.case-grid.cols-2,.case-grid.cols-4{grid-template-columns:repeat(2,1fr)}
     .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px 14px}
@@ -217,7 +217,6 @@
 <!-- ===== Page Hero ===== -->
 <section class="page-hero">
   <div class="container page-hero-inner">
-    <div class="crumbs"><a href="zh-landing.html">首页</a> &nbsp;/&nbsp; 案例</div>
     <span class="eyebrow light">案例</span>
     <h1>从社区电动自行车充电站到吉瓦时级电网储能。</h1>
     <p class="lead">我们的锂电专用消防设备已在重点安保区域、交通场站、中央国企基础设施和公用事业级储能项目实现具名部署。重点客户包括<span class="kw">天安门地区</span>、<span class="kw">中国铁建</span>、<span class="kw">国家电网</span>、<span class="kw">三峡</span>新能源和<span class="kw">厦门公交集团</span>。</p>

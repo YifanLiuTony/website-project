@@ -278,6 +278,9 @@
   .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7687a8}
 
   /* ---- Responsive ---- */
+  @media (min-width: 1440px){
+    :root{--container:1440px}
+  }
   @media (max-width: 980px){
     .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
     .problem-grid,.case-grid{grid-template-columns:1fr 1fr}
@@ -326,7 +329,7 @@
   /* ---- Shared full-screen photographic hero ---- */
   .photo-hero{padding:0;height:calc(100svh - 108px);min-height:0;background:#0f1b38}
   .photo-hero::before{z-index:1;opacity:.12}
-  .photo-hero .hero-grid{grid-template-columns:minmax(0,680px) 300px;gap:clamp(64px,8vw,124px);justify-content:space-between;width:100%;max-width:1200px;height:calc(100svh - 108px);min-height:0;margin:0 auto;padding:0 48px;align-items:center;position:relative;z-index:2}
+  .photo-hero .hero-grid{grid-template-columns:minmax(0,680px) 300px;gap:clamp(64px,8vw,124px);justify-content:space-between;width:100%;max-width:var(--container);height:calc(100svh - 108px);min-height:0;margin:0 auto;padding:0 48px;align-items:center;position:relative;z-index:2}
   .photo-hero .hero-grid > div:first-child{max-width:680px;padding:0;position:relative;z-index:2;transform:translateY(-18px)}
   .photo-hero .eyebrow{font-size:.78rem;letter-spacing:.14em;margin-bottom:18px}
   .photo-hero h1{max-width:720px;margin-bottom:22px;font-size:clamp(3rem,4.05vw,5.15rem);line-height:1.08;letter-spacing:-.045em;text-wrap:balance}

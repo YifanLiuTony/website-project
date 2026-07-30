@@ -92,9 +92,6 @@
   .page-hero .quick-links{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 12px}
   .page-hero .ql-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#dde4f4;padding:8px 16px;border-radius:99px;font-size:.85rem;font-weight:500;transition:background .15s,border-color .15s}
   .page-hero .ql-chip:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
-  .crumbs{font-size:.82rem;color:#9bb4d9;margin-bottom:14px}
-  .crumbs a{color:#9bb4d9;text-decoration:underline;text-underline-offset:2px}
-  .crumbs a:hover{color:#fff}
 
   /* ---- Stats strip (below hero) ---- */
   .stats-strip{background:var(--bg-soft);border-bottom:1px solid var(--line);padding:28px 0}
@@ -168,6 +165,9 @@
   .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:#7687a8}
 
   /* ---- Responsive ---- */
+  @media (min-width: 1440px){
+    :root{--container:1440px}
+  }
   @media (max-width: 980px){
     .featured-case-grid,.case-grid,.case-grid.cols-2,.case-grid.cols-4{grid-template-columns:repeat(2,1fr)}
     .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px 14px}
@@ -217,7 +217,6 @@
 <!-- ===== Page Hero ===== -->
 <section class="page-hero">
   <div class="container page-hero-inner">
-    <div class="crumbs"><a href="en-landing.html">Home</a> &nbsp;/&nbsp; Case Studies</div>
     <span class="eyebrow light">Case Studies</span>
     <h1>From neighborhood e-bike stations to gigawatt-hour grid storage.</h1>
     <p class="lead">Named deployments of our lithium-specific fire-safety hardware across national-security zones, transit depots, central-government state-owned-enterprise infrastructure, and utility-scale energy storage. Featured customers include <span class="kw">Tiananmen District</span>, <span class="kw">China Railway Construction</span>, <span class="kw">State Grid</span>, <span class="kw">Three Gorges</span> Renewables, and <span class="kw">Xiamen Bus Group</span>.</p>

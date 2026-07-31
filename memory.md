@@ -1,5 +1,9 @@
 # Project Memory
 
+## Git Workflow Preference
+- When the user explicitly asks to commit, push, or submit changes to Git, commit only the current task-scoped changes and push them directly to `origin/main` without asking for an additional confirmation.
+- Preserve unrelated local changes and never include them in the commit unless the user explicitly asks.
+
 ## Scope
 - This repo is the Sunfly building materials marketing site used to gather leads.
 - It supports 3 languages: English (`EN`), Traditional Chinese / Hong Kong (`繁`), and Simplified Chinese (`简`).

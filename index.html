@@ -275,6 +275,49 @@
             scroll-behavior: smooth;
         }
 
+        .products-track {
+            display: flex;
+            gap: 1.25rem;
+            margin-inline: -1rem;
+            padding: 0.25rem 1rem 1.25rem;
+            overflow-x: auto;
+            scroll-padding-inline: 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .products-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .products-track > * {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+        }
+
+        @media (min-width: 768px) {
+            .products-track {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 2rem;
+                margin-inline: 0;
+                padding: 0;
+                overflow: visible;
+                scroll-snap-type: none;
+            }
+
+            .products-track > * {
+                min-width: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-track {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
         .hero-fill-screen {
             min-height: calc(100vh - 124px);
             min-height: calc(100svh - 124px);
@@ -531,7 +574,7 @@
                 <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="products.title"></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="products-track">
                 <!-- Raised Floor System — live catalog -->
                 <a href="/products/" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow block group">
                     <div class="h-48 overflow-hidden relative">

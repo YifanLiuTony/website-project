@@ -275,7 +275,8 @@
             scroll-behavior: smooth;
         }
 
-        .products-track {
+        .products-track,
+        .job-references-track {
             display: flex;
             gap: 1.25rem;
             margin-inline: -1rem;
@@ -287,17 +288,20 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .products-track::-webkit-scrollbar {
+        .products-track::-webkit-scrollbar,
+        .job-references-track::-webkit-scrollbar {
             display: none;
         }
 
-        .products-track > * {
+        .products-track > *,
+        .job-references-track > * {
             flex: 0 0 85%;
             scroll-snap-align: start;
         }
 
         @media (min-width: 768px) {
-            .products-track {
+            .products-track,
+            .job-references-track {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 2rem;
@@ -307,7 +311,8 @@
                 scroll-snap-type: none;
             }
 
-            .products-track > * {
+            .products-track > *,
+            .job-references-track > * {
                 min-width: 0;
             }
         }
@@ -674,7 +679,7 @@
                 <h2 class="text-slate-900 mb-6 text-4xl font-bold pb-2 inline-block border-b-4 border-orange-500" data-i18n="jobRef.title"></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="job-references-track">
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-64 overflow-hidden">
                         <img src="/assets/job-references/macau-galaxy-3a-gaming-area.png"

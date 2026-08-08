@@ -1,14 +1,16 @@
 # Project Memory
 
 ## Git Workflow Preference
-- Before making any code changes, run `git pull` first to synchronize the local repository with the remote.
-- When the user says to commit, commit only the current task-scoped changes directly on `main` and push them to `origin/main` without asking for additional confirmation.
+- Before changing any code, always run `git fetch origin` and check the current branch against its remote tracking branch.
+- If the remote branch has new commits, synchronize or resolve the branch state before editing; do not begin code changes from stale local state.
+- When the user explicitly asks to commit, push, or submit changes to Git, commit only the current task-scoped changes and push them directly to `origin/main` without asking for an additional confirmation.
 - Preserve unrelated local changes and never include them in the commit unless the user explicitly asks.
 
 ## Scope
 - This repo is the Sunfly building materials marketing site used to gather leads.
 - It supports 3 languages: English (`EN`), Traditional Chinese / Hong Kong (`繁`), and Simplified Chinese (`简`).
-- Never inspect, read, search, or modify anything under `zkya/`; it belongs to a different project.
+- Ignore everything under `zkya/`; it belongs to a different project.
+- Treat `zkya/` as a strict no-touch boundary: do not modify, delete, generate, format, stage, or commit any file under it while working on this project.
 
 ## Current Site Shape
 - The main site is a mostly static HTML site, not a framework app.

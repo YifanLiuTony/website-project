@@ -3,7 +3,7 @@
 Sunfly products-catalog build script.
 
 Input:
-  parete-scrape/products.json  (scraped & bilingual-normalized, 24 products)
+  parete-scrape/products.json  (scraped & bilingual-normalized, 33 products)
   parete-scrape/images/        (local image bundle)
 
 Output (into the live site tree):
@@ -51,9 +51,9 @@ CATALOG_I18N = {
     "简": "产品",
 }
 CATALOG_SUBTITLE_I18N = {
-    "EN": "Search or filter the raised-floor catalog, then open a product detail page for specifications and quote requests.",
-    "繁": "搜尋或篩選架空地板目錄，然後進入產品詳情頁查看規格並索取報價。",
-    "简": "搜索或筛选架空地板目录，然后进入产品详情页查看规格并索取报价。",
+    "EN": "Search or filter the floor and ceiling catalog, then open a product detail page for specifications and quote requests.",
+    "繁": "搜尋或篩選地板及天花目錄，然後進入產品詳情頁查看規格並索取報價。",
+    "简": "搜索或筛选地板及天花目录，然后进入产品详情页查看规格并索取报价。",
 }
 
 # s2hkm uses zh-HK-specific phrases where available; fall back to s2hk otherwise.
@@ -471,8 +471,9 @@ def render_header(active: str = "") -> str:
 """.strip()
 
 
-def render_footer() -> str:
-    return r"""
+def render_footer(omit_raised_floor: bool = False) -> str:
+    raised_floor_item = "" if omit_raised_floor else '<li><a href="/products/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="products.raisedFloor.name"></a></li>'
+    return f"""
 <footer class="bg-slate-900 text-white mt-20">
   <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -495,8 +496,8 @@ def render_footer() -> str:
       <div>
         <h3 class="text-white mb-4" data-i18n="footer.products.title"></h3>
         <ul class="space-y-2">
-          <li><a href="/products/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="products.raisedFloor.name"></a></li>
-          <li class="text-slate-400" data-i18n="products.ceiling.name"></li>
+          {raised_floor_item}
+          <li><a href="/products/acoustic-ceiling/" class="text-slate-400 hover:text-orange-400 transition-colors" data-i18n="products.ceiling.name"></a></li>
           <li class="text-slate-400" data-i18n="products.glazing.name"></li>
           <li class="text-slate-400" data-i18n="products.steelFraming.name"></li>
         </ul>
@@ -823,6 +824,10 @@ def render_body_end(product_translations_js: str, list_expander_js: str = "") ->
 """
 
 
+def clean_generated_html(page_html: str) -> str:
+    return "\n".join(line.rstrip() for line in page_html.splitlines()) + "\n"
+
+
 # ----- Gallery + image staging ---------------------------------------------
 
 def stage_product_assets(product: dict, scrape_root: Path, dest_root: Path, public_slug: str, skip_images: bool = False) -> dict:
@@ -839,6 +844,29 @@ def stage_product_assets(product: dict, scrape_root: Path, dest_root: Path, publ
                 target = dest_dir / img.name
                 if not target.exists() or not filecmp.cmp(img, target, shallow=False):
                     shutil.copy2(img, target)
+
+    # Some curated Sunfly products share an image folder instead of having a
+    # scraped per-product directory. Copy the exact gallery/thumbnail assets
+    # referenced by the product data so their public paths remain stable.
+    referenced_paths = []
+    thumb = product.get("thumbnail") or {}
+    if thumb.get("path"):
+        referenced_paths.append(thumb["path"])
+    for lang_entries in (product.get("gallery") or {}).values():
+        for entry in lang_entries or []:
+            if entry.get("path"):
+                referenced_paths.append(entry["path"])
+    for rel_path in referenced_paths:
+        if rel_path.startswith(("http://", "https://")):
+            continue
+        src_file = scrape_root / rel_path
+        if not src_file.is_file():
+            continue
+        target = dest_dir / src_file.name
+        if not skip_images:
+            if not target.exists() or not filecmp.cmp(src_file, target, shallow=False):
+                shutil.copy2(src_file, target)
+
     # Rewrite gallery paths — use EN gallery as canonical (paths are shared between EN/ZH typically)
     new_gallery = []
     seen_srcs: set[str] = set()
@@ -1023,6 +1051,29 @@ COMMON_LABELS = {
     "category.subcategoryLabel": {"EN": "subcategories", "繁": "個子分類", "简": "个子分类"},
 }
 
+CEILING_CATALOG_LABELS = {
+    "category.title": {
+        "EN": "Acoustic Ceiling Systems",
+        "繁": "吸音吊頂天花系統",
+        "简": "吸音吊顶天花系统",
+    },
+    "category.subtitle": {
+        "EN": "Browse acoustic ceiling systems by installation type, then open each system page for dimensions, acoustic performance and project notes.",
+        "繁": "按安裝系統瀏覽吸音天花，進入各系統頁查看尺寸、吸音性能及項目應用資料。",
+        "简": "按安装系统浏览吸音天花，进入各系统页查看尺寸、吸音性能及项目应用资料。",
+    },
+    "category.filter.all": {
+        "EN": "All Ceiling Systems",
+        "繁": "所有天花系統",
+        "简": "所有天花系统",
+    },
+    "category.noResults": {
+        "EN": "No ceiling systems found matching your search.",
+        "繁": "未找到符合您搜尋條件的天花系統。",
+        "简": "未找到符合您搜索条件的天花系统。",
+    },
+}
+
 
 def build_translations_js_block(extra: dict[str, dict[str, str | list[str]]]) -> str:
     """Return a JS snippet that merges `extra` into the global translations
@@ -1060,6 +1111,7 @@ def build_translations_js_block(extra: dict[str, dict[str, str | list[str]]]) ->
 
 def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_slug: str, skip_images: bool = False) -> Path:
     sunfly = product.get("sunfly") or {}
+    is_ceiling_product = product_group_key(product) == "ceiling"
     staged = stage_product_assets(product, scrape_root, dest_root, public_slug, skip_images=skip_images)
     gallery = staged["gallery"]
 
@@ -1169,6 +1221,13 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
             }
     # Also include the common labels the SKU page needs
     extra_i18n.update(COMMON_LABELS)
+    if is_ceiling_product:
+        extra_i18n.update(CEILING_CATALOG_LABELS)
+        extra_i18n["product.backToCategory"] = {
+            "EN": "Back to ceiling systems",
+            "繁": "返回天花系統",
+            "简": "返回天花系统",
+        }
 
     translations_js = build_translations_js_block(extra_i18n)
 
@@ -1387,6 +1446,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     """
 
     primary_sku = skus[0] if skus else f"SF-{series or 'UNKNOWN'}"
+    back_to_category_href = "/products/acoustic-ceiling/" if is_ceiling_product else "/products/"
 
     body = f"""
 {render_header(active="products")}
@@ -1466,7 +1526,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
   </section>
 
   <div class="mt-6">
-    <a href="/products/" class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600">
+    <a href="{back_to_category_href}" class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
       <span data-i18n="product.backToCategory"></span>
     </a>
@@ -1474,7 +1534,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
 </main>
 
 {render_quote_modal()}
-{render_footer()}
+{render_footer(omit_raised_floor=is_ceiling_product)}
 """
 
     # Small JS to expand `data-i18n-list` & `data-list-fallback` at runtime.
@@ -1535,7 +1595,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
 
     out_path = dest_root / "products" / public_slug / "index.html"
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(page_html, encoding="utf-8")
+    out_path.write_text(clean_generated_html(page_html), encoding="utf-8")
     return out_path
 
 
@@ -1607,6 +1667,19 @@ CATALOG_GROUPS = {
             "简": "适用于冷却、洁净室气流及关键设施的穿孔与通风地板。",
         },
     },
+    "ceiling": {
+        "order": 60,
+        "title": {
+            "EN": "Acoustic Ceiling Systems",
+            "繁": "吸音吊頂天花系統",
+            "简": "吸音吊顶天花系统",
+        },
+        "desc": {
+            "EN": "Glass-fiber acoustic ceiling panels and baffles for offices, education, healthcare, cinemas and commercial interiors.",
+            "繁": "適用於辦公、教育、醫療、影院及商業空間的玻纖吸音天花板與吊片系統。",
+            "简": "适用于办公、教育、医疗、影院及商业空间的玻纤吸音天花板与吊片系统。",
+        },
+    },
 }
 
 
@@ -1628,7 +1701,21 @@ def product_group_key(product: dict) -> str:
     return "steel"
 
 
-def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root: Path, dest_root: Path, skip_images: bool = False) -> Path:
+def render_catalog_page(
+    products: list[dict],
+    slugs: dict[Any, str],
+    scrape_root: Path,
+    dest_root: Path,
+    skip_images: bool = False,
+    *,
+    output_relative_path: str = "products/index.html",
+    canonical: str = "https://sunfly.hk/products/",
+    page_title: str = "Products — Sunfly Building Materials",
+    meta_desc: str = "Browse Sunfly floor and ceiling products by category, including steel anti-static, calcium sulphate, aluminum, OA network, ventilation access floors and acoustic ceiling systems.",
+    category_overrides: dict[str, dict[str, str]] | None = None,
+    include_filters: bool = True,
+    omit_raised_floor_footer: bool = False,
+) -> Path:
     staged = []
     for p in products:
         info = stage_product_assets(p, scrape_root, dest_root, slugs[p["id"]], skip_images=skip_images)
@@ -1643,16 +1730,6 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
             "title_sc": p_i18n["简"]["title"],
         })
 
-    extra_i18n: dict[str, dict[str, str]] = {}
-    extra_i18n.update(COMMON_LABELS)
-    for group_key, meta in CATALOG_GROUPS.items():
-        extra_i18n[f"group.{group_key}.title"] = meta["title"]
-        extra_i18n[f"group.{group_key}.desc"] = meta["desc"]
-    for s in staged:
-        key = f"cat.{s['public_slug']}"
-        extra_i18n[key] = {"EN": s["title_en"], "繁": s["title_tc"], "简": s["title_sc"]}
-    translations_js = build_translations_js_block(extra_i18n)
-
     by_group: dict[str, list[dict]] = {}
     for s in staged:
         by_group.setdefault(s["group"], []).append(s)
@@ -1661,26 +1738,43 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
 
     ordered_group_keys = sorted(by_group, key=lambda key: CATALOG_GROUPS[key]["order"])
 
-    filter_button_chunks = [
-        """
+    extra_i18n: dict[str, dict[str, str]] = {}
+    extra_i18n.update(COMMON_LABELS)
+    if category_overrides:
+        extra_i18n.update(category_overrides)
+    for group_key in ordered_group_keys:
+        meta = CATALOG_GROUPS[group_key]
+        extra_i18n[f"group.{group_key}.title"] = meta["title"]
+        extra_i18n[f"group.{group_key}.desc"] = meta["desc"]
+    for s in staged:
+        key = f"cat.{s['public_slug']}"
+        extra_i18n[key] = {"EN": s["title_en"], "繁": s["title_tc"], "简": s["title_sc"]}
+    translations_js = build_translations_js_block(extra_i18n)
+
+    filter_button_chunks = []
+    if include_filters:
+        filter_button_chunks.append("""
 <button type="button"
         class="product-filter px-4 py-2 rounded-full border text-sm font-semibold transition-colors bg-orange-500 text-white border-orange-500 shadow-sm"
         data-product-filter="all"
         aria-pressed="true">
   <span data-i18n="category.filter.all"></span>
 </button>
-        """.strip()
-    ]
-    for group_key in ordered_group_keys:
-        filter_button_chunks.append(f"""
+        """.strip())
+        for group_key in ordered_group_keys:
+            filter_button_chunks.append(f"""
 <button type="button"
         class="product-filter px-4 py-2 rounded-full border text-sm font-semibold transition-colors bg-white text-slate-700 border-slate-200 hover:border-orange-300 hover:text-orange-600"
         data-product-filter="{esc(group_key)}"
         aria-pressed="false">
   <span data-i18n="group.{esc(group_key)}.title"></span>
 </button>
-        """.strip())
-    product_filter_buttons = textwrap.indent("\n".join(filter_button_chunks), "          ")
+            """.strip())
+    product_filter_buttons = textwrap.indent("\n".join(filter_button_chunks), "          ") if filter_button_chunks else ""
+    filters_html = f"""
+        <div id="product-filters" class="flex flex-wrap gap-3">
+{product_filter_buttons}
+        </div>""" if product_filter_buttons else ""
 
     catalog_card_chunks = []
     for group_key in ordered_group_keys:
@@ -1768,9 +1862,19 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
 
   function initializeProductCatalog() {
     if (!document.getElementById('product-grid')) return;
+    var initialHash = (window.location.hash || '').replace(/^#/, '');
+    if (initialHash) {
+      document.querySelectorAll('.product-filter').forEach(function (button) {
+        if (button.getAttribute('data-product-filter') === initialHash) activeProductFilter = initialHash;
+      });
+    }
     document.querySelectorAll('.product-filter').forEach(function (button) {
       button.addEventListener('click', function () {
         activeProductFilter = button.getAttribute('data-product-filter') || 'all';
+        if (window.history && window.history.replaceState) {
+          var targetHash = activeProductFilter === 'all' ? window.location.pathname : '#' + activeProductFilter;
+          window.history.replaceState(null, '', targetHash);
+        }
         applyProductFilters();
       });
     });
@@ -1791,6 +1895,10 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
 <main class="bg-slate-50">
   <section class="py-10 lg:py-14">
     <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12">
+      <header class="mb-8 max-w-4xl">
+        <h1 class="text-slate-900 mb-4 pb-2 inline-block border-b-4 border-orange-500" data-i18n="category.title"></h1>
+        <p class="text-slate-600 text-lg" data-i18n="category.subtitle"></p>
+      </header>
       <div class="flex flex-col gap-5 mb-8">
         <div class="relative w-full">
           <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1802,9 +1910,7 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
                  data-i18n="category.searchPlaceholder"
                  class="w-full rounded-lg border border-slate-300 bg-white py-3 pl-12 pr-4 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
         </div>
-        <div id="product-filters" class="flex flex-wrap gap-3">
-{product_filter_buttons}
-        </div>
+{filters_html}
       </div>
 
       <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
@@ -1819,21 +1925,38 @@ def render_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root
 </main>
 
 {render_quote_modal()}
-{render_footer()}
+{render_footer(omit_raised_floor=omit_raised_floor_footer)}
 """
 
-    canonical = "https://sunfly.hk/products/"
     page_html = render_head(
-        "Products — Sunfly Building Materials",
-        "Browse Sunfly raised-floor products by category, including steel anti-static, calcium sulphate, aluminum, OA network and ventilation access floors.",
+        page_title,
+        meta_desc,
         canonical,
         alt_langs={"en": canonical, "zh-Hant": canonical, "zh-Hans": canonical, "x-default": canonical},
     ) + body + render_body_end(translations_js, list_expander_js=catalog_js)
 
-    out_path = dest_root / "products" / "index.html"
+    out_path = dest_root / output_relative_path
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(page_html, encoding="utf-8")
+    out_path.write_text(clean_generated_html(page_html), encoding="utf-8")
     return out_path
+
+
+def render_ceiling_catalog_page(products: list[dict], slugs: dict[Any, str], scrape_root: Path, dest_root: Path, skip_images: bool = False) -> Path:
+    ceiling_products = [p for p in products if product_group_key(p) == "ceiling"]
+    return render_catalog_page(
+        ceiling_products,
+        slugs,
+        scrape_root,
+        dest_root,
+        skip_images=skip_images,
+        output_relative_path="products/acoustic-ceiling/index.html",
+        canonical="https://sunfly.hk/products/acoustic-ceiling/",
+        page_title="Acoustic Ceiling Systems — Sunfly Building Materials",
+        meta_desc="Browse Sunfly acoustic ceiling systems by installation type, including baffles, exposed grid, concealed grid, clean guard, direct-bond and custom solutions.",
+        category_overrides=CEILING_CATALOG_LABELS,
+        include_filters=False,
+        omit_raised_floor_footer=True,
+    )
 
 
 # ----- Legacy redirects -----------------------------------------------------
@@ -1863,7 +1986,7 @@ def render_legacy_redirect_page(dest_root: Path, relative_path: str, target_path
 """
     out_path = dest_root / relative_path
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(page_html, encoding="utf-8")
+    out_path.write_text(clean_generated_html(page_html), encoding="utf-8")
     return out_path
 
 
@@ -1897,7 +2020,7 @@ def render_hub_page(dest_root: Path) -> Path:
             "desc_key": "products.raisedFloor.desc",
             "available": True,
         },
-        {"href": "/products/", "img": "/assets/products2.png", "name_key": "products.ceiling.name", "desc_key": "products.ceiling.desc", "available": False},
+        {"href": "/products/acoustic-ceiling/", "img": "/assets/products/cs-1/ceiling-artisan-baffle.jpg", "name_key": "products.ceiling.name", "desc_key": "products.ceiling.desc", "available": True},
         {"href": "/products/", "img": "/assets/products3.jpeg", "name_key": "products.glazing.name", "desc_key": "products.glazing.desc", "available": False},
         {"href": "/products/", "img": "/assets/products4.jpeg", "name_key": "products.steelFraming.name", "desc_key": "products.steelFraming.desc", "available": False},
     ]
@@ -1939,7 +2062,7 @@ def render_hub_page(dest_root: Path) -> Path:
     page_html = render_head("Products — Sunfly Building Materials", "Premium building materials: access floor systems, ceilings, glazing and light-steel framing for overseas buyers.", canonical_hub) + body + render_body_end(translations_js)
     out = dest_root / "products" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page_html, encoding="utf-8")
+    out.write_text(clean_generated_html(page_html), encoding="utf-8")
     return out
 
 
@@ -1998,6 +2121,8 @@ def main() -> None:
     # Grouped products catalog
     if not args.skip_catalog:
         out = render_catalog_page(products, slugs, scrape_root, site_root, skip_images=args.skip_images)
+        print(f"[build] wrote {out.relative_to(site_root)}")
+        out = render_ceiling_catalog_page(products, slugs, scrape_root, site_root, skip_images=args.skip_images)
         print(f"[build] wrote {out.relative_to(site_root)}")
         for legacy_out in render_legacy_redirects(site_root):
             print(f"[build] wrote {legacy_out.relative_to(site_root)}")

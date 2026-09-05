@@ -35,6 +35,7 @@ import re
 import shutil
 import sys
 import textwrap
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -528,10 +529,10 @@ def render_quote_modal() -> str:
 </button>
 
 <!-- Quote modal -->
-<div id="quote-modal" class="hidden fixed inset-0 z-[60] bg-slate-900/70 items-center justify-center p-4">
+<div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title" class="hidden fixed inset-0 z-[60] bg-slate-900/70 items-center justify-center p-4">
   <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
     <div class="flex justify-between items-center p-6 border-b">
-      <h3 class="text-slate-900 text-xl font-semibold" data-i18n="quote.modalTitle"></h3>
+      <h3 id="quote-modal-title" class="text-slate-900 text-xl font-semibold" data-i18n="quote.modalTitle"></h3>
       <button onclick="closeQuoteModal()" class="text-slate-500 hover:text-slate-900 text-2xl leading-none">&times;</button>
     </div>
     <div class="p-6">
@@ -539,31 +540,31 @@ def render_quote_modal() -> str:
       <form id="quote-form" class="space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.name"></span> *</label>
-            <input type="text" name="name" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <label for="quote-name" class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.name"></span> *</label>
+            <input type="text" id="quote-name" name="name" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
           </div>
           <div>
-            <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.email"></span> *</label>
-            <input type="email" name="email" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <label for="quote-email" class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.email"></span> *</label>
+            <input type="email" id="quote-email" name="email" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.phone"></span></label>
-            <input type="tel" name="phone" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <label for="quote-phone" class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.phone"></span></label>
+            <input type="tel" id="quote-phone" name="phone" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
           </div>
           <div>
-            <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="quote.company"></span></label>
-            <input type="text" name="company" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <label for="quote-company" class="block text-slate-700 mb-1 text-sm"><span data-i18n="quote.company"></span></label>
+            <input type="text" id="quote-company" name="company" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
           </div>
         </div>
         <div>
-          <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="quote.quantity"></span></label>
-          <input type="text" name="quantity" placeholder="e.g. 500 m²" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
+          <label for="quote-quantity" class="block text-slate-700 mb-1 text-sm"><span data-i18n="quote.quantity"></span></label>
+          <input type="text" id="quote-quantity" name="quantity" placeholder="e.g. 500 m²" class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
         </div>
         <div>
-          <label class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.message"></span> *</label>
-          <textarea name="message" rows="4" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+          <label for="quote-message" class="block text-slate-700 mb-1 text-sm"><span data-i18n="contact.form.message"></span> *</label>
+          <textarea id="quote-message" name="message" rows="4" required class="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
         </div>
         <!-- Hidden packed cart field — will be filled by JS before submit -->
         <input type="hidden" name="items" id="quote-items-hidden">
@@ -696,7 +697,7 @@ def render_quote_js() -> str:
           submitBtn.textContent = t('quote.sending') || 'Sending…';
 
           if (typeof emailjs === 'undefined') {
-            alert('EmailJS not loaded — please try again from the main contact form.');
+            alert(t('contact.form.error'));
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
             return;
@@ -712,7 +713,7 @@ def render_quote_js() -> str:
             })
             .catch(function (err) {
               console.error('quote send error', err);
-              alert('Sorry, there was an error sending your request. Please email info@sunfly.hk directly.');
+              alert(t('contact.form.error'));
             })
             .finally(function () {
               submitBtn.disabled = false;
@@ -762,9 +763,10 @@ def render_head(page_title: str, meta_desc: str, canonical: str, alt_langs: dict
     <meta property="og:locale" content="en_HK">
     <meta property="og:locale:alternate" content="zh_HK">
     <meta property="og:locale:alternate" content="zh_CN">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <script src="/assets/tailwindcss-3_4_17.css"></script>
+
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <script src="/assets/tailwindcss-3_4_17.js"></script>
     <script>
       tailwind.config = {{
         theme: {{ extend: {{ colors: {{
@@ -1227,6 +1229,13 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
             "简": "返回天花系统",
         }
 
+    # Caption translations follow the actual image pairs, not application bullets.
+    image_captions = sunfly.get("application_image_captions") or {}
+    extra_i18n["p.applicationImages"] = {
+        "EN": image_captions.get("en", []),
+        "繁": [to_zh_hk(x) for x in image_captions.get("zh", [])],
+        "简": image_captions.get("zh", []),
+    }
     translations_js = build_translations_js_block(extra_i18n)
 
     page_title = f"{i18n['EN']['title']} — Sunfly Building Materials"
@@ -1310,8 +1319,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     # section. Pairs without captions (e.g. a header/diagram image at the top
     # of the section) render as standalone images — they get no i18n key so
     # they don't steal a translation slot from the captioned photos below.
-    # Captioned pairs enumerate from 0 to stay aligned with desc_applications
-    # (which is built from the bullet list of caption text, omitting empties).
+    # Each captioned image has a dedicated, curated translation slot.
     applications_pairs = desc_media_en["applications"]["pairs"]
     applications_gallery_html = ""
     if applications_pairs:
@@ -1326,7 +1334,7 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
                 cards.append(
                     '<figure class="rounded-lg overflow-hidden border border-slate-200 bg-white shadow-sm">'
                     f'<img src="{esc(src)}" alt="{esc(pair.get("alt",""))}" loading="lazy" class="w-full h-auto object-cover">'
-                    f'<figcaption class="px-4 py-3 text-slate-700 text-sm" data-i18n="p.applications.{caption_idx}">{esc(caption_text)}</figcaption>'
+                    f'<figcaption class="px-4 py-3 text-slate-700 text-sm" data-i18n="p.applicationImages.{caption_idx}">{esc(caption_text)}</figcaption>'
                     '</figure>'
                 )
                 caption_idx += 1
@@ -1443,7 +1451,8 @@ def render_sku_page(product: dict, scrape_root: Path, dest_root: Path, public_sl
     </nav>
     """
 
-    primary_sku = skus[0] if skus else f"SF-{series or 'UNKNOWN'}"
+    # A multi-model series must not silently select its lowest load class.
+    primary_sku = skus[0] if len(skus) == 1 else f"SF-{series or 'UNKNOWN'}"
     back_to_category_href = "/products/acoustic-ceiling/" if is_ceiling_product else "/products/"
 
     body = f"""
@@ -2083,6 +2092,27 @@ def flatten_products(data: dict) -> list[dict]:
     return unique
 
 
+def write_sitemap(site_root: Path) -> None:
+    """Include public Sunfly pages, excluding legacy redirects and other projects."""
+    pages = [site_root / "index.html", site_root / "job-references/index.html"]
+    pages.extend(sorted((site_root / "products").rglob("index.html")))
+    entries = []
+    for page in pages:
+        if not page.exists():
+            continue
+        content = page.read_text(encoding="utf-8")
+        if re.search(r'<meta[^>]+name="robots"[^>]+noindex', content):
+            continue
+        relative = page.relative_to(site_root).as_posix()
+        url = "https://sunfly.hk/" + relative.removesuffix("index.html")
+        modified = datetime.fromtimestamp(page.stat().st_mtime, timezone.utc).date().isoformat()
+        entries.append(f"  <url><loc>{esc(url)}</loc><lastmod>{modified}</lastmod></url>")
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += "\n".join(entries) + "\n</urlset>\n"
+    (site_root / "sitemap.xml").write_text(xml, encoding="utf-8")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--site-root", default=str(REPO_ROOT_DEFAULT))
@@ -2137,6 +2167,8 @@ def main() -> None:
     for p in target_products:
         out = render_sku_page(p, scrape_root, site_root, slugs[p["id"]], skip_images=args.skip_images)
         print(f"[build] wrote {out.relative_to(site_root)}")
+
+    write_sitemap(site_root)
 
 
 if __name__ == "__main__":

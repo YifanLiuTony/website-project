@@ -130,37 +130,25 @@ function prepareContactEmailPayload(form) {
 }
 
 // Handle contact form submission
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
     event.preventDefault();
-    prepareContactEmailPayload(event.target);
-
-    // EmailJS configuration
-    const serviceID = 'default_service';
-    const templateID = 'template_czus2pw';
-
-    // Show loading state
-    const submitButton = event.target.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
+    const form = event.target;
+    prepareContactEmailPayload(form);
+    const submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-
-    // Send email using EmailJS
-    emailjs.sendForm(serviceID, templateID, event.target)
-        .then(() => {
-            // Show success message
-            alert(t('contact.form.success') || 'Message sent successfully!');
-            // Reset form
-            event.target.reset();
-        })
-        .catch((error) => {
-            console.error('Email send error:', error);
-            alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@sunfly.hk');
-        })
-        .finally(() => {
-            // Restore button state
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-        });
+    submitButton.textContent = t('contact.form.sending');
+    try {
+        if (typeof emailjs === 'undefined') throw new Error('Email service unavailable');
+        await emailjs.sendForm('default_service', 'template_czus2pw', form);
+        alert(t('contact.form.success'));
+        form.reset();
+    } catch (error) {
+        console.error('Email send error:', error);
+        alert(t('contact.form.error'));
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = t('contact.form.submit');
+    }
 }
 
 // Initialize on page load

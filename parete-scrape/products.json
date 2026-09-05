@@ -275,7 +275,7 @@
                 },
                 {
                   "label": "Panel thickness",
-                  "value": "35 mm"
+                  "value": "33 mm"
                 },
                 {
                   "label": "Surface finish",
@@ -305,7 +305,7 @@
                 },
                 {
                   "label": "面板厚度",
-                  "value": "35 mm"
+                  "value": "33 mm"
                 },
                 {
                   "label": "表面面层",
@@ -383,7 +383,7 @@
                 ],
                 [
                   "FS1500",
-                  "600 x 600 x 35 mm",
+                  "600 x 600 x 33 mm",
                   "39.32 kN/m2",
                   "6.67 kN",
                   "5.56 / 4.45 kN",
@@ -391,7 +391,7 @@
                 ],
                 [
                   "FS2000",
-                  "600 x 600 x 35 mm",
+                  "600 x 600 x 33 mm",
                   "58.00 kN/m2",
                   "9.00 kN",
                   "6.70 / 5.60 kN",
@@ -405,7 +405,30 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/anti-static-flooring/"
-            ]
+            ],
+            "thickness_confirmation": {
+              "value_mm": 33,
+              "confirmed_by": "site owner",
+              "date": "2026-09-05"
+            },
+            "application_image_captions": {
+              "en": [
+                "Computer room",
+                "UPS room",
+                "Control room",
+                "Computer room",
+                "Control and monitoring center",
+                "Computer teaching room"
+              ],
+              "zh": [
+                "计算机房",
+                "不间断电源（UPS）机房",
+                "控制室",
+                "计算机房",
+                "控制及监控中心",
+                "计算机教学室"
+              ]
+            }
           }
         },
         {
@@ -794,7 +817,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/anti-static-flooring/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Computer room",
+                "UPS room",
+                "Control room",
+                "Computer room",
+                "Control and monitoring center",
+                "Computer teaching room"
+              ],
+              "zh": [
+                "计算机房",
+                "不间断电源（UPS）机房",
+                "控制室",
+                "计算机房",
+                "控制及监控中心",
+                "计算机教学室"
+              ]
+            }
           }
         },
         {
@@ -1524,7 +1565,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/anti-static-flooring/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Computer room",
+                "UPS room",
+                "Control room",
+                "Computer room",
+                "Control and monitoring center",
+                "Computer teaching room"
+              ],
+              "zh": [
+                "计算机房",
+                "不间断电源（UPS）机房",
+                "控制室",
+                "计算机房",
+                "控制及监控中心",
+                "计算机教学室"
+              ]
+            }
           }
         },
         {
@@ -1877,7 +1936,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/anti-static-flooring/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Computer room",
+                "UPS room",
+                "Control room",
+                "Computer room",
+                "Control and monitoring center",
+                "Computer teaching room"
+              ],
+              "zh": [
+                "计算机房",
+                "不间断电源（UPS）机房",
+                "控制室",
+                "计算机房",
+                "控制及监控中心",
+                "计算机教学室"
+              ]
+            }
           }
         },
         {
@@ -2254,7 +2331,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -2643,7 +2738,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -2996,7 +3109,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -3337,7 +3468,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -3690,7 +3839,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -4043,7 +4210,25 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/calcium-sulphate-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Monitoring room",
+                "Data center",
+                "Server room",
+                "Computer room",
+                "Telecommunications server room",
+                "Broadcast control room"
+              ],
+              "zh": [
+                "监控室",
+                "数据中心",
+                "服务器机房",
+                "计算机房",
+                "通信服务器机房",
+                "广播控制室"
+              ]
+            }
           }
         },
         {
@@ -4421,7 +4606,17 @@
             },
             "source_urls": [
               "https://www.titanflor.com/products/aluminum-solid-panel/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Cleanroom",
+                "Data center"
+              ],
+              "zh": [
+                "洁净室",
+                "数据中心"
+              ]
+            }
           }
         }
       ]
@@ -6175,7 +6370,15 @@
             },
             "source_urls": [
               "https://htraisedfloor.com/product/oa-intelligence-raised-floor/"
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "On-site installation of steel raised floor with cable trunking"
+              ],
+              "zh": [
+                "全钢线槽架空地板现场安装"
+              ]
+            }
           }
         },
         {
@@ -6566,7 +6769,17 @@
                   ]
                 ]
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Cleanroom",
+                "Data center"
+              ],
+              "zh": [
+                "洁净室",
+                "数据中心"
+              ]
+            }
           }
         },
         {
@@ -8688,7 +8901,7 @@
                 },
                 {
                   "label": "Panel / module size",
-                  "value": "600 x 1200, 1200 x 1200, 1200 x 2400 mm; custom shapes 600-2700 mm"
+                  "value": "Rectangle: 600 x 1200 / 1200 x 1200 / 1200 x 2400 mm; trapezoid / hexagon: 1200 x 1200 mm; circle: Ø800 / Ø1200 mm; custom: 600-2700 mm"
                 },
                 {
                   "label": "Shapes",
@@ -8714,7 +8927,7 @@
                 },
                 {
                   "label": "板材 / 模数尺寸",
-                  "value": "600 x 1200、1200 x 1200、1200 x 2400 mm；特殊形状 600-2700 mm"
+                  "value": "矩形：600 x 1200 / 1200 x 1200 / 1200 x 2400 mm；梯形 / 六边形：1200 x 1200 mm；圆形：Ø800 / Ø1200 mm；特殊形状：600-2700 mm"
                 },
                 {
                   "label": "形状选择",
@@ -8751,8 +8964,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.90",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -8773,8 +8986,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.90",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -8793,11 +9006,28 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 6. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第6页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Offices, lobbies and open collaboration areas",
+                "Schools, lecture halls and education interiors",
+                "Commercial interiors requiring custom visual rhythm"
+              ],
+              "zh": [
+                "办公室、大堂及开放协作空间",
+                "学校、报告厅及教育空间",
+                "需要定制视觉节奏的商业空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 12,
+              "printed_page": 6
+            }
           }
         },
         {
@@ -9005,8 +9235,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.90",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -9027,8 +9257,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.90",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -9047,11 +9277,28 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 8. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第8页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Atriums, halls and high-volume public interiors",
+                "Lecture halls and education interiors",
+                "Commercial interiors requiring visible acoustic treatment"
+              ],
+              "zh": [
+                "中庭、大厅及高大公共空间",
+                "报告厅及教育空间",
+                "需要可见吸音处理的商业空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 14,
+              "printed_page": 8
+            }
           }
         },
         {
@@ -9192,7 +9439,7 @@
                 },
                 {
                   "label": "Typical thickness",
-                  "value": "15 / 20 / 25 / 30 mm"
+                  "value": "600 / 1200 mm length: 15 / 20 mm; 1800 / 2400 mm length: 20 / 25 / 30 mm"
                 },
                 {
                   "label": "Panel / module size",
@@ -9218,7 +9465,7 @@
                 },
                 {
                   "label": "典型厚度",
-                  "value": "15 / 20 / 25 / 30 mm"
+                  "value": "长度600 / 1200 mm：15 / 20 mm；长度1800 / 2400 mm：20 / 25 / 30 mm"
                 },
                 {
                   "label": "板材 / 模数尺寸",
@@ -9259,8 +9506,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.85",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -9281,8 +9528,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.85",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -9301,11 +9548,28 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 9. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第9页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Offices, classrooms and general commercial interiors",
+                "Healthcare corridors and clinical public areas",
+                "Public circulation and facility interiors"
+              ],
+              "zh": [
+                "办公室、教室及普通商业空间",
+                "医疗走廊及诊疗公共区域",
+                "公共通道及设施空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 15,
+              "printed_page": 9
+            }
           }
         },
         {
@@ -9511,8 +9775,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.95",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -9533,8 +9797,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.95",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -9553,11 +9817,26 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 11. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第11页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Offices, corridors and clean public interiors",
+                "Healthcare and facility interiors needing maintenance access"
+              ],
+              "zh": [
+                "办公室、走廊及整洁公共空间",
+                "需要维护检修的医疗及设施空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 17,
+              "printed_page": 11
+            }
           }
         },
         {
@@ -9684,7 +9963,7 @@
                 },
                 {
                   "label": "Typical thickness",
-                  "value": "15 / 20 / 25 mm"
+                  "value": "600 / 1200 mm length: 15 / 20 mm; 1800 / 2400 mm length: 20 / 25 mm"
                 },
                 {
                   "label": "Panel / module size",
@@ -9710,7 +9989,7 @@
                 },
                 {
                   "label": "典型厚度",
-                  "value": "15 / 20 / 25 mm"
+                  "value": "长度600 / 1200 mm：15 / 20 mm；长度1800 / 2400 mm：20 / 25 mm"
                 },
                 {
                   "label": "板材 / 模数尺寸",
@@ -9751,8 +10030,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.85",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -9773,8 +10052,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.85",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -9793,11 +10072,26 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 13. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第13页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Cinemas, screening rooms and low-reflectance interiors",
+                "Equipment rooms and technical spaces"
+              ],
+              "zh": [
+                "影院、放映室及低反光空间",
+                "设备房及技术空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 19,
+              "printed_page": 13
+            }
           }
         },
         {
@@ -9991,8 +10285,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.85",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -10013,8 +10307,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.85",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -10033,11 +10327,26 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 14. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第14页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Offices, classrooms and rooms requiring speech privacy",
+                "Industrial and technical interiors"
+              ],
+              "zh": [
+                "办公室、教室及需要语言私密性的空间",
+                "工业及技术空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 20,
+              "printed_page": 14
+            }
           }
         },
         {
@@ -10231,8 +10540,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.9",
-                    "ISO 354 test basis"
+                    "Class A, NRC ≥ 0.90",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -10258,8 +10567,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.9",
-                    "ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.90",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -10283,11 +10592,26 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 15. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第15页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Hospitals, clinics and rehabilitation interiors",
+                "Restaurants, pool areas and humid public interiors"
+              ],
+              "zh": [
+                "医院、诊所及康复空间",
+                "餐厅、游泳馆及潮湿公共空间"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 21,
+              "printed_page": 15
+            }
           }
         },
         {
@@ -10481,8 +10805,8 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "Class A, NRC ≥ 0.90",
+                    "Product brochure: ISO 354:2003"
                   ],
                   [
                     "Reaction to fire",
@@ -10498,8 +10822,8 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "A级吸声，NRC ≥ 0.90",
+                    "产品说明册所列依据：ISO 354:2003"
                   ],
                   [
                     "燃烧性能",
@@ -10513,11 +10837,26 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Brochure reference: printed page 16. Confirm final performance against the test report for the selected panel and installation.",
+                  "zh": "资料依据：产品说明册印刷页码第16页。最终性能以所选板材及安装构造对应的检测报告为准。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Existing offices and public interiors needing acoustic upgrades",
+                "Small rooms, ceilings and localized acoustic treatment areas"
+              ],
+              "zh": [
+                "需要声学改造的既有办公室及公共空间",
+                "小房间、顶面及局部吸音处理区域"
+              ]
+            },
+            "brochure_reference": {
+              "document": "北洋吸音天花说明册.pdf",
+              "pdf_page": 22,
+              "printed_page": 16
+            }
           }
         },
         {
@@ -10725,18 +11064,18 @@
                 "rows": [
                   [
                     "Sound absorption",
-                    "Class A, NRC >= 0.85-0.95",
-                    "System and cavity depth dependent; ISO 354 test basis"
+                    "By selected system",
+                    "Confirm against the selected system and its test report"
                   ],
                   [
                     "Reaction to fire",
-                    "A2 non-combustible",
-                    "GB 8624-2012 test basis"
+                    "By selected system",
+                    "Confirm against the selected system and its test report"
                   ],
                   [
                     "Humidity resistance",
-                    "RH99",
-                    "Stable at 40 C and 99% relative humidity"
+                    "By selected system",
+                    "Confirm against the selected system and its test report"
                   ],
                   [
                     "Customization",
@@ -10747,18 +11086,18 @@
                 "rows_zh": [
                   [
                     "吸声",
-                    "A级，NRC >= 0.85-0.95",
-                    "按系统及空腔深度确定；ISO 354 测试依据"
+                    "按所选系统确定",
+                    "按选定系统及其检测报告确认"
                   ],
                   [
                     "燃烧性能",
-                    "A2 级不燃",
-                    "GB 8624-2012 测试依据"
+                    "按所选系统确定",
+                    "按选定系统及其检测报告确认"
                   ],
                   [
                     "防潮性能",
-                    "RH99",
-                    "在 40 C、相对湿度 99% 环境下尺寸稳定"
+                    "按所选系统确定",
+                    "按选定系统及其检测报告确认"
                   ],
                   [
                     "定制化",
@@ -10767,11 +11106,23 @@
                   ]
                 ],
                 "note": {
-                  "en": "Values are brochure reference data; final selection should be confirmed against project drawings and the selected system build-up.",
-                  "zh": "数值为资料参考数据，最终规格应按项目图纸和所选系统构造确认。"
+                  "en": "Custom shapes and finishes are shown on printed page 17 of the product brochure. Performance depends on the selected base system.",
+                  "zh": "定制形状及饰面参考产品说明册印刷页码第17页；性能取决于所选基础系统。"
                 }
               }
-            ]
+            ],
+            "application_image_captions": {
+              "en": [
+                "Retail, leisure and feature public interiors",
+                "Offices and commercial interiors requiring a custom ceiling identity",
+                "Large-volume interiors with project-specific visual rhythm"
+              ],
+              "zh": [
+                "零售、休闲及特色公共空间",
+                "需要定制顶部形象的办公及商业空间",
+                "需要项目专属节奏的大体量空间"
+              ]
+            }
           }
         }
       ]

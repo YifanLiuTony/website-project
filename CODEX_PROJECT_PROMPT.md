@@ -40,3 +40,10 @@ python tools/build_products.py --site-root <repo-root> --skip-images
 - 产品生成器改动要运行对应构建。
 - 提交前检查旧值残留，并运行 `git diff --check`。
 - 无法验证时，明确说明阻碍和下一步检查方法。
+
+
+## 公司名称（用户于2026年9月5日确认）
+- 正式中文名：香港沈飛材料科技有限公司
+- 正式英文名：SUNFLY MATERIALS TECHNOLOGY (HONG KONG) CO., LIMITED
+- 简体页面显示：香港沈飞材料科技有限公司
+- 公司介绍、页脚及结构化公司资料使用上述对应名称。

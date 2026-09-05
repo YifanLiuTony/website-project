@@ -110,3 +110,10 @@
 - Continue polishing `/products/` as the grouped catalog and `/products/af-1/` as the reference detail page.
 - Clean up obsolete product outputs (`products/anti-static-access-floor/`) once the new route structure is accepted.
 - Confirm the quote flow works consistently across homepage, product catalog, and detail pages.
+
+
+## Confirmed Company Names (2026-09-05)
+- The owner confirmed the official Chinese name: 香港沈飛材料科技有限公司
+- The official English name is: SUNFLY MATERIALS TECHNOLOGY (HONG KONG) CO., LIMITED
+- Use 香港沈飞材料科技有限公司 in Simplified Chinese copy, and the exact official Chinese spelling in Traditional Chinese and structured company aliases.
+- Keep these names consistent in the company introduction, copyright footer and structured company data.

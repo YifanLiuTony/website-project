@@ -1,5 +1,3 @@
-# robots.txt for Sunfly Building Materials
-
 User-agent: *
 Allow: /
 Disallow: /send-email.php
@@ -7,14 +5,5 @@ Disallow: /email-logs.txt
 Disallow: /test-email.js
 Disallow: /server.js
 Disallow: /package.json
-
-# Sitemap location
-Sitemap: https://www.sunfly.com.hk/sitemap.xml
-
-# Crawl-delay (optional, adjust based on server capacity)
-Crawl-delay: 1
-
-User-agent: *
-Allow: /
 
 Sitemap: https://sunfly.hk/sitemap.xml

@@ -58,8 +58,8 @@ const translations = {
         'jobRef.project1.location': 'Macau',
         'jobRef.project1.date': 'Supply Date: October 2021',
         'jobRef.project1.quantity': 'Project Quantity: 2200 m²',
-        'jobRef.project1.product': 'Product Used: PARETE steel raised floor FS2000',
-        'jobRef.project1.desc': 'PARETE steel raised floor FS2000 system installed at Macau Galaxy 3A Gaming Area with total area of 2200m². Premium raised floor system designed specifically for gaming and entertainment facilities, supplied in October 2021.',
+        'jobRef.project1.product': 'Product Used: steel raised floor FS2000',
+        'jobRef.project1.desc': 'steel raised floor FS2000 system installed at Macau Galaxy 3A Gaming Area with total area of 2200m². Premium raised floor system designed specifically for gaming and entertainment facilities, supplied in October 2021.',
         'jobRef.project2.title': 'De Montfort University Office Building',
         'jobRef.project2.location': 'Leicester, United Kingdom',
         'jobRef.project2.date': 'Application Area: Library',
@@ -82,7 +82,7 @@ const translations = {
         // About
         'about.title': 'About Sunfly',
         'about.subtitle': 'Your Trusted Building Materials Partner',
-        'about.intro': 'With over a decade of experience in the building materials industry, Sunfly Building Materials (Hong Kong) Corporation Limited has established itself as a premier supplier of high-quality construction materials throughout Hong Kong and the Greater Bay Area.',
+        'about.intro': 'With over a decade of experience in the building materials industry, SUNFLY MATERIALS TECHNOLOGY (HONG KONG) CO., LIMITED has established itself as a premier supplier of high-quality construction materials throughout Hong Kong and the Greater Bay Area.',
         'about.whyChoose': 'Why Choose Us',
         'about.quality.title': 'Premium Quality',
         'about.quality.desc': 'All our products meet international standards and undergo rigorous quality control.',
@@ -224,8 +224,8 @@ const translations = {
         'jobRef.project1.location': '澳門',
         'jobRef.project1.date': '供應日期: 2021年10月',
         'jobRef.project1.quantity': '項目數量: 2200 m²',
-        'jobRef.project1.product': '使用的產品: PARETE鋼製架空地板 FS2000',
-        'jobRef.project1.desc': '澳門銀河3A遊戲區安裝PARETE鋼製架空地板FS2000系統，總面積為2200m²。高端架空地板系統專為遊戲和娛樂設施設計，於2021年10月供應。',
+        'jobRef.project1.product': '使用的產品: 鋼製架空地板 FS2000',
+        'jobRef.project1.desc': '澳門銀河3A遊戲區安裝鋼製架空地板FS2000系統，總面積為2200m²。高端架空地板系統專為遊戲和娛樂設施設計，於2021年10月供應。',
         'jobRef.project2.title': '德蒙福特大學辦公大樓',
         'jobRef.project2.location': '萊斯特, 英國',
         'jobRef.project2.date': '應用區域: 圖書館',
@@ -248,7 +248,7 @@ const translations = {
         // About
         'about.title': '關於沈飛',
         'about.subtitle': '您值得信賴的建材夥伴',
-        'about.intro': '沈飛建材（香港）有限公司在建築材料行業擁有超過十年的經驗，已成為香港及大灣區優質建築材料的首選供應商。',
+        'about.intro': '香港沈飛材料科技有限公司在建築材料行業擁有超過十年的經驗，已成為香港及大灣區優質建築材料的首選供應商。',
         'about.whyChoose': '為何選擇我們',
         'about.quality.title': '優質品質',
         'about.quality.desc': '我們所有產品均符合國際標準並通過嚴格的品質控制。',
@@ -320,7 +320,7 @@ const translations = {
         'footer.about.desc': '香港領先的優質建材供應商，致力於品質及客戶滿意度。',
         'footer.products.title': '產品',
         'footer.contact.title': '聯絡',
-        'footer.copyright': '© 2026 SUNFLY MATERIALS TECHNOLOGY (HONG KONG) CO., LIMITED. All rights reserved.',
+        'footer.copyright': '© 2026 香港沈飛材料科技有限公司。版權所有。',
 
         // Image Alt Text
         'alt.hero': '建築材料',
@@ -390,8 +390,8 @@ const translations = {
         'jobRef.project1.location': '澳门',
         'jobRef.project1.date': '供应日期: 2021年10月',
         'jobRef.project1.quantity': '项目数量: 2200 m²',
-        'jobRef.project1.product': '使用的产品: PARETE钢制架空地板 FS2000',
-        'jobRef.project1.desc': '澳门银河3A游戏区安装PARETE钢制架空地板FS2000系统，总面积为2200m²。高端架空地板系统专为游戏和娱乐设施设计，于2021年10月供应。',
+        'jobRef.project1.product': '使用的产品: 钢制架空地板 FS2000',
+        'jobRef.project1.desc': '澳门银河3A游戏区安装钢制架空地板FS2000系统，总面积为2200m²。高端架空地板系统专为游戏和娱乐设施设计，于2021年10月供应。',
         'jobRef.project2.title': '德蒙福特大学办公楼',
         'jobRef.project2.location': '莱斯特, 英国',
         'jobRef.project2.date': '应用区域: 图书馆',
@@ -414,7 +414,7 @@ const translations = {
         // About
         'about.title': '关于沈飞',
         'about.subtitle': '您值得信赖的建材伙伴',
-        'about.intro': '沈飞建材（香港）有限公司在建筑材料行业拥有超过十年的经验，已成为香港及大湾区优质建筑材料的首选供应商。',
+        'about.intro': '香港沈飞材料科技有限公司在建筑材料行业拥有超过十年的经验，已成为香港及大湾区优质建筑材料的首选供应商。',
         'about.whyChoose': '为何选择我们',
         'about.quality.title': '优质品质',
         'about.quality.desc': '我们所有产品均符合国际标准并通过严格的品质控制。',
@@ -486,7 +486,7 @@ const translations = {
         'footer.about.desc': '香港领先的优质建材供应商，致力于品质及客户满意度。',
         'footer.products.title': '产品',
         'footer.contact.title': '联系',
-        'footer.copyright': '© 2026 SUNFLY MATERIALS TECHNOLOGY (HONG KONG) CO., LIMITED. All rights reserved.',
+        'footer.copyright': '© 2026 香港沈飞材料科技有限公司。版权所有。',
 
         // Image Alt Text
         'alt.hero': '建筑材料',
@@ -499,3 +499,9 @@ const translations = {
         'alt.project2': '德蒙福特大学办公楼'
     }
 };
+
+Object.assign(translations["EN"], {"contact.form.sending": "Sending…", "contact.form.error": "Your message could not be sent. Please try again or email info@sunfly.hk.", "jobReference.searchPlaceholder": "Search projects, locations or products..."});
+
+Object.assign(translations["繁"], {"contact.form.sending": "發送中…", "contact.form.error": "訊息未能發送，請重試或電郵至 info@sunfly.hk。", "jobReference.searchPlaceholder": "搜尋項目、地點或產品…"});
+
+Object.assign(translations["简"], {"contact.form.sending": "发送中…", "contact.form.error": "讯息未能发送，请重试或电邮至 info@sunfly.hk。", "jobReference.searchPlaceholder": "搜索项目、地点或产品…"});

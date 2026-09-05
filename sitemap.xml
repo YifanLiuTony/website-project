@@ -1,91 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
-  <url>
-    <loc>https://sunfly.hk/</loc>
-    <lastmod>2026-08-09</lastmod>          <!-- update to today's date or last real change -->
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-
-    <!-- Language alternates (optional but good for multilingual) -->
-    <xhtml:link rel="alternate" hreflang="en"    href="https://sunfly.hk/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://sunfly.hk/" />
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://sunfly.hk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sunfly.hk/" />
-  </url>
-
-  <!-- Products catalog -->
-  <url>
-    <loc>https://sunfly.hk/products/</loc>
-    <lastmod>2026-08-09</lastmod>           <!-- use real last change date -->
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Acoustic ceiling systems catalog -->
-  <url>
-    <loc>https://sunfly.hk/products/acoustic-ceiling/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Acoustic ceiling system pages -->
-  <url>
-    <loc>https://sunfly.hk/products/cs-1/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-2/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-3/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-4/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-5/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-6/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-7/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-8/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sunfly.hk/products/cs-9/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sunfly.hk/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/job-references/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/acoustic-ceiling/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-1/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-10/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-11/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-12/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-2/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-3/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-4/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-5/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-6/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-7/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-8/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/af-9/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c1-0a-500/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c2-0a-500/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c3-0a-600/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c4-oa-600-bracing/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c4-oa-600-stringer/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/c5-0a-500/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-1/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-2/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-3/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-4/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-5/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-6/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-7/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-8/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/cs-9/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-1/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-2/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-3/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-4/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-5/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://sunfly.hk/products/vf-7/</loc><lastmod>2026-09-05</lastmod></url>
 </urlset>

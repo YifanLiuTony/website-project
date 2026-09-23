@@ -147,43 +147,27 @@
 }
     </script>
     
-    <!-- Structured Data - Products -->
+    <!-- Structured Data - Product Catalog Links (categories, not individual products) -->
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "itemListElement": [
         {
-            "@type": "Product",
+            "@type": "ListItem",
             "position": 1,
-            "name": "Raised Floor Systems",
-            "description": "Anti-static raised floor systems with heavy load capacity, cable management, and easy installation",
-            "brand": {
-                "@type": "Brand",
-                "name": "Sunfly"
-            }
+            "name": "Product Catalog",
+            "url": "https://sunfly.hk/products/"
         },
         {
-            "@type": "Product",
+            "@type": "ListItem",
             "position": 2,
-            "name": "Ceiling Systems",
-            "description": "Acoustic ceiling panels with fire-rated materials, various finishes, and easy maintenance"
-        },
-        {
-            "@type": "Product",
-            "position": 3,
-            "name": "Glazing Systems",
-            "description": "Energy efficient glazing with sound insulation, UV protection, and custom designs"
-        },
-        {
-            "@type": "Product",
-            "position": 4,
-            "name": "Steel Framing Systems",
-            "description": "Corrosion resistant steel framing with quick assembly for partition walls and load-bearing structures"
+            "name": "Acoustic Ceiling Systems",
+            "url": "https://sunfly.hk/products/acoustic-ceiling/"
         }
     ]
 }
-</script>
+    </script>
     
     <!-- Tailwind CSS CDN -->
     <script src="/assets/tailwindcss-3_4_17.js"></script>
